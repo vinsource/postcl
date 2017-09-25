@@ -841,28 +841,6 @@
     <WCFMetadataStorage Include="Service References\AutomativeDescriptionService7\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\NewVinControlMVC_v7\vincontrol.Application\vincontrol.Application.csproj">
-      <Project>{7f0f1443-be02-4bad-8e5c-34aded92dca3}</Project>
-      <Name>vincontrol.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\NewVinControlMVC_v7\vincontrol.Constant\vincontrol.Constant.csproj">
-      <Project>{ad3324ca-2044-4c68-be5d-ccb63ad12897}</Project>
-      <Name>vincontrol.Constant</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\NewVinControlMVC_v7\vincontrol.Data\vincontrol.Data.csproj">
-      <Project>{7d76e800-c9d8-407a-8844-a775ee6d5a65}</Project>
-      <Name>vincontrol.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\VinClappSelf\Clapp.WpfControlLibrary.UploadImageControl\Clapp.WpfControlLibrary.UploadImageControl.csproj">
-      <Project>{14748c1c-040d-42a6-a7ae-a202e0f74562}</Project>
-      <Name>Clapp.WpfControlLibrary.UploadImageControl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\VinClappSelf\Vinclapp.Craigslist.\Vinclapp.Craigslist.csproj">
-      <Project>{5250F5A7-9A3E-4966-8474-11A3E35D9587}</Project>
-      <Name>Vinclapp.Craigslist</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
