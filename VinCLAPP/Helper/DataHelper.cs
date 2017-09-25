@@ -94,12 +94,12 @@ namespace VinCLAPP.Helper
                     CityID = firstCity.CityId,
                     CityName = firstCity.City.CityName,
                     CraigsListCityURL = firstCity.City.CraigsListCityURL,
-                    SubCity = firstCity.City.SubCity.Value==1,
-                    CLIndex = firstCity.City.CLIndex.Value,
+                    SubCity = firstCity.City.SubCity.GetValueOrDefault()==1,
+                    CLIndex = firstCity.City.CLIndex.GetValueOrDefault(),
                     isCurrentlyUsed = false,
                     Position = GlobalVar.CurrentDealer.CityList.Count + 1,
-                    AreaAbbr = firstCity.City.AreaAbbr,
-                    SubAbbr = firstCity.City.SubAbbr
+                    AreaAbbr = firstCity.City.AreaAbbr ?? string.Empty,
+                    SubAbbr = firstCity.City.SubAbbr ?? string.Empty
                 });
 
                 foreach (var tmp in restCity)
@@ -109,12 +109,12 @@ namespace VinCLAPP.Helper
                         CityID = tmp.CityId,
                         CityName = tmp.City.CityName,
                         CraigsListCityURL = tmp.City.CraigsListCityURL,
-                        SubCity = tmp.City.SubCity.Value==1,
-                        CLIndex = tmp.City.CLIndex.Value,
+                        SubCity = tmp.City.SubCity.GetValueOrDefault()==1,
+                        CLIndex = tmp.City.CLIndex.GetValueOrDefault(),
                         isCurrentlyUsed = false,
                         Position = GlobalVar.CurrentDealer.CityList.Count + 1,
-                        AreaAbbr = tmp.City.AreaAbbr,
-                        SubAbbr = tmp.City.SubAbbr
+                        AreaAbbr = tmp.City.AreaAbbr ?? string.Empty,
+                        SubAbbr = tmp.City.SubAbbr ?? string.Empty
                     };
 
                     GlobalVar.CurrentDealer.CityList.Add(city);

@@ -372,9 +372,9 @@ namespace VinCLAPP.Forms
             }
         }
 
-   
+        private void txtCustomerEmail_TextChanged(object sender, EventArgs e)
+        {
 
-       
- 
+        }
     }
 }

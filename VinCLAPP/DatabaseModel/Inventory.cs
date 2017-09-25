@@ -57,6 +57,7 @@ namespace VinCLAPP.DatabaseModel
         public Nullable<System.DateTime> LastPosted { get; set; }
         public Nullable<bool> Certified { get; set; }
         public Nullable<int> VincontrolListingId { get; set; }
+        public Nullable<bool> IsTruck { get; set; }
     
         public virtual Dealer Dealer { get; set; }
     }
