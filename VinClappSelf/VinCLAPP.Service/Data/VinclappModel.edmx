@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="vinclappModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="vinclappModelStoreContainer">
+          <EntitySet Name="addmanufactures" EntityType="vinclappModel.Store.addmanufactures" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="datafeedvendor" EntityType="vinclappModel.Store.datafeedvendor" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclappaccount" EntityType="vinclappModel.Store.vinclappaccount" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclappchunkstring" EntityType="vinclappModel.Store.vinclappchunkstring" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclappcity" EntityType="vinclappModel.Store.vinclappcity" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclappcraigslisttracking" EntityType="vinclappModel.Store.vinclappcraigslisttracking" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclappdealercity" EntityType="vinclappModel.Store.vinclappdealercity" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclappdealerlist" EntityType="vinclappModel.Store.vinclappdealerlist" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclappemailaccount" EntityType="vinclappModel.Store.vinclappemailaccount" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclappinventory" EntityType="vinclappModel.Store.vinclappinventory" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclappinventorysoldout" EntityType="vinclappModel.Store.vinclappinventorysoldout" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclappmasterdealerlist" EntityType="vinclappModel.Store.vinclappmasterdealerlist" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclapppackage" EntityType="vinclappModel.Store.vinclapppackage" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclapptrackaccount" EntityType="vinclappModel.Store.vinclapptrackaccount" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="vinclappusazipcode" EntityType="vinclappModel.Store.vinclappusazipcode" store:Type="Tables" Schema="vinclapp" />
+          <EntitySet Name="wheeldrive" EntityType="vinclappModel.Store.wheeldrive" store:Type="Tables" Schema="vinclapp" />
+        </EntityContainer>
+        <EntityType Name="addmanufactures">
+          <Key>
+            <PropertyRef Name="AddManufacturesId" />
+          </Key>
+          <Property Name="AddManufacturesId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DivisionId" Type="int" />
+          <Property Name="DivisionName" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="datafeedvendor">
+          <Key>
+            <PropertyRef Name="datafeedvendorid" />
+          </Key>
+          <Property Name="datafeedvendorid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="vendorname" Type="varchar" MaxLength="45" />
+          <Property Name="DateStamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="vinclappaccount">
+          <Key>
+            <PropertyRef Name="AccountAutoId" />
+          </Key>
+          <Property Name="AccountAutoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="varchar" MaxLength="45" />
+          <Property Name="LastName" Type="varchar" MaxLength="45" />
+          <Property Name="PersonalPhone" Type="varchar" MaxLength="45" />
+          <Property Name="AccountName" Type="varchar" MaxLength="45" />
+          <Property Name="AccountPassword" Type="varchar" MaxLength="45" />
+          <Property Name="DealerId" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="Active" Type="bool" />
+          <Property Name="Quota" Type="int" />
+          <Property Name="FirstCity" Type="int" />
+          <Property Name="IsFirstLogOn" Type="bit" />
+          <Property Name="Ip" Type="varchar" MaxLength="45" />
+          <Property Name="Trial" Type="bit" />
+          <Property Name="TrialStartDate" Type="datetime" />
+          <Property Name="ExpirationDate" Type="datetime" />
+          <Property Name="QuickbookAccountId" Type="varchar" MaxLength="45" />
+          <Property Name="QuickBookAccountName" Type="varchar" MaxLength="45" />
+          <Property Name="DataFeedSetUp" Type="bit" />
+        </EntityType>
+        <EntityType Name="vinclappchunkstring">
+          <Key>
+            <PropertyRef Name="ChunkStringId" />
+          </Key>
+          <Property Name="ChunkStringId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ChunkName" Type="varchar" MaxLength="45" />
+          <Property Name="ChunkValue" Type="longtext" />
+        </EntityType>
+        <EntityType Name="vinclappcity">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="varchar" MaxLength="45" />
+          <Property Name="CraigsListCityURL" Type="varchar" MaxLength="100" />
+          <Property Name="SubCity" Type="bool" />
+          <Property Name="CLIndex" Type="int" />
+          <Property Name="State" Type="varchar" MaxLength="45" />
+          <Property Name="StateAbbr" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="vinclappcraigslisttracking">
+          <Key>
+            <PropertyRef Name="TrackingId" />
+          </Key>
+          <Property Name="TrackingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CLPostingId" Type="bigint" />
+          <Property Name="ListingId" Type="int" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="DealerId" Type="int" />
+          <Property Name="AccountId" Type="int" />
+          <Property Name="Computer" Type="varchar" MaxLength="255" />
+          <Property Name="EmailAccount" Type="varchar" MaxLength="255" />
+          <Property Name="ShowAd" Type="bit" />
+          <Property Name="Renew" Type="bit" />
+          <Property Name="HtmlCraigslistUrl" Type="varchar" MaxLength="255" />
+          <Property Name="ExpirationDate" Type="datetime" />
+          <Property Name="AddedDate" Type="datetime" />
+          <Property Name="CheckDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="vinclappdealercity">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="AutoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DealerID" Type="int" />
+          <Property Name="AccountAutoId" Type="int" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="vinclappdealerlist">
+          <Key>
+            <PropertyRef Name="VincontrolId" />
+          </Key>
+          <Property Name="VincontrolId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DealershipName" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="45" />
+          <Property Name="StreetAddress" Type="varchar" MaxLength="255" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="State" Type="varchar" MaxLength="45" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="45" />
+          <Property Name="LogoURL" Type="varchar" MaxLength="255" />
+          <Property Name="WebSiteURL" Type="varchar" MaxLength="255" />
+          <Property Name="CreditURL" Type="varchar" MaxLength="355" />
+          <Property Name="LeadEmail" Type="longtext" />
+          <Property Name="EmailFormat" Type="int" />
+          <Property Name="CityOveride" Type="varchar" MaxLength="255" />
+          <Property Name="DealerTitle" Type="varchar" MaxLength="255" />
+          <Property Name="Active" Type="bool" />
+          <Property Name="DelayTimer" Type="int" />
+          <Property Name="DateAdded" Type="datetime" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="ExceptionCategory" Type="int" />
+          <Property Name="GoogleAnalyticAccount" Type="varchar" MaxLength="255" />
+          <Property Name="PostWithPrice" Type="bool" />
+          <Property Name="DealerPathFeed" Type="varchar" MaxLength="255" />
+          <Property Name="DataFeedVendor" Type="varchar" MaxLength="100" />
+          <Property Name="VendorEmail" Type="varchar" MaxLength="100" />
+          <Property Name="VendorPhone" Type="varchar" MaxLength="45" />
+          <Property Name="CustomMessage" Type="longtext" />
+          <Property Name="AuthorizedName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="vinclappemailaccount">
+          <Key>
+            <PropertyRef Name="EmailAccountId" />
+          </Key>
+          <Property Name="EmailAccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="255" />
+          <Property Name="EmailPassword" Type="varchar" MaxLength="255" />
+          <Property Name="DateAdded" Type="datetime" />
+          <Property Name="DealerId" Type="int" />
+          <Property Name="AccountAutoId" Type="int" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="vinclappinventory">
+          <Key>
+            <PropertyRef Name="ListingID" />
+          </Key>
+          <Property Name="ListingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ModelYear" Type="varchar" MaxLength="10" />
+          <Property Name="Make" Type="varchar" MaxLength="100" />
+          <Property Name="Model" Type="varchar" MaxLength="100" />
+          <Property Name="Trim" Type="varchar" MaxLength="100" />
+          <Property Name="VINNumber" Type="varchar" MaxLength="100" />
+          <Property Name="StockNumber" Type="varchar" MaxLength="100" />
+          <Property Name="SalePrice" Type="varchar" MaxLength="100" />
+          <Property Name="MSRP" Type="varchar" MaxLength="100" />
+          <Property Name="Mileage" Type="varchar" MaxLength="100" />
+          <Property Name="ExteriorColor" Type="varchar" MaxLength="100" />
+          <Property Name="InteriorColor" Type="varchar" MaxLength="100" />
+          <Property Name="InteriorSurface" Type="varchar" MaxLength="100" />
+          <Property Name="BodyType" Type="varchar" MaxLength="100" />
+          <Property Name="Cylinders" Type="varchar" MaxLength="45" />
+          <Property Name="Liters" Type="varchar" MaxLength="45" />
+          <Property Name="EngineType" Type="varchar" MaxLength="100" />
+          <Property Name="DriveTrain" Type="varchar" MaxLength="100" />
+          <Property Name="FuelType" Type="varchar" MaxLength="100" />
+          <Property Name="Tranmission" Type="varchar" MaxLength="200" />
+          <Property Name="Doors" Type="varchar" MaxLength="45" />
+          <Property Name="Certified" Type="bool" />
+          <Property Name="CarsPackages" Type="longtext" />
+          <Property Name="CarsOptions" Type="longtext" />
+          <Property Name="Descriptions" Type="longtext" />
+          <Property Name="CarImageUrl" Type="longtext" />
+          <Property Name="ThumbnailImageURL" Type="longtext" />
+          <Property Name="DateInStock" Type="datetime" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="DealerId" Type="int" />
+          <Property Name="DealershipName" Type="varchar" MaxLength="200" />
+          <Property Name="DealershipAddress" Type="varchar" MaxLength="250" />
+          <Property Name="DealershipCity" Type="varchar" MaxLength="100" />
+          <Property Name="DealershipState" Type="varchar" MaxLength="10" />
+          <Property Name="DealershipPhone" Type="varchar" MaxLength="100" />
+          <Property Name="DealershipZipCode" Type="varchar" MaxLength="45" />
+          <Property Name="DealerCost" Type="varchar" MaxLength="45" />
+          <Property Name="ACV" Type="varchar" MaxLength="45" />
+          <Property Name="DefaultImageUrl" Type="longtext" />
+          <Property Name="NewUsed" Type="varchar" MaxLength="10" />
+          <Property Name="AddToInventoryBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="vinclappinventorysoldout">
+          <Key>
+            <PropertyRef Name="ListingID" />
+          </Key>
+          <Property Name="ListingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ModelYear" Type="varchar" MaxLength="10" />
+          <Property Name="Make" Type="varchar" MaxLength="100" />
+          <Property Name="Model" Type="varchar" MaxLength="100" />
+          <Property Name="Trim" Type="varchar" MaxLength="100" />
+          <Property Name="VINNumber" Type="varchar" MaxLength="100" />
+          <Property Name="StockNumber" Type="varchar" MaxLength="100" />
+          <Property Name="SalePrice" Type="varchar" MaxLength="100" />
+          <Property Name="MSRP" Type="varchar" MaxLength="100" />
+          <Property Name="Mileage" Type="varchar" MaxLength="100" />
+          <Property Name="ExteriorColor" Type="varchar" MaxLength="100" />
+          <Property Name="InteriorColor" Type="varchar" MaxLength="100" />
+          <Property Name="InteriorSurface" Type="varchar" MaxLength="100" />
+          <Property Name="BodyType" Type="varchar" MaxLength="100" />
+          <Property Name="Cylinders" Type="varchar" MaxLength="45" />
+          <Property Name="Liters" Type="varchar" MaxLength="45" />
+          <Property Name="EngineType" Type="varchar" MaxLength="100" />
+          <Property Name="DriveTrain" Type="varchar" MaxLength="100" />
+          <Property Name="FuelType" Type="varchar" MaxLength="100" />
+          <Property Name="Tranmission" Type="varchar" MaxLength="200" />
+          <Property Name="Doors" Type="varchar" MaxLength="45" />
+          <Property Name="Certified" Type="bool" />
+          <Property Name="CarsOptions" Type="longtext" />
+          <Property Name="Descriptions" Type="longtext" />
+          <Property Name="CarImageUrl" Type="longtext" />
+          <Property Name="DateInStock" Type="datetime" Nullable="false" />
+          <Property Name="DealerId" Type="int" />
+          <Property Name="DealershipName" Type="varchar" MaxLength="200" />
+          <Property Name="DealershipAddress" Type="varchar" MaxLength="250" />
+          <Property Name="DealershipCity" Type="varchar" MaxLength="100" />
+          <Property Name="DealershipState" Type="varchar" MaxLength="10" />
+          <Property Name="DealershipPhone" Type="varchar" MaxLength="100" />
+          <Property Name="DealershipZipCode" Type="varchar" MaxLength="45" />
+          <Property Name="DealerCost" Type="varchar" MaxLength="45" />
+          <Property Name="ACV" Type="varchar" MaxLength="45" />
+          <Property Name="DefaultImageUrl" Type="longtext" />
+          <Property Name="NewUsed" Type="varchar" MaxLength="10" />
+          <Property Name="AddToInventoryBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="vinclappmasterdealerlist">
+          <Key>
+            <PropertyRef Name="vinclappdealerId" />
+          </Key>
+          <Property Name="vinclappdealerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DealerPassword" Type="varchar" MaxLength="100" />
+          <Property Name="DealershipName" Type="varchar" MaxLength="255" />
+          <Property Name="DealershipAddress" Type="longtext" />
+          <Property Name="DateAdded" Type="datetime" />
+          <Property Name="Lattitude" Type="varchar" MaxLength="100" />
+          <Property Name="Longtitude" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="City" Type="varchar" MaxLength="45" />
+          <Property Name="State" Type="varchar" MaxLength="45" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="45" />
+          <Property Name="Phone" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="vinclapppackage">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Name="PackageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PackageName" Type="varchar" MaxLength="45" />
+          <Property Name="MonthlyPrice" Type="int" />
+          <Property Name="Period" Type="varchar" MaxLength="45" />
+          <Property Name="TotalCharge" Type="int" />
+          <Property Name="QuickBookPackageId" Type="int" />
+          <Property Name="QuickBookPackageName" Type="varchar" MaxLength="45" />
+          <Property Name="AddedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="vinclapptrackaccount">
+          <Key>
+            <PropertyRef Name="TrackId" />
+          </Key>
+          <Property Name="TrackId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" />
+          <Property Name="AccountNumber" Type="int" />
+          <Property Name="DailyUse" Type="int" />
+          <Property Name="LastUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="vinclappusazipcode">
+          <Key>
+            <PropertyRef Name="ZIPCode" />
+          </Key>
+          <Property Name="ZIPCode" Type="int" Nullable="false" />
+          <Property Name="ZIPType" Type="varchar" MaxLength="45" />
+          <Property Name="CityName" Type="varchar" MaxLength="45" />
+          <Property Name="CityType" Type="varchar" MaxLength="45" />
+          <Property Name="CountyName" Type="varchar" MaxLength="45" />
+          <Property Name="CountyFIPS" Type="varchar" MaxLength="45" />
+          <Property Name="StateName" Type="varchar" MaxLength="45" />
+          <Property Name="StateAbbr" Type="varchar" MaxLength="45" />
+          <Property Name="StateFIPS" Type="varchar" MaxLength="45" />
+          <Property Name="MSACode" Type="varchar" MaxLength="45" />
+          <Property Name="AreaCode" Type="varchar" MaxLength="45" />
+          <Property Name="TimeZone" Type="varchar" MaxLength="45" />
+          <Property Name="UTC" Type="varchar" MaxLength="45" />
+          <Property Name="DST" Type="varchar" MaxLength="45" />
+          <Property Name="Latitude" Type="varchar" MaxLength="45" />
+          <Property Name="Longitude" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="wheeldrive">
+          <Key>
+            <PropertyRef Name="WheelDriveId" />
+          </Key>
+          <Property Name="WheelDriveId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="45" />
+          <Property Name="TextValue" Type="varchar" MaxLength="45" />
+          <Property Name="ShortValue" Type="varchar" MaxLength="45" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="vinclappModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="vinclappEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="addmanufactures" EntityType="vinclappModel.addmanufacture" />
+          <EntitySet Name="datafeedvendors" EntityType="vinclappModel.datafeedvendor" />
+          <EntitySet Name="vinclappaccounts" EntityType="vinclappModel.vinclappaccount" />
+          <EntitySet Name="vinclappchunkstrings" EntityType="vinclappModel.vinclappchunkstring" />
+          <EntitySet Name="vinclappcities" EntityType="vinclappModel.vinclappcity" />
+          <EntitySet Name="vinclappcraigslisttrackings" EntityType="vinclappModel.vinclappcraigslisttracking" />
+          <EntitySet Name="vinclappdealercities" EntityType="vinclappModel.vinclappdealercity" />
+          <EntitySet Name="vinclappdealerlists" EntityType="vinclappModel.vinclappdealerlist" />
+          <EntitySet Name="vinclappemailaccounts" EntityType="vinclappModel.vinclappemailaccount" />
+          <EntitySet Name="vinclappinventories" EntityType="vinclappModel.vinclappinventory" />
+          <EntitySet Name="vinclappinventorysoldouts" EntityType="vinclappModel.vinclappinventorysoldout" />
+          <EntitySet Name="vinclappmasterdealerlists" EntityType="vinclappModel.vinclappmasterdealerlist" />
+          <EntitySet Name="vinclapppackages" EntityType="vinclappModel.vinclapppackage" />
+          <EntitySet Name="vinclapptrackaccounts" EntityType="vinclappModel.vinclapptrackaccount" />
+          <EntitySet Name="vinclappusazipcodes" EntityType="vinclappModel.vinclappusazipcode" />
+          <EntitySet Name="wheeldrives" EntityType="vinclappModel.wheeldrive" />
+        </EntityContainer>
+        <EntityType Name="addmanufacture">
+          <Key>
+            <PropertyRef Name="AddManufacturesId" />
+          </Key>
+          <Property Name="AddManufacturesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DivisionId" Type="Int32" />
+          <Property Name="DivisionName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="datafeedvendor">
+          <Key>
+            <PropertyRef Name="datafeedvendorid" />
+          </Key>
+          <Property Name="datafeedvendorid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vendorname" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="DateStamp" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="vinclappaccount">
+          <Key>
+            <PropertyRef Name="AccountAutoId" />
+          </Key>
+          <Property Name="AccountAutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="PersonalPhone" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AccountName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AccountPassword" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="DealerId" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" />
+          <Property Name="LastUpdated" Type="DateTime" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="Quota" Type="Int32" />
+          <Property Name="FirstCity" Type="Int32" />
+          <Property Name="IsFirstLogOn" Type="Boolean" />
+          <Property Name="Ip" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Trial" Type="Boolean" />
+          <Property Name="TrialStartDate" Type="DateTime" />
+          <Property Name="ExpirationDate" Type="DateTime" />
+          <Property Name="QuickbookAccountId" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="QuickBookAccountName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="DataFeedSetUp" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="vinclappchunkstring">
+          <Key>
+            <PropertyRef Name="ChunkStringId" />
+          </Key>
+          <Property Name="ChunkStringId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChunkName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ChunkValue" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vinclappcity">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="CraigsListCityURL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SubCity" Type="Boolean" />
+          <Property Name="CLIndex" Type="Int32" />
+          <Property Name="State" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="StateAbbr" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vinclappcraigslisttracking">
+          <Key>
+            <PropertyRef Name="TrackingId" />
+          </Key>
+          <Property Name="TrackingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLPostingId" Type="Int64" />
+          <Property Name="ListingId" Type="Int32" />
+          <Property Name="CityId" Type="Int32" />
+          <Property Name="DealerId" Type="Int32" />
+          <Property Name="AccountId" Type="Int32" />
+          <Property Name="Computer" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="EmailAccount" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ShowAd" Type="Boolean" />
+          <Property Name="Renew" Type="Boolean" />
+          <Property Name="HtmlCraigslistUrl" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ExpirationDate" Type="DateTime" />
+          <Property Name="AddedDate" Type="DateTime" />
+          <Property Name="CheckDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="vinclappdealercity">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealerID" Type="Int32" />
+          <Property Name="AccountAutoId" Type="Int32" />
+          <Property Name="CityID" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="vinclappdealerlist">
+          <Key>
+            <PropertyRef Name="VincontrolId" />
+          </Key>
+          <Property Name="VincontrolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealershipName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="StreetAddress" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="LogoURL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="WebSiteURL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="CreditURL" Type="String" MaxLength="355" Unicode="false" FixedLength="false" />
+          <Property Name="LeadEmail" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="EmailFormat" Type="Int32" />
+          <Property Name="CityOveride" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DealerTitle" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="DelayTimer" Type="Int32" />
+          <Property Name="DateAdded" Type="DateTime" />
+          <Property Name="LastUpdated" Type="DateTime" />
+          <Property Name="ExceptionCategory" Type="Int32" />
+          <Property Name="GoogleAnalyticAccount" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="PostWithPrice" Type="Boolean" />
+          <Property Name="DealerPathFeed" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DataFeedVendor" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VendorEmail" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VendorPhone" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="CustomMessage" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="AuthorizedName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vinclappemailaccount">
+          <Key>
+            <PropertyRef Name="EmailAccountId" />
+          </Key>
+          <Property Name="EmailAccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="EmailPassword" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DateAdded" Type="DateTime" />
+          <Property Name="DealerId" Type="Int32" />
+          <Property Name="AccountAutoId" Type="Int32" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vinclappinventory">
+          <Key>
+            <PropertyRef Name="ListingID" />
+          </Key>
+          <Property Name="ListingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModelYear" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Make" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Trim" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VINNumber" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="StockNumber" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SalePrice" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MSRP" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Mileage" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ExteriorColor" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InteriorColor" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InteriorSurface" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BodyType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Cylinders" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Liters" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="EngineType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DriveTrain" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FuelType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Tranmission" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Doors" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Certified" Type="Boolean" />
+          <Property Name="CarsPackages" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="CarsOptions" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="Descriptions" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="CarImageUrl" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="ThumbnailImageURL" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="DateInStock" Type="DateTime" />
+          <Property Name="LastUpdated" Type="DateTime" />
+          <Property Name="DealerId" Type="Int32" />
+          <Property Name="DealershipName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipAddress" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipCity" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipState" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipPhone" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipZipCode" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="DealerCost" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ACV" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="DefaultImageUrl" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="NewUsed" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AddToInventoryBy" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vinclappinventorysoldout">
+          <Key>
+            <PropertyRef Name="ListingID" />
+          </Key>
+          <Property Name="ListingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModelYear" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Make" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Trim" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VINNumber" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="StockNumber" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SalePrice" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MSRP" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Mileage" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ExteriorColor" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InteriorColor" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InteriorSurface" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BodyType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Cylinders" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Liters" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="EngineType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DriveTrain" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FuelType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Tranmission" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Doors" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Certified" Type="Boolean" />
+          <Property Name="CarsOptions" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="Descriptions" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="CarImageUrl" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="DateInStock" Type="DateTime" Nullable="false" />
+          <Property Name="DealerId" Type="Int32" />
+          <Property Name="DealershipName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipAddress" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipCity" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipState" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipPhone" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipZipCode" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="DealerCost" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ACV" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="DefaultImageUrl" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="NewUsed" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AddToInventoryBy" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vinclappmasterdealerlist">
+          <Key>
+            <PropertyRef Name="vinclappdealerId" />
+          </Key>
+          <Property Name="vinclappdealerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealerPassword" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipAddress" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="DateAdded" Type="DateTime" />
+          <Property Name="Lattitude" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Longtitude" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vinclapppackage">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Name="PackageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PackageName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="MonthlyPrice" Type="Int32" />
+          <Property Name="Period" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="TotalCharge" Type="Int32" />
+          <Property Name="QuickBookPackageId" Type="Int32" />
+          <Property Name="QuickBookPackageName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AddedDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="vinclapptrackaccount">
+          <Key>
+            <PropertyRef Name="TrackId" />
+          </Key>
+          <Property Name="TrackId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="Int32" />
+          <Property Name="AccountNumber" Type="Int32" />
+          <Property Name="DailyUse" Type="Int32" />
+          <Property Name="LastUpdated" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="vinclappusazipcode">
+          <Key>
+            <PropertyRef Name="ZIPCode" />
+          </Key>
+          <Property Name="ZIPCode" Type="Int32" Nullable="false" />
+          <Property Name="ZIPType" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="CityName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="CityType" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="CountyName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="CountyFIPS" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="StateName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="StateAbbr" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="StateFIPS" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="MSACode" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AreaCode" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="TimeZone" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="UTC" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="DST" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Latitude" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Longitude" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="wheeldrive">
+          <Key>
+            <PropertyRef Name="WheelDriveId" />
+          </Key>
+          <Property Name="WheelDriveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="TextValue" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ShortValue" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="vinclappModelStoreContainer" CdmEntityContainer="vinclappEntities">
+          <EntitySetMapping Name="addmanufactures"><EntityTypeMapping TypeName="vinclappModel.addmanufacture"><MappingFragment StoreEntitySet="addmanufactures">
+            <ScalarProperty Name="AddManufacturesId" ColumnName="AddManufacturesId" />
+            <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+            <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="datafeedvendors"><EntityTypeMapping TypeName="vinclappModel.datafeedvendor"><MappingFragment StoreEntitySet="datafeedvendor">
+            <ScalarProperty Name="datafeedvendorid" ColumnName="datafeedvendorid" />
+            <ScalarProperty Name="vendorname" ColumnName="vendorname" />
+            <ScalarProperty Name="DateStamp" ColumnName="DateStamp" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclappaccounts"><EntityTypeMapping TypeName="vinclappModel.vinclappaccount"><MappingFragment StoreEntitySet="vinclappaccount">
+            <ScalarProperty Name="AccountAutoId" ColumnName="AccountAutoId" />
+            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+            <ScalarProperty Name="LastName" ColumnName="LastName" />
+            <ScalarProperty Name="PersonalPhone" ColumnName="PersonalPhone" />
+            <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+            <ScalarProperty Name="AccountPassword" ColumnName="AccountPassword" />
+            <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+            <ScalarProperty Name="Active" ColumnName="Active" />
+            <ScalarProperty Name="Quota" ColumnName="Quota" />
+            <ScalarProperty Name="FirstCity" ColumnName="FirstCity" />
+            <ScalarProperty Name="IsFirstLogOn" ColumnName="IsFirstLogOn" />
+            <ScalarProperty Name="Ip" ColumnName="Ip" />
+            <ScalarProperty Name="Trial" ColumnName="Trial" />
+            <ScalarProperty Name="TrialStartDate" ColumnName="TrialStartDate" />
+            <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+            <ScalarProperty Name="QuickbookAccountId" ColumnName="QuickbookAccountId" />
+            <ScalarProperty Name="QuickBookAccountName" ColumnName="QuickBookAccountName" />
+            <ScalarProperty Name="DataFeedSetUp" ColumnName="DataFeedSetUp" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclappchunkstrings"><EntityTypeMapping TypeName="vinclappModel.vinclappchunkstring"><MappingFragment StoreEntitySet="vinclappchunkstring">
+            <ScalarProperty Name="ChunkStringId" ColumnName="ChunkStringId" />
+            <ScalarProperty Name="ChunkName" ColumnName="ChunkName" />
+            <ScalarProperty Name="ChunkValue" ColumnName="ChunkValue" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclappcities"><EntityTypeMapping TypeName="vinclappModel.vinclappcity"><MappingFragment StoreEntitySet="vinclappcity">
+            <ScalarProperty Name="CityID" ColumnName="CityID" />
+            <ScalarProperty Name="CityName" ColumnName="CityName" />
+            <ScalarProperty Name="CraigsListCityURL" ColumnName="CraigsListCityURL" />
+            <ScalarProperty Name="SubCity" ColumnName="SubCity" />
+            <ScalarProperty Name="CLIndex" ColumnName="CLIndex" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="StateAbbr" ColumnName="StateAbbr" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclappcraigslisttrackings"><EntityTypeMapping TypeName="vinclappModel.vinclappcraigslisttracking"><MappingFragment StoreEntitySet="vinclappcraigslisttracking">
+            <ScalarProperty Name="TrackingId" ColumnName="TrackingId" />
+            <ScalarProperty Name="CLPostingId" ColumnName="CLPostingId" />
+            <ScalarProperty Name="ListingId" ColumnName="ListingId" />
+            <ScalarProperty Name="CityId" ColumnName="CityId" />
+            <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+            <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+            <ScalarProperty Name="Computer" ColumnName="Computer" />
+            <ScalarProperty Name="EmailAccount" ColumnName="EmailAccount" />
+            <ScalarProperty Name="ShowAd" ColumnName="ShowAd" />
+            <ScalarProperty Name="Renew" ColumnName="Renew" />
+            <ScalarProperty Name="HtmlCraigslistUrl" ColumnName="HtmlCraigslistUrl" />
+            <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+            <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+            <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclappdealercities"><EntityTypeMapping TypeName="vinclappModel.vinclappdealercity"><MappingFragment StoreEntitySet="vinclappdealercity">
+            <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+            <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+            <ScalarProperty Name="AccountAutoId" ColumnName="AccountAutoId" />
+            <ScalarProperty Name="CityID" ColumnName="CityID" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclappdealerlists"><EntityTypeMapping TypeName="vinclappModel.vinclappdealerlist"><MappingFragment StoreEntitySet="vinclappdealerlist">
+            <ScalarProperty Name="VincontrolId" ColumnName="VincontrolId" />
+            <ScalarProperty Name="DealershipName" ColumnName="DealershipName" />
+            <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+            <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+            <ScalarProperty Name="LogoURL" ColumnName="LogoURL" />
+            <ScalarProperty Name="WebSiteURL" ColumnName="WebSiteURL" />
+            <ScalarProperty Name="CreditURL" ColumnName="CreditURL" />
+            <ScalarProperty Name="LeadEmail" ColumnName="LeadEmail" />
+            <ScalarProperty Name="EmailFormat" ColumnName="EmailFormat" />
+            <ScalarProperty Name="CityOveride" ColumnName="CityOveride" />
+            <ScalarProperty Name="DealerTitle" ColumnName="DealerTitle" />
+            <ScalarProperty Name="Active" ColumnName="Active" />
+            <ScalarProperty Name="DelayTimer" ColumnName="DelayTimer" />
+            <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+            <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+            <ScalarProperty Name="ExceptionCategory" ColumnName="ExceptionCategory" />
+            <ScalarProperty Name="GoogleAnalyticAccount" ColumnName="GoogleAnalyticAccount" />
+            <ScalarProperty Name="PostWithPrice" ColumnName="PostWithPrice" />
+            <ScalarProperty Name="DealerPathFeed" ColumnName="DealerPathFeed" />
+            <ScalarProperty Name="DataFeedVendor" ColumnName="DataFeedVendor" />
+            <ScalarProperty Name="VendorEmail" ColumnName="VendorEmail" />
+            <ScalarProperty Name="VendorPhone" ColumnName="VendorPhone" />
+            <ScalarProperty Name="CustomMessage" ColumnName="CustomMessage" />
+            <ScalarProperty Name="AuthorizedName" ColumnName="AuthorizedName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclappemailaccounts"><EntityTypeMapping TypeName="vinclappModel.vinclappemailaccount"><MappingFragment StoreEntitySet="vinclappemailaccount">
+            <ScalarProperty Name="EmailAccountId" ColumnName="EmailAccountId" />
+            <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+            <ScalarProperty Name="EmailPassword" ColumnName="EmailPassword" />
+            <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+            <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+            <ScalarProperty Name="AccountAutoId" ColumnName="AccountAutoId" />
+            <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclappinventories"><EntityTypeMapping TypeName="vinclappModel.vinclappinventory"><MappingFragment StoreEntitySet="vinclappinventory">
+            <ScalarProperty Name="ListingID" ColumnName="ListingID" />
+            <ScalarProperty Name="ModelYear" ColumnName="ModelYear" />
+            <ScalarProperty Name="Make" ColumnName="Make" />
+            <ScalarProperty Name="Model" ColumnName="Model" />
+            <ScalarProperty Name="Trim" ColumnName="Trim" />
+            <ScalarProperty Name="VINNumber" ColumnName="VINNumber" />
+            <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+            <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+            <ScalarProperty Name="MSRP" ColumnName="MSRP" />
+            <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+            <ScalarProperty Name="ExteriorColor" ColumnName="ExteriorColor" />
+            <ScalarProperty Name="InteriorColor" ColumnName="InteriorColor" />
+            <ScalarProperty Name="InteriorSurface" ColumnName="InteriorSurface" />
+            <ScalarProperty Name="BodyType" ColumnName="BodyType" />
+            <ScalarProperty Name="Cylinders" ColumnName="Cylinders" />
+            <ScalarProperty Name="Liters" ColumnName="Liters" />
+            <ScalarProperty Name="EngineType" ColumnName="EngineType" />
+            <ScalarProperty Name="DriveTrain" ColumnName="DriveTrain" />
+            <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+            <ScalarProperty Name="Tranmission" ColumnName="Tranmission" />
+            <ScalarProperty Name="Doors" ColumnName="Doors" />
+            <ScalarProperty Name="Certified" ColumnName="Certified" />
+            <ScalarProperty Name="CarsPackages" ColumnName="CarsPackages" />
+            <ScalarProperty Name="CarsOptions" ColumnName="CarsOptions" />
+            <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+            <ScalarProperty Name="CarImageUrl" ColumnName="CarImageUrl" />
+            <ScalarProperty Name="ThumbnailImageURL" ColumnName="ThumbnailImageURL" />
+            <ScalarProperty Name="DateInStock" ColumnName="DateInStock" />
+            <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+            <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+            <ScalarProperty Name="DealershipName" ColumnName="DealershipName" />
+            <ScalarProperty Name="DealershipAddress" ColumnName="DealershipAddress" />
+            <ScalarProperty Name="DealershipCity" ColumnName="DealershipCity" />
+            <ScalarProperty Name="DealershipState" ColumnName="DealershipState" />
+            <ScalarProperty Name="DealershipPhone" ColumnName="DealershipPhone" />
+            <ScalarProperty Name="DealershipZipCode" ColumnName="DealershipZipCode" />
+            <ScalarProperty Name="DealerCost" ColumnName="DealerCost" />
+            <ScalarProperty Name="ACV" ColumnName="ACV" />
+            <ScalarProperty Name="DefaultImageUrl" ColumnName="DefaultImageUrl" />
+            <ScalarProperty Name="NewUsed" ColumnName="NewUsed" />
+            <ScalarProperty Name="AddToInventoryBy" ColumnName="AddToInventoryBy" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclappinventorysoldouts"><EntityTypeMapping TypeName="vinclappModel.vinclappinventorysoldout"><MappingFragment StoreEntitySet="vinclappinventorysoldout">
+            <ScalarProperty Name="ListingID" ColumnName="ListingID" />
+            <ScalarProperty Name="ModelYear" ColumnName="ModelYear" />
+            <ScalarProperty Name="Make" ColumnName="Make" />
+            <ScalarProperty Name="Model" ColumnName="Model" />
+            <ScalarProperty Name="Trim" ColumnName="Trim" />
+            <ScalarProperty Name="VINNumber" ColumnName="VINNumber" />
+            <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+            <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+            <ScalarProperty Name="MSRP" ColumnName="MSRP" />
+            <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+            <ScalarProperty Name="ExteriorColor" ColumnName="ExteriorColor" />
+            <ScalarProperty Name="InteriorColor" ColumnName="InteriorColor" />
+            <ScalarProperty Name="InteriorSurface" ColumnName="InteriorSurface" />
+            <ScalarProperty Name="BodyType" ColumnName="BodyType" />
+            <ScalarProperty Name="Cylinders" ColumnName="Cylinders" />
+            <ScalarProperty Name="Liters" ColumnName="Liters" />
+            <ScalarProperty Name="EngineType" ColumnName="EngineType" />
+            <ScalarProperty Name="DriveTrain" ColumnName="DriveTrain" />
+            <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+            <ScalarProperty Name="Tranmission" ColumnName="Tranmission" />
+            <ScalarProperty Name="Doors" ColumnName="Doors" />
+            <ScalarProperty Name="Certified" ColumnName="Certified" />
+            <ScalarProperty Name="CarsOptions" ColumnName="CarsOptions" />
+            <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+            <ScalarProperty Name="CarImageUrl" ColumnName="CarImageUrl" />
+            <ScalarProperty Name="DateInStock" ColumnName="DateInStock" />
+            <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+            <ScalarProperty Name="DealershipName" ColumnName="DealershipName" />
+            <ScalarProperty Name="DealershipAddress" ColumnName="DealershipAddress" />
+            <ScalarProperty Name="DealershipCity" ColumnName="DealershipCity" />
+            <ScalarProperty Name="DealershipState" ColumnName="DealershipState" />
+            <ScalarProperty Name="DealershipPhone" ColumnName="DealershipPhone" />
+            <ScalarProperty Name="DealershipZipCode" ColumnName="DealershipZipCode" />
+            <ScalarProperty Name="DealerCost" ColumnName="DealerCost" />
+            <ScalarProperty Name="ACV" ColumnName="ACV" />
+            <ScalarProperty Name="DefaultImageUrl" ColumnName="DefaultImageUrl" />
+            <ScalarProperty Name="NewUsed" ColumnName="NewUsed" />
+            <ScalarProperty Name="AddToInventoryBy" ColumnName="AddToInventoryBy" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclappmasterdealerlists"><EntityTypeMapping TypeName="vinclappModel.vinclappmasterdealerlist"><MappingFragment StoreEntitySet="vinclappmasterdealerlist">
+            <ScalarProperty Name="vinclappdealerId" ColumnName="vinclappdealerId" />
+            <ScalarProperty Name="DealerPassword" ColumnName="DealerPassword" />
+            <ScalarProperty Name="DealershipName" ColumnName="DealershipName" />
+            <ScalarProperty Name="DealershipAddress" ColumnName="DealershipAddress" />
+            <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+            <ScalarProperty Name="Lattitude" ColumnName="Lattitude" />
+            <ScalarProperty Name="Longtitude" ColumnName="Longtitude" />
+            <ScalarProperty Name="Address" ColumnName="Address" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+            <ScalarProperty Name="Phone" ColumnName="Phone" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclapppackages"><EntityTypeMapping TypeName="vinclappModel.vinclapppackage"><MappingFragment StoreEntitySet="vinclapppackage">
+            <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+            <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+            <ScalarProperty Name="MonthlyPrice" ColumnName="MonthlyPrice" />
+            <ScalarProperty Name="Period" ColumnName="Period" />
+            <ScalarProperty Name="TotalCharge" ColumnName="TotalCharge" />
+            <ScalarProperty Name="QuickBookPackageId" ColumnName="QuickBookPackageId" />
+            <ScalarProperty Name="QuickBookPackageName" ColumnName="QuickBookPackageName" />
+            <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclapptrackaccounts"><EntityTypeMapping TypeName="vinclappModel.vinclapptrackaccount"><MappingFragment StoreEntitySet="vinclapptrackaccount">
+            <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+            <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+            <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+            <ScalarProperty Name="DailyUse" ColumnName="DailyUse" />
+            <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vinclappusazipcodes"><EntityTypeMapping TypeName="vinclappModel.vinclappusazipcode"><MappingFragment StoreEntitySet="vinclappusazipcode">
+            <ScalarProperty Name="ZIPCode" ColumnName="ZIPCode" />
+            <ScalarProperty Name="ZIPType" ColumnName="ZIPType" />
+            <ScalarProperty Name="CityName" ColumnName="CityName" />
+            <ScalarProperty Name="CityType" ColumnName="CityType" />
+            <ScalarProperty Name="CountyName" ColumnName="CountyName" />
+            <ScalarProperty Name="CountyFIPS" ColumnName="CountyFIPS" />
+            <ScalarProperty Name="StateName" ColumnName="StateName" />
+            <ScalarProperty Name="StateAbbr" ColumnName="StateAbbr" />
+            <ScalarProperty Name="StateFIPS" ColumnName="StateFIPS" />
+            <ScalarProperty Name="MSACode" ColumnName="MSACode" />
+            <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+            <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+            <ScalarProperty Name="UTC" ColumnName="UTC" />
+            <ScalarProperty Name="DST" ColumnName="DST" />
+            <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+            <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="wheeldrives"><EntityTypeMapping TypeName="vinclappModel.wheeldrive"><MappingFragment StoreEntitySet="wheeldrive">
+            <ScalarProperty Name="WheelDriveId" ColumnName="WheelDriveId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="TextValue" ColumnName="TextValue" />
+            <ScalarProperty Name="ShortValue" ColumnName="ShortValue" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="VinclappModel">
+        <EntityTypeShape EntityType="vinclappModel.addmanufacture" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.datafeedvendor" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclappaccount" Width="1.5" PointX="0.75" PointY="3.75" Height="4.8648079427083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclappchunkstring" Width="1.5" PointX="2.75" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclappcity" Width="1.5" PointX="4.75" PointY="0.75" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclappcraigslisttracking" Width="1.5" PointX="4.75" PointY="4.75" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclappdealercity" Width="1.5" PointX="6.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclappdealerlist" Width="1.5" PointX="6.75" PointY="3.75" Height="6.2109179687500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclappemailaccount" Width="1.5" PointX="8.75" PointY="0.75" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclappinventory" Width="1.5" PointX="8.75" PointY="4.75" Height="8.9031380208333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclappinventorysoldout" Width="1.5" PointX="0.75" PointY="9.75" Height="8.3262337239583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclappmasterdealerlist" Width="1.5" PointX="2.75" PointY="9.75" Height="3.3263964843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclapppackage" Width="1.5" PointX="10.75" PointY="0.75" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclapptrackaccount" Width="1.5" PointX="10.75" PointY="4.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.vinclappusazipcode" Width="1.5" PointX="4.75" PointY="10.75" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="vinclappModel.wheeldrive" Width="1.5" PointX="10.75" PointY="7.75" Height="1.7879850260416674" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

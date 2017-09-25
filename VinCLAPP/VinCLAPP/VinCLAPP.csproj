@@ -1,0 +1,908 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ADFA0962-548B-4EBA-B97D-58B9DEB89A76}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VinCLAPP</RootNamespace>
+    <AssemblyName>CLDMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>017B512920CBAA4EAD95EA2D4E2838ADBD9A6C14</ManifestCertificateThumbprint>
+    <ManifestKeyFile>VinCLAPP_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>cl-icon2.ico</ApplicationIcon>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>ftp://vinclapp.net/postcl/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://vinclapp.net/postcl/</InstallUrl>
+    <UpdateUrl>http://vinclapp.net/postcl/</UpdateUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>112</ApplicationRevision>
+    <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevDefined.OAuth">
+      <HintPath>..\..\VinClappSelf\packages\IPPDotNetDevKit.2.1.12.0\lib\DevDefined.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>..\..\VinClappSelf\packages\IPPDotNetDevKit.2.1.12.0\lib\DotNetOpenAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="edtFTPnet, Version=2.2.2.0, Culture=neutral, PublicKeyToken=4b0c991f43097782">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ShareLibrary\edtFTPnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\VinControlMVC\trunk\NewVinControlMVC_v7\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="HiQPdf, Version=5.8.0.0, Culture=neutral, PublicKeyToken=acd8b62594985b24, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\HiQPdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.SHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=db7cfd3acb5ad44e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>D:\ShareLibrary\Interop.SHDocVw.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intuit.Ipp.AsyncServices">
+      <HintPath>..\..\VinClappSelf\packages\IPPDotNetDevKit.2.1.12.0\lib\Intuit.Ipp.AsyncServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intuit.Ipp.Core">
+      <HintPath>..\..\VinClappSelf\packages\IPPDotNetDevKit.2.1.12.0\lib\Intuit.Ipp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intuit.Ipp.Data">
+      <HintPath>..\..\VinClappSelf\packages\IPPDotNetDevKit.2.1.12.0\lib\Intuit.Ipp.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intuit.Ipp.Diagnostics">
+      <HintPath>..\..\VinClappSelf\packages\IPPDotNetDevKit.2.1.12.0\lib\Intuit.Ipp.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intuit.Ipp.Exception">
+      <HintPath>..\..\VinClappSelf\packages\IPPDotNetDevKit.2.1.12.0\lib\Intuit.Ipp.Exception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intuit.Ipp.Retry">
+      <HintPath>..\..\VinClappSelf\packages\IPPDotNetDevKit.2.1.12.0\lib\Intuit.Ipp.Retry.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intuit.Ipp.Security">
+      <HintPath>..\..\VinClappSelf\packages\IPPDotNetDevKit.2.1.12.0\lib\Intuit.Ipp.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intuit.Ipp.Services">
+      <HintPath>..\..\VinClappSelf\packages\IPPDotNetDevKit.2.1.12.0\lib\Intuit.Ipp.Services.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intuit.Ipp.Utility">
+      <HintPath>..\..\VinClappSelf\packages\IPPDotNetDevKit.2.1.12.0\lib\Intuit.Ipp.Utility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.2.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LumenWorks.Framework.IO, Version=3.8.0.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CraigslistManagerApp\CraigslistManagerApp\bin\Debug\LumenWorks.Framework.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MSDN.HtmlEditorControl, Version=2.0.5091.27295, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\MSDN.HtmlEditorControl.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=1.6.30117.9648, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpCompress">
+      <HintPath>D:\ShareLibrary\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Starksoft.Net.Ftp">
+      <HintPath>D:\ShareLibrary\Starksoft.Net.Ftp.dll</HintPath>
+    </Reference>
+    <Reference Include="Starksoft.Net.Proxy">
+      <HintPath>D:\ShareLibrary\Starksoft.Net.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration.Install">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Administration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WatiN.Core, Version=2.1.0.1196, Culture=neutral, PublicKeyToken=db7cfd3acb5ad44e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\ShareLibrary\WatiN.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebsitesScreenshot, Version=1.6.0.0, Culture=neutral, PublicKeyToken=a86c4eea080940bd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\ShareLibrary\WebsitesScreenshot.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\..\VinClappSelf\Clapp.WpfControlLibrary.UploadImageControl\Library\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\DataGridViewMaskedTextCell.cs" />
+    <Compile Include="Controls\DataGridViewMaskedTextColumn.cs" />
+    <Compile Include="Controls\DataGridViewMaskedTextControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ReferencedDescriptionAttribute.cs" />
+    <Compile Include="DatabaseModel\Account.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\City.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\CLDMS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CLDMS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\CLDMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\CLDMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CLDMS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataFeedVendor.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\Dealer.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\Email.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\Inventory.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\Package.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\SelectedCity.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\SoldOutInventory.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\Tracking.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\UsaZipCode.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\WheelDrive.cs">
+      <DependentUpon>CLDMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\APIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\APIForm.Designer.cs">
+      <DependentUpon>APIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CalendarForm.Designer.cs">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangePassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePassForm.Designer.cs">
+      <DependentUpon>ChangePassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\CustomizedToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\CityChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CityChoiceForm.Designer.cs">
+      <DependentUpon>CityChoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CraigslistCreditCardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CraigslistCreditCardForm.Designer.cs">
+      <DependentUpon>CraigslistCreditCardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreditCardAuthorizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreditCardAuthorizeForm.Designer.cs">
+      <DependentUpon>CreditCardAuthorizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CraigsListAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CraigsListAccountForm.designer.cs">
+      <DependentUpon>CraigsListAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataFeedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataFeedForm.Designer.cs">
+      <DependentUpon>DataFeedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmailForgetPassowrd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmailForgetPassowrd.Designer.cs">
+      <DependentUpon>EmailForgetPassowrd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpirationTrialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpirationTrialForm.Designer.cs">
+      <DependentUpon>ExpirationTrialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HTMLEditorEndingSentence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HTMLEditorEndingSentence.Designer.cs">
+      <DependentUpon>HTMLEditorEndingSentence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SupportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SupportForm.Designer.cs">
+      <DependentUpon>SupportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TrackingAdsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrackingAdsForm.Designer.cs">
+      <DependentUpon>TrackingAdsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WebForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WebForm.Designer.cs">
+      <DependentUpon>WebForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\CLAPIHelper.cs" />
+    <Compile Include="Helper\CreditCardHelpercs.cs" />
+    <Compile Include="Helper\CsvExport.cs" />
+    <Compile Include="Helper\EnumerableExtensions.cs" />
+    <Compile Include="Helper\RandomPassword.cs" />
+    <Compile Include="Helper\RenewHelper.cs" />
+    <Compile Include="Helper\SortableBindingList.cs" />
+    <Compile Include="Helper\WebRequestHelper.cs" />
+    <Compile Include="Model\DecodeType.cs" />
+    <Compile Include="Forms\LoginWarningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginWarningForm.designer.cs">
+      <DependentUpon>LoginWarningForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhoneVerificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhoneVerificationForm.designer.cs">
+      <DependentUpon>PhoneVerificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UploadPicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UploadPicture.Designer.cs">
+      <DependentUpon>UploadPicture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewImage.Designer.cs">
+      <DependentUpon>ViewImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VinDecodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VinDecodeForm.Designer.cs">
+      <DependentUpon>VinDecodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ChromeAutoService.cs" />
+    <Compile Include="Helper\ComputerAccountHelper.cs" />
+    <Compile Include="Helper\ConfigHelper.cs" />
+    <Compile Include="Helper\Constants.cs" />
+    <Compile Include="Helper\CraigsListHelper.cs" />
+    <Compile Include="Helper\EmailHelper.cs" />
+    <Compile Include="Helper\GridviewHelper.cs" />
+    <Compile Include="Helper\ImageHelper.cs" />
+    <Compile Include="Helper\LocationHelper.cs" />
+    <Compile Include="Helper\LogicHelper.cs" />
+    <Compile Include="Helper\GlobalVar.cs" />
+    <Compile Include="Helper\CommonHelper.cs" />
+    <Compile Include="Helper\DataHelper.cs" />
+    <Compile Include="Helper\PdfHelper.cs" />
+    <Compile Include="Helper\QuickBookHelper.cs" />
+    <Compile Include="Helper\QuickBookMerchantHelper.cs" />
+    <Compile Include="Helper\SelectListHelper.cs" />
+    <Compile Include="Helper\TrailHelper.cs" />
+    <Compile Include="Helper\VinDecodeHelper.cs" />
+    <Compile Include="Helper\WinAPI.cs" />
+    <Compile Include="Helper\XMLHelper.cs" />
+    <Compile Include="Helper\ZipCodeHelper.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\AppraisalViewFormModel.cs" />
+    <Compile Include="Model\CraigsListTrackingModel.cs" />
+    <Compile Include="Model\EmailAccount.cs" />
+    <Compile Include="Model\ChunkString.cs" />
+    <Compile Include="Model\City.cs" />
+    <Compile Include="Model\Dealer.cs" />
+    <Compile Include="Model\ExtendedFactoryOptions.cs" />
+    <Compile Include="Model\HostingServer.cs" />
+    <Compile Include="Model\ImageModel.cs" />
+    <Compile Include="Model\PostCLCustomer.cs" />
+    <Compile Include="Model\SelectListItem.cs" />
+    <Compile Include="Model\Template.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AutomativeDescriptionService7\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\APIForm.resx">
+      <DependentUpon>APIForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalendarForm.resx">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePassForm.resx">
+      <DependentUpon>ChangePassForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CityChoiceForm.resx">
+      <DependentUpon>CityChoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CraigslistCreditCardForm.resx">
+      <DependentUpon>CraigslistCreditCardForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreditCardAuthorizeForm.resx">
+      <DependentUpon>CreditCardAuthorizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CraigsListAccountForm.resx">
+      <DependentUpon>CraigsListAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataFeedForm.resx">
+      <DependentUpon>DataFeedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmailForgetPassowrd.resx">
+      <DependentUpon>EmailForgetPassowrd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpirationTrialForm.resx">
+      <DependentUpon>ExpirationTrialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HTMLEditorEndingSentence.resx">
+      <DependentUpon>HTMLEditorEndingSentence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginWarningForm.resx">
+      <DependentUpon>LoginWarningForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhoneVerificationForm.resx">
+      <DependentUpon>PhoneVerificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SupportForm.resx">
+      <DependentUpon>SupportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TrackingAdsForm.resx">
+      <DependentUpon>TrackingAdsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UploadPicture.resx">
+      <DependentUpon>UploadPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewImage.resx">
+      <DependentUpon>ViewImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VinDecodeForm.resx">
+      <DependentUpon>VinDecodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebForm.resx">
+      <DependentUpon>WebForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="DatabaseModel\CLDMS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CLDMS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DatabaseModel\CLDMS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CLDMS.edmx</DependentUpon>
+      <LastGenOutput>CLDMS.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DatabaseModel\CLDMS.edmx.diagram">
+      <DependentUpon>CLDMS.edmx</DependentUpon>
+    </None>
+    <None Include="DatabaseModel\CLDMS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CLDMS.edmx</DependentUpon>
+      <LastGenOutput>CLDMS.cs</LastGenOutput>
+    </None>
+    <None Include="Libs\HiQPdf.dep" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\VinCLAPP.DatabaseModel.vinclappEntities.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <None Include="Service References\AutomativeDescriptionService7\Description7a.wsdl" />
+    <None Include="Service References\AutomativeDescriptionService7\VinCLAPP.AutomativeDescriptionService7.CategoryDefinitions.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomativeDescriptionService7\VinCLAPP.AutomativeDescriptionService7.Divisions.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomativeDescriptionService7\VinCLAPP.AutomativeDescriptionService7.Models.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomativeDescriptionService7\VinCLAPP.AutomativeDescriptionService7.ModelYears.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomativeDescriptionService7\VinCLAPP.AutomativeDescriptionService7.Styles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomativeDescriptionService7\VinCLAPP.AutomativeDescriptionService7.Subdivisions.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomativeDescriptionService7\VinCLAPP.AutomativeDescriptionService7.TechnicalSpecificationDefinitions.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomativeDescriptionService7\VinCLAPP.AutomativeDescriptionService7.VehicleDescription.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomativeDescriptionService7\VinCLAPP.AutomativeDescriptionService7.VersionInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\edtFTPnet.dll" />
+    <Content Include="Libs\HtmlAgilityPack.dll" />
+    <Content Include="Libs\HtmlAgilityPack.pdb" />
+    <Content Include="Libs\HtmlAgilityPack.XML" />
+    <Content Include="Libs\Interop.SHDocVw.dll" />
+    <Content Include="Libs\LumenWorks.Framework.IO.dll" />
+    <Content Include="Libs\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="Libs\MSDN.HtmlEditorControl.dll" />
+    <Content Include="Libs\SharpCompress.dll" />
+    <Content Include="Libs\Starksoft.Net.Ftp.dll" />
+    <Content Include="Libs\Starksoft.Net.Proxy.dll" />
+    <None Include="Resources\progress.gif" />
+    <None Include="Resources\support-btn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\visamasteramericanexpress.jpg" />
+    <None Include="Resources\securitycode.gif" />
+    <None Include="Resources\CustomerSignUpLoadingIndicator.gif" />
+    <None Include="Resources\PostCLlogo.jpg" />
+    <Resource Include="Resources\delete.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Resources\stripedtexture-301409.jpeg" />
+    <EmbeddedResource Include="Resources\visa_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\mastercard_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\discover_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\amex_48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="cl-icon.ico" />
+    <Content Include="cl-icon2.ico" />
+    <Content Include="images_8so3ogcy9p.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\HiQPdf.dll" />
+    <Content Include="Libs\HiQPdf.xml" />
+    <Content Include="Libs\itextsharp.dll" />
+    <EmbeddedResource Include="Resources\edit.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\upload.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\view.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WhatIsThis.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ajax-loader-mainform.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\bg-vinclapp.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\bg-vinclapp1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\btnBGblack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\btnBGblack1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CreditPaymentIcon.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CreditPaymentIcon1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\list-window-bg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Template1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Template10.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Template2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Template3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Template4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Template5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Template6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Template7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Template8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Template9.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\vin-clapp-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\vin-clapp-logo1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\vinclapp-logo-app.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CreditPaymentSmallIcon.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Service References\AutomativeDescriptionService7\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AutomativeDescriptionService7\configuration.svcinfo" />
+    <None Include="Service References\AutomativeDescriptionService7\configuration91.svcinfo" />
+    <None Include="Properties\app.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AutomativeDescriptionService7\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\VinControlMVC\trunk\NewVinControlMVC_v7\vincontrol.Application\vincontrol.Application.csproj">
+      <Project>{7f0f1443-be02-4bad-8e5c-34aded92dca3}</Project>
+      <Name>vincontrol.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\VinControlMVC\trunk\NewVinControlMVC_v7\vincontrol.Constant\vincontrol.Constant.csproj">
+      <Project>{ad3324ca-2044-4c68-be5d-ccb63ad12897}</Project>
+      <Name>vincontrol.Constant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\VinControlMVC\trunk\NewVinControlMVC_v7\vincontrol.Data\vincontrol.Data.csproj">
+      <Project>{7d76e800-c9d8-407a-8844-a775ee6d5a65}</Project>
+      <Name>vincontrol.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\VinClappSelf\Clapp.WpfControlLibrary.UploadImageControl\Clapp.WpfControlLibrary.UploadImageControl.csproj">
+      <Project>{14748c1c-040d-42a6-a7ae-a202e0f74562}</Project>
+      <Name>Clapp.WpfControlLibrary.UploadImageControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\VinClappSelf\Vinclapp.Craigslist.\Vinclapp.Craigslist.csproj">
+      <Project>{5250F5A7-9A3E-4966-8474-11A3E35D9587}</Project>
+      <Name>Vinclapp.Craigslist</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

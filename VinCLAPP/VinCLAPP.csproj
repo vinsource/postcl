@@ -707,9 +707,29 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Libs\DevDefined.OAuth.dll" />
+    <Content Include="Libs\DotNetOpenAuth.dll" />
+    <Content Include="Libs\edtFTPnet.dll" />
+    <Content Include="Libs\Interop.SHDocVw.dll" />
+    <Content Include="Libs\Intuit.Ipp.AsyncServices.dll" />
+    <Content Include="Libs\Intuit.Ipp.Core.dll" />
+    <Content Include="Libs\Intuit.Ipp.Data.dll" />
+    <Content Include="Libs\Intuit.Ipp.Diagnostics.dll" />
+    <Content Include="Libs\Intuit.Ipp.Exception.dll" />
+    <Content Include="Libs\Intuit.Ipp.Retry.dll" />
+    <Content Include="Libs\Intuit.Ipp.Security.dll" />
+    <Content Include="Libs\Intuit.Ipp.Services.dll" />
+    <Content Include="Libs\Intuit.Ipp.Utility.dll" />
+    <Content Include="Libs\LumenWorks.Framework.IO.dll" />
+    <Content Include="Libs\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="Libs\MSDN.HtmlEditorControl.dll" />
     <Content Include="Libs\SharpCompress.dll" />
     <Content Include="Libs\Starksoft.Net.Ftp.dll" />
     <Content Include="Libs\Starksoft.Net.Proxy.dll" />
+    <Content Include="Libs\WatiN.Core.dll" />
+    <Content Include="Libs\WatiN.Core.xml" />
+    <Content Include="Libs\WebsitesScreenshot.dll" />
+    <Content Include="Libs\Xceed.Wpf.Toolkit.dll" />
     <None Include="Resources\progress.gif" />
     <None Include="Resources\support-btn.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -845,6 +865,32 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\vincontrol\vincontrol.Application\vincontrol.Application.csproj">
+      <Project>{7f0f1443-be02-4bad-8e5c-34aded92dca3}</Project>
+      <Name>vincontrol.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\vincontrol\vincontrol.ConfigurationManagement\vincontrol.ConfigurationManagement.csproj">
+      <Project>{ebcbf920-a03a-431f-a6ed-40210a37228e}</Project>
+      <Name>vincontrol.ConfigurationManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\vincontrol\vincontrol.Constant\vincontrol.Constant.csproj">
+      <Project>{ad3324ca-2044-4c68-be5d-ccb63ad12897}</Project>
+      <Name>vincontrol.Constant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\vincontrol\vincontrol.Data\vincontrol.Data.csproj">
+      <Project>{7d76e800-c9d8-407a-8844-a775ee6d5a65}</Project>
+      <Name>vincontrol.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VinClappSelf\Clapp.WpfControlLibrary.UploadImageControl\Clapp.WpfControlLibrary.UploadImageControl.csproj">
+      <Project>{14748c1c-040d-42a6-a7ae-a202e0f74562}</Project>
+      <Name>Clapp.WpfControlLibrary.UploadImageControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VinClappSelf\Vinclapp.Craigslist\Vinclapp.Craigslist.csproj">
+      <Project>{5250f5a7-9a3e-4966-8474-11a3e35d9587}</Project>
+      <Name>Vinclapp.Craigslist</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

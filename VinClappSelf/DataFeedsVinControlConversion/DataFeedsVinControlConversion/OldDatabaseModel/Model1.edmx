@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="whitmanenterprisewarehouseModel1.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="whitmanenterprisewarehouseModel1StoreContainer">
+          <EntitySet Name="whitmanenterpriseappraisal" EntityType="whitmanenterprisewarehouseModel1.Store.whitmanenterpriseappraisal" store:Type="Tables" Schema="whitmanenterprisewarehouse" />
+        </EntityContainer>
+        <EntityType Name="whitmanenterpriseappraisal">
+          <Key>
+            <PropertyRef Name="idAppraisal" />
+          </Key>
+          <Property Name="idAppraisal" Type="int" Nullable="false" />
+          <Property Name="ModelYear" Type="int" />
+          <Property Name="Make" Type="varchar" MaxLength="100" />
+          <Property Name="Model" Type="varchar" MaxLength="100" />
+          <Property Name="Trim" Type="varchar" MaxLength="100" />
+          <Property Name="VINNumber" Type="varchar" MaxLength="100" />
+          <Property Name="StockNumber" Type="varchar" MaxLength="100" />
+          <Property Name="SalePrice" Type="varchar" MaxLength="100" />
+          <Property Name="MSRP" Type="varchar" MaxLength="100" />
+          <Property Name="Mileage" Type="varchar" MaxLength="100" />
+          <Property Name="Cylinders" Type="varchar" MaxLength="45" />
+          <Property Name="ExteriorColor" Type="varchar" MaxLength="100" />
+          <Property Name="InteriorColor" Type="varchar" MaxLength="100" />
+          <Property Name="InteriorSurface" Type="varchar" MaxLength="100" />
+          <Property Name="BodyType" Type="varchar" MaxLength="100" />
+          <Property Name="EngineType" Type="varchar" MaxLength="100" />
+          <Property Name="DriveTrain" Type="varchar" MaxLength="100" />
+          <Property Name="FuelType" Type="varchar" MaxLength="100" />
+          <Property Name="Tranmission" Type="varchar" MaxLength="200" />
+          <Property Name="Liters" Type="varchar" MaxLength="45" />
+          <Property Name="Doors" Type="varchar" MaxLength="45" />
+          <Property Name="FuelEconomyCity" Type="varchar" MaxLength="45" />
+          <Property Name="FuelEconomyHighWay" Type="varchar" MaxLength="45" />
+          <Property Name="Certified" Type="bool" />
+          <Property Name="CarsOptions" Type="longtext" />
+          <Property Name="CarsPackages" Type="longtext" />
+          <Property Name="PackageDescription" Type="longtext" />
+          <Property Name="Descriptions" Type="longtext" />
+          <Property Name="CarImageUrl" Type="longtext" />
+          <Property Name="DealershipName" Type="varchar" MaxLength="200" />
+          <Property Name="DealershipAddress" Type="varchar" MaxLength="250" />
+          <Property Name="DealershipCity" Type="varchar" MaxLength="100" />
+          <Property Name="DealershipState" Type="varchar" MaxLength="10" />
+          <Property Name="DealershipPhone" Type="varchar" MaxLength="100" />
+          <Property Name="DealershipId" Type="int" />
+          <Property Name="DealerCost" Type="varchar" MaxLength="45" />
+          <Property Name="ACV" Type="varchar" MaxLength="45" />
+          <Property Name="DefaultImageUrl" Type="longtext" />
+          <Property Name="AppraisalDate" Type="datetime" />
+          <Property Name="FirstName" Type="varchar" MaxLength="200" />
+          <Property Name="LastName" Type="varchar" MaxLength="200" />
+          <Property Name="Address" Type="varchar" MaxLength="200" />
+          <Property Name="City" Type="varchar" MaxLength="20" />
+          <Property Name="State" Type="varchar" MaxLength="20" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="10" />
+          <Property Name="AppraisalBy" Type="varchar" MaxLength="100" />
+          <Property Name="InventoryAdd" Type="bool" />
+          <Property Name="AppraisalType" Type="varchar" MaxLength="25" />
+          <Property Name="AppraisalID" Type="varchar" MaxLength="45" />
+          <Property Name="ChromeModelId" Type="varchar" MaxLength="45" />
+          <Property Name="ChromeStyleId" Type="varchar" MaxLength="45" />
+          <Property Name="StandardOptions" Type="longtext" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="VehicleType" Type="varchar" MaxLength="100" />
+          <Property Name="TruckClass" Type="varchar" MaxLength="100" />
+          <Property Name="TruckType" Type="varchar" MaxLength="100" />
+          <Property Name="TruckCategory" Type="varchar" MaxLength="100" />
+          <Property Name="KBBOptionsId" Type="longtext" />
+          <Property Name="Note" Type="longtext" />
+          <Property Name="Carfaxowner" Type="int" />
+          <Property Name="KBBTrimId" Type="int" />
+          <Property Name="Signature" Type="mediumblob" />
+          <Property Name="Email" Type="varchar" MaxLength="45" />
+          <Property Name="Phone" Type="varchar" MaxLength="45" />
+          <Property Name="Street" Type="varchar" MaxLength="255" />
+          <Property Name="Photo" Type="mediumblob" />
+          <Property Name="Status" Type="varchar" MaxLength="45" />
+          <Property Name="VinGenie" Type="bit" />
+          <Property Name="UserStamp" Type="varchar" MaxLength="100" />
+          <Property Name="DateStamp" Type="datetime" />
+          <Property Name="NumberOfCar" Type="int" />
+          <Property Name="CarRanking" Type="int" />
+          <Property Name="DeviceId" Type="varchar" MaxLength="100" />
+          <Property Name="DeviceName" Type="varchar" MaxLength="255" />
+          <Property Name="MarketLowestPrice" Type="decimal" Precision="11" />
+          <Property Name="MarketAveragePrice" Type="decimal" Precision="11" />
+          <Property Name="MarketHighestPrice" Type="decimal" Precision="11" />
+          <Property Name="ColorCode" Type="varchar" MaxLength="30" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="whitmanenterprisewarehouseModel1" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="whitmanenterprisewarehouseEntities1">
+          <EntitySet Name="whitmanenterpriseappraisal" EntityType="whitmanenterprisewarehouseModel1.whitmanenterpriseappraisal" />
+        </EntityContainer>
+        <EntityType Name="whitmanenterpriseappraisal">
+          <Key>
+            <PropertyRef Name="idAppraisal" />
+          </Key>
+          <Property Name="idAppraisal" Type="Int32" Nullable="false" />
+          <Property Name="ModelYear" Type="Int32" />
+          <Property Name="Make" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Trim" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VINNumber" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="StockNumber" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SalePrice" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MSRP" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Mileage" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Cylinders" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ExteriorColor" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InteriorColor" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InteriorSurface" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BodyType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EngineType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DriveTrain" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FuelType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Tranmission" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Liters" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Doors" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="FuelEconomyCity" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="FuelEconomyHighWay" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Certified" Type="Boolean" />
+          <Property Name="CarsOptions" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="CarsPackages" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="PackageDescription" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="Descriptions" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="CarImageUrl" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipAddress" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipCity" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipState" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipPhone" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DealershipId" Type="Int32" />
+          <Property Name="DealerCost" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ACV" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="DefaultImageUrl" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="AppraisalDate" Type="DateTime" />
+          <Property Name="FirstName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AppraisalBy" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InventoryAdd" Type="Boolean" />
+          <Property Name="AppraisalType" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="AppraisalID" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ChromeModelId" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ChromeStyleId" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="StandardOptions" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdated" Type="DateTime" />
+          <Property Name="VehicleType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="TruckClass" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="TruckType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="TruckCategory" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="KBBOptionsId" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="Carfaxowner" Type="Int32" />
+          <Property Name="KBBTrimId" Type="Int32" />
+          <Property Name="Signature" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Street" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="VinGenie" Type="Boolean" />
+          <Property Name="UserStamp" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DateStamp" Type="DateTime" />
+          <Property Name="NumberOfCar" Type="Int32" />
+          <Property Name="CarRanking" Type="Int32" />
+          <Property Name="DeviceId" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DeviceName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MarketLowestPrice" Type="Decimal" />
+          <Property Name="MarketAveragePrice" Type="Decimal" />
+          <Property Name="MarketHighestPrice" Type="Decimal" />
+          <Property Name="ColorCode" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="whitmanenterprisewarehouseModel1StoreContainer" CdmEntityContainer="whitmanenterprisewarehouseEntities1">
+          <EntitySetMapping Name="whitmanenterpriseappraisal">
+            <EntityTypeMapping TypeName="IsTypeOf(whitmanenterprisewarehouseModel1.whitmanenterpriseappraisal)">
+              <MappingFragment StoreEntitySet="whitmanenterpriseappraisal">
+                <ScalarProperty Name="idAppraisal" ColumnName="idAppraisal" />
+                <ScalarProperty Name="ModelYear" ColumnName="ModelYear" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Trim" ColumnName="Trim" />
+                <ScalarProperty Name="VINNumber" ColumnName="VINNumber" />
+                <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+                <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+                <ScalarProperty Name="MSRP" ColumnName="MSRP" />
+                <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+                <ScalarProperty Name="Cylinders" ColumnName="Cylinders" />
+                <ScalarProperty Name="ExteriorColor" ColumnName="ExteriorColor" />
+                <ScalarProperty Name="InteriorColor" ColumnName="InteriorColor" />
+                <ScalarProperty Name="InteriorSurface" ColumnName="InteriorSurface" />
+                <ScalarProperty Name="BodyType" ColumnName="BodyType" />
+                <ScalarProperty Name="EngineType" ColumnName="EngineType" />
+                <ScalarProperty Name="DriveTrain" ColumnName="DriveTrain" />
+                <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+                <ScalarProperty Name="Tranmission" ColumnName="Tranmission" />
+                <ScalarProperty Name="Liters" ColumnName="Liters" />
+                <ScalarProperty Name="Doors" ColumnName="Doors" />
+                <ScalarProperty Name="FuelEconomyCity" ColumnName="FuelEconomyCity" />
+                <ScalarProperty Name="FuelEconomyHighWay" ColumnName="FuelEconomyHighWay" />
+                <ScalarProperty Name="Certified" ColumnName="Certified" />
+                <ScalarProperty Name="CarsOptions" ColumnName="CarsOptions" />
+                <ScalarProperty Name="CarsPackages" ColumnName="CarsPackages" />
+                <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+                <ScalarProperty Name="CarImageUrl" ColumnName="CarImageUrl" />
+                <ScalarProperty Name="DealershipName" ColumnName="DealershipName" />
+                <ScalarProperty Name="DealershipAddress" ColumnName="DealershipAddress" />
+                <ScalarProperty Name="DealershipCity" ColumnName="DealershipCity" />
+                <ScalarProperty Name="DealershipState" ColumnName="DealershipState" />
+                <ScalarProperty Name="DealershipPhone" ColumnName="DealershipPhone" />
+                <ScalarProperty Name="DealershipId" ColumnName="DealershipId" />
+                <ScalarProperty Name="DealerCost" ColumnName="DealerCost" />
+                <ScalarProperty Name="ACV" ColumnName="ACV" />
+                <ScalarProperty Name="DefaultImageUrl" ColumnName="DefaultImageUrl" />
+                <ScalarProperty Name="AppraisalDate" ColumnName="AppraisalDate" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="AppraisalBy" ColumnName="AppraisalBy" />
+                <ScalarProperty Name="InventoryAdd" ColumnName="InventoryAdd" />
+                <ScalarProperty Name="AppraisalType" ColumnName="AppraisalType" />
+                <ScalarProperty Name="AppraisalID" ColumnName="AppraisalID" />
+                <ScalarProperty Name="ChromeModelId" ColumnName="ChromeModelId" />
+                <ScalarProperty Name="ChromeStyleId" ColumnName="ChromeStyleId" />
+                <ScalarProperty Name="StandardOptions" ColumnName="StandardOptions" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="TruckClass" ColumnName="TruckClass" />
+                <ScalarProperty Name="TruckType" ColumnName="TruckType" />
+                <ScalarProperty Name="TruckCategory" ColumnName="TruckCategory" />
+                <ScalarProperty Name="KBBOptionsId" ColumnName="KBBOptionsId" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Carfaxowner" ColumnName="Carfaxowner" />
+                <ScalarProperty Name="KBBTrimId" ColumnName="KBBTrimId" />
+                <ScalarProperty Name="Signature" ColumnName="Signature" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="VinGenie" ColumnName="VinGenie" />
+                <ScalarProperty Name="UserStamp" ColumnName="UserStamp" />
+                <ScalarProperty Name="DateStamp" ColumnName="DateStamp" />
+                <ScalarProperty Name="NumberOfCar" ColumnName="NumberOfCar" />
+                <ScalarProperty Name="CarRanking" ColumnName="CarRanking" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="MarketLowestPrice" ColumnName="MarketLowestPrice" />
+                <ScalarProperty Name="MarketAveragePrice" ColumnName="MarketAveragePrice" />
+                <ScalarProperty Name="MarketHighestPrice" ColumnName="MarketHighestPrice" />
+                <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Model1" ZoomLevel="56">
+        <EntityTypeShape EntityType="whitmanenterprisewarehouseModel1.whitmanenterpriseappraisal" Width="1.5" PointX="0.75" PointY="0.75" Height="16.018291015625003" IsExpanded="true" /></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

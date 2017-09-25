@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Clapp.WpfControlLibrary.UploadImageControl.ImageViewer.ThumbnailPhoto"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="RadioButtonControlTemplate" TargetType="{x:Type RadioButton}">
+            <Border BorderThickness="2" BorderBrush="#FFC0C0B8" Name="bdr" CornerRadius="10">            
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0"  Color="#FFB3C5E7" BlurRadius="15" />
+                </Border.Effect>
+                <ContentPresenter  />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Trigger.Setters>
+                        <Setter TargetName="bdr" Property="BorderBrush" Value="#FF434343" />
+                        <Setter TargetName="bdr" Property="BorderThickness" Value="3" />
+                        <Setter TargetName="bdr" Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect ShadowDepth="0" Color="#FF434343" BlurRadius="15" />
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger.Setters>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>        
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="10,0,0,10">        
+        <RadioButton  GroupName="PhotoVieweGroup" Name="rdo" Checked="RadioButton_Checked"  VerticalAlignment="Top"  Template="{StaticResource RadioButtonControlTemplate}">            
+            <RadioButton.Content>
+                <Image Name="img" Stretch="UniformToFill"></Image>
+            </RadioButton.Content>
+        </RadioButton>
+    </Grid>
+</UserControl>

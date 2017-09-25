@@ -1,0 +1,1149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CLDMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CLDMSModelStoreContainer">
+          <EntitySet Name="Account" EntityType="CLDMSModel.Store.Account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="City" EntityType="CLDMSModel.Store.City" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DataFeedVendor" EntityType="CLDMSModel.Store.DataFeedVendor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Dealer" EntityType="CLDMSModel.Store.Dealer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Email" EntityType="CLDMSModel.Store.Email" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Inventory" EntityType="CLDMSModel.Store.Inventory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Package" EntityType="CLDMSModel.Store.Package" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SelectedCity" EntityType="CLDMSModel.Store.SelectedCity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SoldOutInventory" EntityType="CLDMSModel.Store.SoldOutInventory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tracking" EntityType="CLDMSModel.Store.Tracking" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsaZipCode" EntityType="CLDMSModel.Store.UsaZipCode" store:Type="Tables" store:Schema="dbo" store:Name="UsaZipCode">
+            <DefiningQuery>SELECT 
+      [UsaZipCode].[UsaZipCodeId] AS [UsaZipCodeId], 
+      [UsaZipCode].[ZIPType] AS [ZIPType], 
+      [UsaZipCode].[CityName] AS [CityName], 
+      [UsaZipCode].[CityType] AS [CityType], 
+      [UsaZipCode].[CountyName] AS [CountyName], 
+      [UsaZipCode].[CountyFIPS] AS [CountyFIPS], 
+      [UsaZipCode].[StateName] AS [StateName], 
+      [UsaZipCode].[StateAbbr] AS [StateAbbr], 
+      [UsaZipCode].[StateFIPS] AS [StateFIPS], 
+      [UsaZipCode].[MSACode] AS [MSACode], 
+      [UsaZipCode].[AreaCode] AS [AreaCode], 
+      [UsaZipCode].[TimeZone] AS [TimeZone], 
+      [UsaZipCode].[UTC] AS [UTC], 
+      [UsaZipCode].[DST] AS [DST], 
+      [UsaZipCode].[Latitude] AS [Latitude], 
+      [UsaZipCode].[Longitude] AS [Longitude]
+      FROM [dbo].[UsaZipCode] AS [UsaZipCode]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WheelDrive" EntityType="CLDMSModel.Store.WheelDrive" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Inventory_Dealer" Association="CLDMSModel.Store.FK_Inventory_Dealer">
+            <End Role="Dealer" EntitySet="Dealer" />
+            <End Role="Inventory" EntitySet="Inventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SelectedCity_Account" Association="CLDMSModel.Store.FK_SelectedCity_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="SelectedCity" EntitySet="SelectedCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SelectedCity_City" Association="CLDMSModel.Store.FK_SelectedCity_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="SelectedCity" EntitySet="SelectedCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SelectedCity_Dealer" Association="CLDMSModel.Store.FK_SelectedCity_Dealer">
+            <End Role="Dealer" EntitySet="Dealer" />
+            <End Role="SelectedCity" EntitySet="SelectedCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SoldOutInventory_Dealer" Association="CLDMSModel.Store.FK_SoldOutInventory_Dealer">
+            <End Role="Dealer" EntitySet="Dealer" />
+            <End Role="SoldOutInventory" EntitySet="SoldOutInventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracking_Account" Association="CLDMSModel.Store.FK_Tracking_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Tracking" EntitySet="Tracking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracking_City" Association="CLDMSModel.Store.FK_Tracking_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Tracking" EntitySet="Tracking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracking_Dealer" Association="CLDMSModel.Store.FK_Tracking_Dealer">
+            <End Role="Dealer" EntitySet="Dealer" />
+            <End Role="Tracking" EntitySet="Tracking" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="45" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="45" />
+          <Property Name="PersonalPhone" Type="nvarchar" MaxLength="45" />
+          <Property Name="AccountName" Type="nvarchar" MaxLength="45" />
+          <Property Name="AccountPassword" Type="nvarchar" MaxLength="45" />
+          <Property Name="DealerId" Type="int" />
+          <Property Name="DateCreated" Type="datetime2" Precision="0" />
+          <Property Name="LastUpdated" Type="datetime2" Precision="0" />
+          <Property Name="Quota" Type="int" />
+          <Property Name="FirstCity" Type="int" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="45" />
+          <Property Name="TrialStartDate" Type="datetime2" Precision="0" />
+          <Property Name="ExpirationDate" Type="datetime2" Precision="0" />
+          <Property Name="QuickbookAccountId" Type="nvarchar" MaxLength="45" />
+          <Property Name="QuickBookAccountName" Type="nvarchar" MaxLength="255" />
+          <Property Name="DailyLimit" Type="int" />
+          <Property Name="APIUsername" Type="nvarchar" MaxLength="45" />
+          <Property Name="APIPassword" Type="nvarchar" MaxLength="45" />
+          <Property Name="APIAccountId" Type="nvarchar" MaxLength="45" />
+          <Property Name="IsFirstLogOn" Type="bit" />
+          <Property Name="DataFeedSetUp" Type="bit" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="Trial" Type="bit" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="45" />
+          <Property Name="CraigsListCityURL" Type="nvarchar" MaxLength="100" />
+          <Property Name="SubCity" Type="smallint" />
+          <Property Name="CLIndex" Type="int" />
+          <Property Name="State" Type="nvarchar" MaxLength="45" />
+          <Property Name="StateAbbr" Type="nvarchar" MaxLength="45" />
+          <Property Name="AreaAbbr" Type="nvarchar" MaxLength="45" />
+          <Property Name="SubAbbr" Type="nvarchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="DataFeedVendor">
+          <Key>
+            <PropertyRef Name="VendorId" />
+          </Key>
+          <Property Name="VendorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VendorName" Type="nvarchar" MaxLength="45" />
+          <Property Name="DateStamp" Type="datetime2" Precision="0" />
+        </EntityType>
+        <EntityType Name="Dealer">
+          <Key>
+            <PropertyRef Name="DealerId" />
+          </Key>
+          <Property Name="DealerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="45" />
+          <Property Name="StreetAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" />
+          <Property Name="State" Type="nvarchar" MaxLength="45" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="45" />
+          <Property Name="LogoURL" Type="nvarchar" MaxLength="255" />
+          <Property Name="WebSiteURL" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreditURL" Type="nvarchar" MaxLength="355" />
+          <Property Name="LeadEmail" Type="nvarchar(max)" />
+          <Property Name="EmailFormat" Type="int" />
+          <Property Name="CityOveride" Type="nvarchar" MaxLength="255" />
+          <Property Name="DealerTitle" Type="nvarchar" MaxLength="255" />
+          <Property Name="DelayTimer" Type="int" />
+          <Property Name="DateAdded" Type="datetime2" Precision="0" />
+          <Property Name="LastUpdated" Type="datetime2" Precision="0" />
+          <Property Name="ExceptionCategory" Type="int" />
+          <Property Name="GoogleAnalyticAccount" Type="nvarchar" MaxLength="255" />
+          <Property Name="DealerPathFeed" Type="nvarchar" MaxLength="255" />
+          <Property Name="DataFeedVendor" Type="nvarchar" MaxLength="100" />
+          <Property Name="VendorEmail" Type="nvarchar" MaxLength="100" />
+          <Property Name="VendorPhone" Type="nvarchar" MaxLength="45" />
+          <Property Name="CustomMessage" Type="nvarchar(max)" />
+          <Property Name="AuthorizedName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EndingSentence" Type="nvarchar(max)" />
+          <Property Name="PostWithPrice" Type="bit" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="Email">
+          <Key>
+            <PropertyRef Name="EmailAccountId" />
+          </Key>
+          <Property Name="EmailAccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmailPassword" Type="nvarchar" MaxLength="255" />
+          <Property Name="DateAdded" Type="datetime2" Precision="0" />
+          <Property Name="DealerId" Type="int" />
+          <Property Name="AccountAutoId" Type="int" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="ListingID" />
+          </Key>
+          <Property Name="ListingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ModelYear" Type="nvarchar" MaxLength="10" />
+          <Property Name="Make" Type="nvarchar" MaxLength="100" />
+          <Property Name="Model" Type="nvarchar" MaxLength="100" />
+          <Property Name="Trim" Type="nvarchar" MaxLength="100" />
+          <Property Name="VINNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="StockNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="SalePrice" Type="nvarchar" MaxLength="100" />
+          <Property Name="MSRP" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mileage" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExteriorColor" Type="nvarchar" MaxLength="100" />
+          <Property Name="InteriorColor" Type="nvarchar" MaxLength="100" />
+          <Property Name="InteriorSurface" Type="nvarchar" MaxLength="100" />
+          <Property Name="BodyType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cylinders" Type="nvarchar" MaxLength="45" />
+          <Property Name="Liters" Type="nvarchar" MaxLength="45" />
+          <Property Name="EngineType" Type="nvarchar" MaxLength="100" />
+          <Property Name="DriveTrain" Type="nvarchar" MaxLength="100" />
+          <Property Name="FuelType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tranmission" Type="nvarchar" MaxLength="200" />
+          <Property Name="Doors" Type="nvarchar" MaxLength="45" />
+          <Property Name="CarsPackages" Type="nvarchar(max)" />
+          <Property Name="CarsOptions" Type="nvarchar(max)" />
+          <Property Name="Descriptions" Type="nvarchar(max)" />
+          <Property Name="CarImageUrl" Type="nvarchar(max)" />
+          <Property Name="ThumbnailImageURL" Type="nvarchar(max)" />
+          <Property Name="DateInStock" Type="datetime2" Precision="0" />
+          <Property Name="LastUpdated" Type="datetime2" Precision="0" />
+          <Property Name="DealerId" Type="int" />
+          <Property Name="DealershipName" Type="nvarchar" MaxLength="200" />
+          <Property Name="DealershipAddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="DealershipCity" Type="nvarchar" MaxLength="100" />
+          <Property Name="DealershipState" Type="nvarchar" MaxLength="10" />
+          <Property Name="DealershipPhone" Type="nvarchar" MaxLength="100" />
+          <Property Name="DealershipZipCode" Type="nvarchar" MaxLength="45" />
+          <Property Name="DealerCost" Type="nvarchar" MaxLength="45" />
+          <Property Name="ACV" Type="nvarchar" MaxLength="45" />
+          <Property Name="DefaultImageUrl" Type="nvarchar(max)" />
+          <Property Name="NewUsed" Type="nvarchar" MaxLength="10" />
+          <Property Name="AddToInventoryBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastPosted" Type="datetime2" Precision="0" />
+          <Property Name="Certified" Type="bit" />
+          <Property Name="VincontrolListingId" Type="int" />
+          <Property Name="IsTruck" Type="bit" />
+        </EntityType>
+        <EntityType Name="Package">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Name="PackageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PackageName" Type="nvarchar" MaxLength="45" />
+          <Property Name="MonthlyPrice" Type="int" />
+          <Property Name="Period" Type="nvarchar" MaxLength="45" />
+          <Property Name="TotalCharge" Type="int" />
+          <Property Name="QuickBookPackageId" Type="int" />
+          <Property Name="QuickBookPackageName" Type="nvarchar" MaxLength="45" />
+          <Property Name="AddedDate" Type="datetime2" Precision="0" />
+        </EntityType>
+        <EntityType Name="SelectedCity">
+          <Key>
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="AccountId" />
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="DealerId" Type="int" Nullable="false" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="DateStamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SoldOutInventory">
+          <Key>
+            <PropertyRef Name="ListingID" />
+          </Key>
+          <Property Name="ListingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ModelYear" Type="nvarchar" MaxLength="10" />
+          <Property Name="Make" Type="nvarchar" MaxLength="100" />
+          <Property Name="Model" Type="nvarchar" MaxLength="100" />
+          <Property Name="Trim" Type="nvarchar" MaxLength="100" />
+          <Property Name="VINNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="StockNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="SalePrice" Type="nvarchar" MaxLength="100" />
+          <Property Name="MSRP" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mileage" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExteriorColor" Type="nvarchar" MaxLength="100" />
+          <Property Name="InteriorColor" Type="nvarchar" MaxLength="100" />
+          <Property Name="InteriorSurface" Type="nvarchar" MaxLength="100" />
+          <Property Name="BodyType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cylinders" Type="nvarchar" MaxLength="45" />
+          <Property Name="Liters" Type="nvarchar" MaxLength="45" />
+          <Property Name="EngineType" Type="nvarchar" MaxLength="100" />
+          <Property Name="DriveTrain" Type="nvarchar" MaxLength="100" />
+          <Property Name="FuelType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tranmission" Type="nvarchar" MaxLength="200" />
+          <Property Name="Doors" Type="nvarchar" MaxLength="45" />
+          <Property Name="CarsOptions" Type="nvarchar(max)" />
+          <Property Name="Descriptions" Type="nvarchar(max)" />
+          <Property Name="CarImageUrl" Type="nvarchar(max)" />
+          <Property Name="DateInStock" Type="datetime2" Nullable="false" Precision="0" />
+          <Property Name="DealerId" Type="int" />
+          <Property Name="DealershipName" Type="nvarchar" MaxLength="200" />
+          <Property Name="DealershipAddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="DealershipCity" Type="nvarchar" MaxLength="100" />
+          <Property Name="DealershipState" Type="nvarchar" MaxLength="10" />
+          <Property Name="DealershipPhone" Type="nvarchar" MaxLength="100" />
+          <Property Name="DealershipZipCode" Type="nvarchar" MaxLength="45" />
+          <Property Name="DealerCost" Type="nvarchar" MaxLength="45" />
+          <Property Name="ACV" Type="nvarchar" MaxLength="45" />
+          <Property Name="DefaultImageUrl" Type="nvarchar(max)" />
+          <Property Name="NewUsed" Type="nvarchar" MaxLength="10" />
+          <Property Name="AddToInventoryBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="Certified" Type="bit" />
+        </EntityType>
+        <EntityType Name="Tracking">
+          <Key>
+            <PropertyRef Name="TrackingId" />
+          </Key>
+          <Property Name="TrackingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CLPostingId" Type="bigint" />
+          <Property Name="ListingId" Type="int" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="DealerId" Type="int" />
+          <Property Name="AccountId" Type="int" />
+          <Property Name="Computer" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmailAccount" Type="nvarchar" MaxLength="255" />
+          <Property Name="AdsUrl" Type="nvarchar" MaxLength="255" />
+          <Property Name="ExpirationDate" Type="datetime2" Precision="0" />
+          <Property Name="AddedDate" Type="datetime2" Precision="0" />
+          <Property Name="CheckDate" Type="datetime2" Precision="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CLDMS.dbo.UsaZipCode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="UsaZipCode">
+          <Key>
+            <PropertyRef Name="UsaZipCodeId" />
+          </Key>
+          <Property Name="UsaZipCodeId" Type="int" Nullable="false" />
+          <Property Name="ZIPType" Type="nvarchar" MaxLength="45" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="45" />
+          <Property Name="CityType" Type="nvarchar" MaxLength="45" />
+          <Property Name="CountyName" Type="nvarchar" MaxLength="45" />
+          <Property Name="CountyFIPS" Type="nvarchar" MaxLength="45" />
+          <Property Name="StateName" Type="nvarchar" MaxLength="45" />
+          <Property Name="StateAbbr" Type="nvarchar" MaxLength="45" />
+          <Property Name="StateFIPS" Type="nvarchar" MaxLength="45" />
+          <Property Name="MSACode" Type="nvarchar" MaxLength="45" />
+          <Property Name="AreaCode" Type="nvarchar" MaxLength="45" />
+          <Property Name="TimeZone" Type="nvarchar" MaxLength="45" />
+          <Property Name="UTC" Type="nvarchar" MaxLength="45" />
+          <Property Name="DST" Type="nvarchar" MaxLength="45" />
+          <Property Name="Latitude" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="Longitude" Type="decimal" Precision="9" Scale="6" />
+        </EntityType>
+        <EntityType Name="WheelDrive">
+          <Key>
+            <PropertyRef Name="WheelDriveId" />
+          </Key>
+          <Property Name="WheelDriveId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="45" />
+          <Property Name="TextValue" Type="nvarchar" MaxLength="45" />
+          <Property Name="ShortValue" Type="nvarchar" MaxLength="45" />
+        </EntityType>
+        <Association Name="FK_Inventory_Dealer">
+          <End Role="Dealer" Type="CLDMSModel.Store.Dealer" Multiplicity="0..1" />
+          <End Role="Inventory" Type="CLDMSModel.Store.Inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealer">
+              <PropertyRef Name="DealerId" />
+            </Principal>
+            <Dependent Role="Inventory">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SelectedCity_Account">
+          <End Role="Account" Type="CLDMSModel.Store.Account" Multiplicity="1" />
+          <End Role="SelectedCity" Type="CLDMSModel.Store.SelectedCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="SelectedCity">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SelectedCity_City">
+          <End Role="City" Type="CLDMSModel.Store.City" Multiplicity="1" />
+          <End Role="SelectedCity" Type="CLDMSModel.Store.SelectedCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="SelectedCity">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SelectedCity_Dealer">
+          <End Role="Dealer" Type="CLDMSModel.Store.Dealer" Multiplicity="1" />
+          <End Role="SelectedCity" Type="CLDMSModel.Store.SelectedCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealer">
+              <PropertyRef Name="DealerId" />
+            </Principal>
+            <Dependent Role="SelectedCity">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SoldOutInventory_Dealer">
+          <End Role="Dealer" Type="CLDMSModel.Store.Dealer" Multiplicity="0..1" />
+          <End Role="SoldOutInventory" Type="CLDMSModel.Store.SoldOutInventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealer">
+              <PropertyRef Name="DealerId" />
+            </Principal>
+            <Dependent Role="SoldOutInventory">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracking_Account">
+          <End Role="Account" Type="CLDMSModel.Store.Account" Multiplicity="0..1" />
+          <End Role="Tracking" Type="CLDMSModel.Store.Tracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Tracking">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracking_City">
+          <End Role="City" Type="CLDMSModel.Store.City" Multiplicity="0..1" />
+          <End Role="Tracking" Type="CLDMSModel.Store.Tracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="Tracking">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracking_Dealer">
+          <End Role="Dealer" Type="CLDMSModel.Store.Dealer" Multiplicity="0..1" />
+          <End Role="Tracking" Type="CLDMSModel.Store.Tracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealer">
+              <PropertyRef Name="DealerId" />
+            </Principal>
+            <Dependent Role="Tracking">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CLDMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CLDMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="CLDMSModel.Account" />
+          <EntitySet Name="Cities" EntityType="CLDMSModel.City" />
+          <EntitySet Name="DataFeedVendors" EntityType="CLDMSModel.DataFeedVendor" />
+          <EntitySet Name="Dealers" EntityType="CLDMSModel.Dealer" />
+          <EntitySet Name="Emails" EntityType="CLDMSModel.Email" />
+          <EntitySet Name="Packages" EntityType="CLDMSModel.Package" />
+          <EntitySet Name="SelectedCities" EntityType="CLDMSModel.SelectedCity" />
+          <EntitySet Name="SoldOutInventories" EntityType="CLDMSModel.SoldOutInventory" />
+          <EntitySet Name="Trackings" EntityType="CLDMSModel.Tracking" />
+          <EntitySet Name="UsaZipCodes" EntityType="CLDMSModel.UsaZipCode" />
+          <EntitySet Name="WheelDrives" EntityType="CLDMSModel.WheelDrive" />
+          <AssociationSet Name="FK_SelectedCity_Account" Association="CLDMSModel.FK_SelectedCity_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="SelectedCity" EntitySet="SelectedCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracking_Account" Association="CLDMSModel.FK_Tracking_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Tracking" EntitySet="Trackings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SelectedCity_City" Association="CLDMSModel.FK_SelectedCity_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="SelectedCity" EntitySet="SelectedCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracking_City" Association="CLDMSModel.FK_Tracking_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Tracking" EntitySet="Trackings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SelectedCity_Dealer" Association="CLDMSModel.FK_SelectedCity_Dealer">
+            <End Role="Dealer" EntitySet="Dealers" />
+            <End Role="SelectedCity" EntitySet="SelectedCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SoldOutInventory_Dealer" Association="CLDMSModel.FK_SoldOutInventory_Dealer">
+            <End Role="Dealer" EntitySet="Dealers" />
+            <End Role="SoldOutInventory" EntitySet="SoldOutInventories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracking_Dealer" Association="CLDMSModel.FK_Tracking_Dealer">
+            <End Role="Dealer" EntitySet="Dealers" />
+            <End Role="Tracking" EntitySet="Trackings" />
+          </AssociationSet>
+          <EntitySet Name="Inventories" EntityType="CLDMSModel.Inventory" />
+          <AssociationSet Name="FK_Inventory_Dealer" Association="CLDMSModel.FK_Inventory_Dealer">
+            <End Role="Dealer" EntitySet="Dealers" />
+            <End Role="Inventory" EntitySet="Inventories" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Type="Int32" Name="AccountId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PersonalPhone" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AccountName" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AccountPassword" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DealerId" />
+          <Property Type="DateTime" Name="DateCreated" Precision="0" />
+          <Property Type="DateTime" Name="LastUpdated" Precision="0" />
+          <Property Type="Int32" Name="Quota" />
+          <Property Type="Int32" Name="FirstCity" />
+          <Property Type="String" Name="Ip" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="TrialStartDate" Precision="0" />
+          <Property Type="DateTime" Name="ExpirationDate" Precision="0" />
+          <Property Type="String" Name="QuickbookAccountId" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QuickBookAccountName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DailyLimit" />
+          <Property Type="String" Name="APIUsername" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="APIPassword" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="APIAccountId" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsFirstLogOn" />
+          <Property Type="Boolean" Name="DataFeedSetUp" />
+          <Property Type="Boolean" Name="Active" />
+          <Property Type="Boolean" Name="Trial" />
+          <NavigationProperty Name="SelectedCities" Relationship="CLDMSModel.FK_SelectedCity_Account" FromRole="Account" ToRole="SelectedCity" />
+          <NavigationProperty Name="Trackings" Relationship="CLDMSModel.FK_Tracking_Account" FromRole="Account" ToRole="Tracking" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Type="Int32" Name="CityID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CityName" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CraigsListCityURL" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="SubCity" />
+          <Property Type="Int32" Name="CLIndex" />
+          <Property Type="String" Name="State" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StateAbbr" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AreaAbbr" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SubAbbr" MaxLength="45" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SelectedCities" Relationship="CLDMSModel.FK_SelectedCity_City" FromRole="City" ToRole="SelectedCity" />
+          <NavigationProperty Name="Trackings" Relationship="CLDMSModel.FK_Tracking_City" FromRole="City" ToRole="Tracking" />
+        </EntityType>
+        <EntityType Name="DataFeedVendor">
+          <Key>
+            <PropertyRef Name="VendorId" />
+          </Key>
+          <Property Type="Int32" Name="VendorId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorName" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateStamp" Precision="0" />
+        </EntityType>
+        <EntityType Name="Dealer">
+          <Key>
+            <PropertyRef Name="DealerId" />
+          </Key>
+          <Property Type="Int32" Name="DealerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StreetAddress" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ZipCode" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LogoURL" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WebSiteURL" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreditURL" MaxLength="355" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LeadEmail" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EmailFormat" />
+          <Property Type="String" Name="CityOveride" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealerTitle" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DelayTimer" />
+          <Property Type="DateTime" Name="DateAdded" Precision="0" />
+          <Property Type="DateTime" Name="LastUpdated" Precision="0" />
+          <Property Type="Int32" Name="ExceptionCategory" />
+          <Property Type="String" Name="GoogleAnalyticAccount" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealerPathFeed" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DataFeedVendor" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VendorEmail" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VendorPhone" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomMessage" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AuthorizedName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EndingSentence" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="PostWithPrice" />
+          <Property Type="Boolean" Name="Active" />
+          <NavigationProperty Name="SelectedCities" Relationship="CLDMSModel.FK_SelectedCity_Dealer" FromRole="Dealer" ToRole="SelectedCity" />
+          <NavigationProperty Name="SoldOutInventories" Relationship="CLDMSModel.FK_SoldOutInventory_Dealer" FromRole="Dealer" ToRole="SoldOutInventory" />
+          <NavigationProperty Name="Trackings" Relationship="CLDMSModel.FK_Tracking_Dealer" FromRole="Dealer" ToRole="Tracking" />
+          <NavigationProperty Name="Inventories" Relationship="CLDMSModel.FK_Inventory_Dealer" FromRole="Dealer" ToRole="Inventory" />
+        </EntityType>
+        <EntityType Name="Email">
+          <Key>
+            <PropertyRef Name="EmailAccountId" />
+          </Key>
+          <Property Type="Int32" Name="EmailAccountId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="EmailAddress" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailPassword" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateAdded" Precision="0" />
+          <Property Type="Int32" Name="DealerId" />
+          <Property Type="Int32" Name="AccountAutoId" />
+          <Property Type="String" Name="PhoneNumber" MaxLength="45" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Package">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Type="Int32" Name="PackageId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PackageName" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MonthlyPrice" />
+          <Property Type="String" Name="Period" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TotalCharge" />
+          <Property Type="Int32" Name="QuickBookPackageId" />
+          <Property Type="String" Name="QuickBookPackageName" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="AddedDate" Precision="0" />
+        </EntityType>
+        <EntityType Name="SelectedCity">
+          <Key>
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="AccountId" />
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Type="Int32" Name="DealerId" Nullable="false" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
+          <Property Type="Int32" Name="CityId" Nullable="false" />
+          <Property Type="DateTime" Name="DateStamp" Precision="3" />
+          <NavigationProperty Name="Account" Relationship="CLDMSModel.FK_SelectedCity_Account" FromRole="SelectedCity" ToRole="Account" />
+          <NavigationProperty Name="City" Relationship="CLDMSModel.FK_SelectedCity_City" FromRole="SelectedCity" ToRole="City" />
+          <NavigationProperty Name="Dealer" Relationship="CLDMSModel.FK_SelectedCity_Dealer" FromRole="SelectedCity" ToRole="Dealer" />
+        </EntityType>
+        <EntityType Name="SoldOutInventory">
+          <Key>
+            <PropertyRef Name="ListingID" />
+          </Key>
+          <Property Type="Int32" Name="ListingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ModelYear" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Make" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Model" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Trim" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VINNumber" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StockNumber" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SalePrice" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MSRP" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mileage" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExteriorColor" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InteriorColor" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InteriorSurface" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BodyType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Cylinders" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Liters" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EngineType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DriveTrain" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FuelType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tranmission" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Doors" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CarsOptions" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descriptions" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CarImageUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateInStock" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="DealerId" />
+          <Property Type="String" Name="DealershipName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealershipAddress" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealershipCity" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealershipState" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealershipPhone" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealershipZipCode" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealerCost" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ACV" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DefaultImageUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NewUsed" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddToInventoryBy" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Certified" />
+          <NavigationProperty Name="Dealer" Relationship="CLDMSModel.FK_SoldOutInventory_Dealer" FromRole="SoldOutInventory" ToRole="Dealer" />
+        </EntityType>
+        <EntityType Name="Tracking">
+          <Key>
+            <PropertyRef Name="TrackingId" />
+          </Key>
+          <Property Type="Int32" Name="TrackingId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="CLPostingId" />
+          <Property Type="Int32" Name="ListingId" />
+          <Property Type="Int32" Name="CityId" />
+          <Property Type="Int32" Name="DealerId" />
+          <Property Type="Int32" Name="AccountId" />
+          <Property Type="String" Name="Computer" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailAccount" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AdsUrl" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ExpirationDate" Precision="0" />
+          <Property Type="DateTime" Name="AddedDate" Precision="0" />
+          <Property Type="DateTime" Name="CheckDate" Precision="0" />
+          <NavigationProperty Name="Account" Relationship="CLDMSModel.FK_Tracking_Account" FromRole="Tracking" ToRole="Account" />
+          <NavigationProperty Name="City" Relationship="CLDMSModel.FK_Tracking_City" FromRole="Tracking" ToRole="City" />
+          <NavigationProperty Name="Dealer" Relationship="CLDMSModel.FK_Tracking_Dealer" FromRole="Tracking" ToRole="Dealer" />
+        </EntityType>
+        <EntityType Name="UsaZipCode">
+          <Key>
+            <PropertyRef Name="UsaZipCodeId" />
+          </Key>
+          <Property Type="Int32" Name="UsaZipCodeId" Nullable="false" />
+          <Property Type="String" Name="ZIPType" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CityName" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CityType" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CountyName" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CountyFIPS" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StateName" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StateAbbr" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StateFIPS" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MSACode" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AreaCode" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TimeZone" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UTC" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DST" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Latitude" Precision="9" Scale="6" />
+          <Property Type="Decimal" Name="Longitude" Precision="9" Scale="6" />
+        </EntityType>
+        <EntityType Name="WheelDrive">
+          <Key>
+            <PropertyRef Name="WheelDriveId" />
+          </Key>
+          <Property Type="Int32" Name="WheelDriveId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TextValue" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ShortValue" MaxLength="45" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_SelectedCity_Account">
+          <End Type="CLDMSModel.Account" Role="Account" Multiplicity="1" />
+          <End Type="CLDMSModel.SelectedCity" Role="SelectedCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="SelectedCity">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracking_Account">
+          <End Type="CLDMSModel.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="CLDMSModel.Tracking" Role="Tracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Tracking">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SelectedCity_City">
+          <End Type="CLDMSModel.City" Role="City" Multiplicity="1" />
+          <End Type="CLDMSModel.SelectedCity" Role="SelectedCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="SelectedCity">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracking_City">
+          <End Type="CLDMSModel.City" Role="City" Multiplicity="0..1" />
+          <End Type="CLDMSModel.Tracking" Role="Tracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="Tracking">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SelectedCity_Dealer">
+          <End Type="CLDMSModel.Dealer" Role="Dealer" Multiplicity="1" />
+          <End Type="CLDMSModel.SelectedCity" Role="SelectedCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealer">
+              <PropertyRef Name="DealerId" />
+            </Principal>
+            <Dependent Role="SelectedCity">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SoldOutInventory_Dealer">
+          <End Type="CLDMSModel.Dealer" Role="Dealer" Multiplicity="0..1" />
+          <End Type="CLDMSModel.SoldOutInventory" Role="SoldOutInventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealer">
+              <PropertyRef Name="DealerId" />
+            </Principal>
+            <Dependent Role="SoldOutInventory">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracking_Dealer">
+          <End Type="CLDMSModel.Dealer" Role="Dealer" Multiplicity="0..1" />
+          <End Type="CLDMSModel.Tracking" Role="Tracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealer">
+              <PropertyRef Name="DealerId" />
+            </Principal>
+            <Dependent Role="Tracking">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="ListingID" />
+          </Key>
+          <Property Type="Int32" Name="ListingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ModelYear" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Make" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Model" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Trim" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VINNumber" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StockNumber" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SalePrice" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MSRP" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mileage" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExteriorColor" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InteriorColor" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InteriorSurface" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BodyType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Cylinders" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Liters" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EngineType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DriveTrain" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FuelType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tranmission" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Doors" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CarsPackages" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CarsOptions" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descriptions" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CarImageUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ThumbnailImageURL" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateInStock" Precision="0" />
+          <Property Type="DateTime" Name="LastUpdated" Precision="0" />
+          <Property Type="Int32" Name="DealerId" />
+          <Property Type="String" Name="DealershipName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealershipAddress" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealershipCity" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealershipState" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealershipPhone" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealershipZipCode" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealerCost" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ACV" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DefaultImageUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NewUsed" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddToInventoryBy" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastPosted" Precision="0" />
+          <Property Type="Boolean" Name="Certified" />
+          <Property Type="Int32" Name="VincontrolListingId" />
+          <Property Type="Boolean" Name="IsTruck" />
+          <NavigationProperty Name="Dealer" Relationship="CLDMSModel.FK_Inventory_Dealer" FromRole="Inventory" ToRole="Dealer" />
+        </EntityType>
+        <Association Name="FK_Inventory_Dealer">
+          <End Type="CLDMSModel.Dealer" Role="Dealer" Multiplicity="0..1" />
+          <End Type="CLDMSModel.Inventory" Role="Inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealer">
+              <PropertyRef Name="DealerId" />
+            </Principal>
+            <Dependent Role="Inventory">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CLDMSModelStoreContainer" CdmEntityContainer="CLDMSEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="CLDMSModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="Trial" ColumnName="Trial" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="DataFeedSetUp" ColumnName="DataFeedSetUp" />
+                <ScalarProperty Name="IsFirstLogOn" ColumnName="IsFirstLogOn" />
+                <ScalarProperty Name="APIAccountId" ColumnName="APIAccountId" />
+                <ScalarProperty Name="APIPassword" ColumnName="APIPassword" />
+                <ScalarProperty Name="APIUsername" ColumnName="APIUsername" />
+                <ScalarProperty Name="DailyLimit" ColumnName="DailyLimit" />
+                <ScalarProperty Name="QuickBookAccountName" ColumnName="QuickBookAccountName" />
+                <ScalarProperty Name="QuickbookAccountId" ColumnName="QuickbookAccountId" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="TrialStartDate" ColumnName="TrialStartDate" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="FirstCity" ColumnName="FirstCity" />
+                <ScalarProperty Name="Quota" ColumnName="Quota" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="AccountPassword" ColumnName="AccountPassword" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="PersonalPhone" ColumnName="PersonalPhone" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="CLDMSModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="SubAbbr" ColumnName="SubAbbr" />
+                <ScalarProperty Name="AreaAbbr" ColumnName="AreaAbbr" />
+                <ScalarProperty Name="StateAbbr" ColumnName="StateAbbr" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="CLIndex" ColumnName="CLIndex" />
+                <ScalarProperty Name="SubCity" ColumnName="SubCity" />
+                <ScalarProperty Name="CraigsListCityURL" ColumnName="CraigsListCityURL" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DataFeedVendors">
+            <EntityTypeMapping TypeName="CLDMSModel.DataFeedVendor">
+              <MappingFragment StoreEntitySet="DataFeedVendor">
+                <ScalarProperty Name="DateStamp" ColumnName="DateStamp" />
+                <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+                <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dealers">
+            <EntityTypeMapping TypeName="CLDMSModel.Dealer">
+              <MappingFragment StoreEntitySet="Dealer">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="PostWithPrice" ColumnName="PostWithPrice" />
+                <ScalarProperty Name="EndingSentence" ColumnName="EndingSentence" />
+                <ScalarProperty Name="AuthorizedName" ColumnName="AuthorizedName" />
+                <ScalarProperty Name="CustomMessage" ColumnName="CustomMessage" />
+                <ScalarProperty Name="VendorPhone" ColumnName="VendorPhone" />
+                <ScalarProperty Name="VendorEmail" ColumnName="VendorEmail" />
+                <ScalarProperty Name="DataFeedVendor" ColumnName="DataFeedVendor" />
+                <ScalarProperty Name="DealerPathFeed" ColumnName="DealerPathFeed" />
+                <ScalarProperty Name="GoogleAnalyticAccount" ColumnName="GoogleAnalyticAccount" />
+                <ScalarProperty Name="ExceptionCategory" ColumnName="ExceptionCategory" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="DelayTimer" ColumnName="DelayTimer" />
+                <ScalarProperty Name="DealerTitle" ColumnName="DealerTitle" />
+                <ScalarProperty Name="CityOveride" ColumnName="CityOveride" />
+                <ScalarProperty Name="EmailFormat" ColumnName="EmailFormat" />
+                <ScalarProperty Name="LeadEmail" ColumnName="LeadEmail" />
+                <ScalarProperty Name="CreditURL" ColumnName="CreditURL" />
+                <ScalarProperty Name="WebSiteURL" ColumnName="WebSiteURL" />
+                <ScalarProperty Name="LogoURL" ColumnName="LogoURL" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emails">
+            <EntityTypeMapping TypeName="CLDMSModel.Email">
+              <MappingFragment StoreEntitySet="Email">
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="AccountAutoId" ColumnName="AccountAutoId" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="EmailPassword" ColumnName="EmailPassword" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="EmailAccountId" ColumnName="EmailAccountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Packages">
+            <EntityTypeMapping TypeName="CLDMSModel.Package">
+              <MappingFragment StoreEntitySet="Package">
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="QuickBookPackageName" ColumnName="QuickBookPackageName" />
+                <ScalarProperty Name="QuickBookPackageId" ColumnName="QuickBookPackageId" />
+                <ScalarProperty Name="TotalCharge" ColumnName="TotalCharge" />
+                <ScalarProperty Name="Period" ColumnName="Period" />
+                <ScalarProperty Name="MonthlyPrice" ColumnName="MonthlyPrice" />
+                <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+                <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SelectedCities">
+            <EntityTypeMapping TypeName="CLDMSModel.SelectedCity">
+              <MappingFragment StoreEntitySet="SelectedCity">
+                <ScalarProperty Name="DateStamp" ColumnName="DateStamp" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SoldOutInventories">
+            <EntityTypeMapping TypeName="CLDMSModel.SoldOutInventory">
+              <MappingFragment StoreEntitySet="SoldOutInventory">
+                <ScalarProperty Name="Certified" ColumnName="Certified" />
+                <ScalarProperty Name="AddToInventoryBy" ColumnName="AddToInventoryBy" />
+                <ScalarProperty Name="NewUsed" ColumnName="NewUsed" />
+                <ScalarProperty Name="DefaultImageUrl" ColumnName="DefaultImageUrl" />
+                <ScalarProperty Name="ACV" ColumnName="ACV" />
+                <ScalarProperty Name="DealerCost" ColumnName="DealerCost" />
+                <ScalarProperty Name="DealershipZipCode" ColumnName="DealershipZipCode" />
+                <ScalarProperty Name="DealershipPhone" ColumnName="DealershipPhone" />
+                <ScalarProperty Name="DealershipState" ColumnName="DealershipState" />
+                <ScalarProperty Name="DealershipCity" ColumnName="DealershipCity" />
+                <ScalarProperty Name="DealershipAddress" ColumnName="DealershipAddress" />
+                <ScalarProperty Name="DealershipName" ColumnName="DealershipName" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="DateInStock" ColumnName="DateInStock" />
+                <ScalarProperty Name="CarImageUrl" ColumnName="CarImageUrl" />
+                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+                <ScalarProperty Name="CarsOptions" ColumnName="CarsOptions" />
+                <ScalarProperty Name="Doors" ColumnName="Doors" />
+                <ScalarProperty Name="Tranmission" ColumnName="Tranmission" />
+                <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+                <ScalarProperty Name="DriveTrain" ColumnName="DriveTrain" />
+                <ScalarProperty Name="EngineType" ColumnName="EngineType" />
+                <ScalarProperty Name="Liters" ColumnName="Liters" />
+                <ScalarProperty Name="Cylinders" ColumnName="Cylinders" />
+                <ScalarProperty Name="BodyType" ColumnName="BodyType" />
+                <ScalarProperty Name="InteriorSurface" ColumnName="InteriorSurface" />
+                <ScalarProperty Name="InteriorColor" ColumnName="InteriorColor" />
+                <ScalarProperty Name="ExteriorColor" ColumnName="ExteriorColor" />
+                <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+                <ScalarProperty Name="MSRP" ColumnName="MSRP" />
+                <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+                <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+                <ScalarProperty Name="VINNumber" ColumnName="VINNumber" />
+                <ScalarProperty Name="Trim" ColumnName="Trim" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="ModelYear" ColumnName="ModelYear" />
+                <ScalarProperty Name="ListingID" ColumnName="ListingID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trackings">
+            <EntityTypeMapping TypeName="CLDMSModel.Tracking">
+              <MappingFragment StoreEntitySet="Tracking">
+                <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="AdsUrl" ColumnName="AdsUrl" />
+                <ScalarProperty Name="EmailAccount" ColumnName="EmailAccount" />
+                <ScalarProperty Name="Computer" ColumnName="Computer" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="ListingId" ColumnName="ListingId" />
+                <ScalarProperty Name="CLPostingId" ColumnName="CLPostingId" />
+                <ScalarProperty Name="TrackingId" ColumnName="TrackingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsaZipCodes">
+            <EntityTypeMapping TypeName="CLDMSModel.UsaZipCode">
+              <MappingFragment StoreEntitySet="UsaZipCode">
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="DST" ColumnName="DST" />
+                <ScalarProperty Name="UTC" ColumnName="UTC" />
+                <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+                <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+                <ScalarProperty Name="MSACode" ColumnName="MSACode" />
+                <ScalarProperty Name="StateFIPS" ColumnName="StateFIPS" />
+                <ScalarProperty Name="StateAbbr" ColumnName="StateAbbr" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="CountyFIPS" ColumnName="CountyFIPS" />
+                <ScalarProperty Name="CountyName" ColumnName="CountyName" />
+                <ScalarProperty Name="CityType" ColumnName="CityType" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="ZIPType" ColumnName="ZIPType" />
+                <ScalarProperty Name="UsaZipCodeId" ColumnName="UsaZipCodeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WheelDrives">
+            <EntityTypeMapping TypeName="CLDMSModel.WheelDrive">
+              <MappingFragment StoreEntitySet="WheelDrive">
+                <ScalarProperty Name="ShortValue" ColumnName="ShortValue" />
+                <ScalarProperty Name="TextValue" ColumnName="TextValue" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="WheelDriveId" ColumnName="WheelDriveId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventories">
+            <EntityTypeMapping TypeName="CLDMSModel.Inventory">
+              <MappingFragment StoreEntitySet="Inventory">
+                <ScalarProperty Name="IsTruck" ColumnName="IsTruck" />
+                <ScalarProperty Name="VincontrolListingId" ColumnName="VincontrolListingId" />
+                <ScalarProperty Name="Certified" ColumnName="Certified" />
+                <ScalarProperty Name="LastPosted" ColumnName="LastPosted" />
+                <ScalarProperty Name="AddToInventoryBy" ColumnName="AddToInventoryBy" />
+                <ScalarProperty Name="NewUsed" ColumnName="NewUsed" />
+                <ScalarProperty Name="DefaultImageUrl" ColumnName="DefaultImageUrl" />
+                <ScalarProperty Name="ACV" ColumnName="ACV" />
+                <ScalarProperty Name="DealerCost" ColumnName="DealerCost" />
+                <ScalarProperty Name="DealershipZipCode" ColumnName="DealershipZipCode" />
+                <ScalarProperty Name="DealershipPhone" ColumnName="DealershipPhone" />
+                <ScalarProperty Name="DealershipState" ColumnName="DealershipState" />
+                <ScalarProperty Name="DealershipCity" ColumnName="DealershipCity" />
+                <ScalarProperty Name="DealershipAddress" ColumnName="DealershipAddress" />
+                <ScalarProperty Name="DealershipName" ColumnName="DealershipName" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="DateInStock" ColumnName="DateInStock" />
+                <ScalarProperty Name="ThumbnailImageURL" ColumnName="ThumbnailImageURL" />
+                <ScalarProperty Name="CarImageUrl" ColumnName="CarImageUrl" />
+                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+                <ScalarProperty Name="CarsOptions" ColumnName="CarsOptions" />
+                <ScalarProperty Name="CarsPackages" ColumnName="CarsPackages" />
+                <ScalarProperty Name="Doors" ColumnName="Doors" />
+                <ScalarProperty Name="Tranmission" ColumnName="Tranmission" />
+                <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+                <ScalarProperty Name="DriveTrain" ColumnName="DriveTrain" />
+                <ScalarProperty Name="EngineType" ColumnName="EngineType" />
+                <ScalarProperty Name="Liters" ColumnName="Liters" />
+                <ScalarProperty Name="Cylinders" ColumnName="Cylinders" />
+                <ScalarProperty Name="BodyType" ColumnName="BodyType" />
+                <ScalarProperty Name="InteriorSurface" ColumnName="InteriorSurface" />
+                <ScalarProperty Name="InteriorColor" ColumnName="InteriorColor" />
+                <ScalarProperty Name="ExteriorColor" ColumnName="ExteriorColor" />
+                <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+                <ScalarProperty Name="MSRP" ColumnName="MSRP" />
+                <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+                <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+                <ScalarProperty Name="VINNumber" ColumnName="VINNumber" />
+                <ScalarProperty Name="Trim" ColumnName="Trim" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="ModelYear" ColumnName="ModelYear" />
+                <ScalarProperty Name="ListingID" ColumnName="ListingID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

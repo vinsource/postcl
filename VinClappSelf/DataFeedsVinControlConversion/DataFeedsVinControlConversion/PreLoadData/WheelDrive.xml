@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<WheelDrive>
+  <Drive Name="Any Drive" Value=""></Drive>
+  <Drive Name="1042" Value="Front Wheel Drive"></Drive>
+  <Drive Name="1043" Value="Rear Wheel Drive"></Drive>
+  <Drive Name="1040" Value="Four Wheel Drive"></Drive>
+  <Drive Name="1041" Value="Rear Wheel Drive"></Drive>
+  <Drive Name="1044" Value="Dual Rear Wheels"></Drive>
+  </WheelDrive>
