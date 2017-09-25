@@ -67,6 +67,7 @@
     <Content Include="Libs\LumenWorks.Framework.IO.dll" />
     <Content Include="Libs\Microsoft.Office.Interop.Excel.dll" />
     <Content Include="Libs\MSDN.HtmlEditorControl.dll" />
+    <Content Include="Libs\SgmlReaderDll.dll" />
     <Content Include="Libs\SharpCompress.dll" />
     <Content Include="Libs\Starksoft.Net.Ftp.dll" />
     <Content Include="Libs\Starksoft.Net.Proxy.dll" />
