@@ -52,7 +52,7 @@ namespace Vinclapp.Craigslist
             string result;
             using (var webClient = new System.Net.WebClient())
             {
-                result = webClient.DownloadString(dealerId==32083 ? "http://vincontrol.com/CraigslistAdsBodyFreewayIsuzu.txt" : "http://vincontrol.com/CraigslistAdsBody.txt");
+                result = webClient.DownloadString(dealerId==37695 ? "http://vincontrol.com/CraigslistAdsBodyFreewayIsuzu.txt" : "http://vincontrol.com/CraigslistAdsBody.txt");
             }
 
             return result;

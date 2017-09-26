@@ -462,6 +462,22 @@ namespace VinCLAPP
             }
             else if (ix == 10)
             {
+                if (vehicle.ProgessStatus == CraigslistPostingStatus.Error)
+                {
+                    lblProcessing.Text = vehicle.ErrorMessage;
+
+                    var list = (BindingList<SimpleVehicleInfo>)dGridInventory.DataSource;
+
+                    foreach (var item in list)
+                    {
+                        if (item.IsSelected)
+                        {
+                            item.IsSelected = false;
+                        }
+                    }
+                    return;
+                }
+
                 if (vehicle.ProgessStatus == CraigslistPostingStatus.EmailVerification)
                 {
                     lblProcessing.Text = "Email verification is required by craigslist. Login to your email, and follow craigslist instructions to finish the first purchase";
@@ -703,7 +719,8 @@ namespace VinCLAPP
             }
             else
             {
-                lblProcessing.Text = "Thanks for using CLDMS. Have a good day";
+                if (string.IsNullOrEmpty(lblProcessing.Text))
+                    lblProcessing.Text = "Thanks for using CLDMS. Have a good day";
 
                 btnPost.Enabled = true;
 

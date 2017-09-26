@@ -383,12 +383,14 @@ namespace Vinclapp.Craigslist
             postingBody = postingBody.Replace(EmailTemplateReader.Transmission, vehicle.Tranmission);
             postingBody = postingBody.Replace(EmailTemplateReader.Stock, vehicle.StockNumber);
             postingBody = postingBody.Replace(EmailTemplateReader.Vin, vehicle.Vin);
-            postingBody = postingBody.Replace(EmailTemplateReader.Option, (!String.IsNullOrEmpty(vehicle.Options)) ? vehicle.Options : string.Empty);
+            postingBody = postingBody.Replace(EmailTemplateReader.Option, (!String.IsNullOrEmpty(vehicle.Options)) ? "<br/><b>Options</b><br/>" + vehicle.Options : string.Empty);
             postingBody = postingBody.Replace(EmailTemplateReader.EndingSentence, vehicle.EndingSentence);
+
             if (!String.IsNullOrEmpty(vehicle.Description))
-                postingBody = postingBody.Replace(EmailTemplateReader.Description, "<br/><b>Description</b><br/><br/>" + ReplaceEmails(vehicle.Description, string.Empty));
+                postingBody = postingBody.Replace(EmailTemplateReader.Description, "<br/><b>Description</b><br/>" + vehicle.Description);
             else
                 postingBody = postingBody.Replace(EmailTemplateReader.Description, string.Empty);
+
             return postingBody;
         }
 

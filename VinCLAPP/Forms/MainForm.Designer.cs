@@ -50,7 +50,21 @@
             this.bgWorker = new System.ComponentModel.BackgroundWorker();
             this.dGridInventory = new System.Windows.Forms.DataGridView();
             this.IsSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ListingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PostingCityId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AutoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PostingCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAds = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.LastPosted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Make = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Trim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pictures = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UploadImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.ViewImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
@@ -137,20 +151,6 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ListingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PostingCityId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AutoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PostingCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastPosted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Make = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Trim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pictures = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridInventory)).BeginInit();
@@ -219,7 +219,7 @@
             this.cbRemember.AutoSize = true;
             this.cbRemember.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRemember.Location = new System.Drawing.Point(96, 100);
-            this.cbRemember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRemember.Margin = new System.Windows.Forms.Padding(4);
             this.cbRemember.Name = "cbRemember";
             this.cbRemember.Size = new System.Drawing.Size(127, 21);
             this.cbRemember.TabIndex = 76;
@@ -237,7 +237,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtUsername, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 24);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.61111F));
@@ -248,7 +248,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(94, 37);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(193, 25);
@@ -392,7 +392,7 @@
             this.Edit,
             this.AdsLink});
             this.dGridInventory.Location = new System.Drawing.Point(0, 68);
-            this.dGridInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dGridInventory.Margin = new System.Windows.Forms.Padding(4);
             this.dGridInventory.Name = "dGridInventory";
             this.dGridInventory.RowHeadersWidth = 25;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F);
@@ -407,12 +407,112 @@
             this.IsSelected.Name = "IsSelected";
             this.IsSelected.Width = 44;
             // 
+            // ListingID
+            // 
+            this.ListingID.DataPropertyName = "ListingID";
+            this.ListingID.HeaderText = "ListingID";
+            this.ListingID.Name = "ListingID";
+            this.ListingID.Visible = false;
+            this.ListingID.Width = 19;
+            // 
+            // PostingCityId
+            // 
+            this.PostingCityId.DataPropertyName = "PostingCityId";
+            this.PostingCityId.HeaderText = "Posting City Id";
+            this.PostingCityId.Name = "PostingCityId";
+            this.PostingCityId.Visible = false;
+            // 
+            // AutoID
+            // 
+            this.AutoID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.AutoID.DataPropertyName = "AutoID";
+            this.AutoID.HeaderText = "Id";
+            this.AutoID.Name = "AutoID";
+            this.AutoID.Width = 40;
+            // 
+            // PostingCity
+            // 
+            this.PostingCity.DataPropertyName = "PostingCity";
+            this.PostingCity.HeaderText = "PostingCity";
+            this.PostingCity.Name = "PostingCity";
+            this.PostingCity.ReadOnly = true;
+            this.PostingCity.Width = 110;
+            // 
+            // Stock
+            // 
+            this.Stock.DataPropertyName = "Stock";
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.Width = 61;
+            // 
             // TotalAds
             // 
             this.TotalAds.DataPropertyName = "TotalAds";
             this.TotalAds.HeaderText = "Ads";
             this.TotalAds.Name = "TotalAds";
             this.TotalAds.Width = 30;
+            // 
+            // LastPosted
+            // 
+            this.LastPosted.DataPropertyName = "LastPosted";
+            this.LastPosted.HeaderText = "Last Posted";
+            this.LastPosted.Name = "LastPosted";
+            // 
+            // Year
+            // 
+            this.Year.DataPropertyName = "Year";
+            this.Year.HeaderText = "Year";
+            this.Year.Name = "Year";
+            this.Year.Width = 57;
+            // 
+            // Make
+            // 
+            this.Make.DataPropertyName = "Make";
+            this.Make.HeaderText = "Make";
+            this.Make.Name = "Make";
+            this.Make.Width = 80;
+            // 
+            // Model
+            // 
+            this.Model.DataPropertyName = "Model";
+            this.Model.HeaderText = "Model";
+            this.Model.Name = "Model";
+            this.Model.Width = 90;
+            // 
+            // Trim
+            // 
+            this.Trim.DataPropertyName = "Trim";
+            this.Trim.HeaderText = "Trim";
+            this.Trim.Name = "Trim";
+            this.Trim.Width = 80;
+            // 
+            // Vin
+            // 
+            this.Vin.DataPropertyName = "Vin";
+            this.Vin.HeaderText = "Vin";
+            this.Vin.Name = "Vin";
+            this.Vin.Width = 101;
+            // 
+            // Pictures
+            // 
+            this.Pictures.DataPropertyName = "Pictures";
+            this.Pictures.HeaderText = "Pics";
+            this.Pictures.Name = "Pictures";
+            this.Pictures.Width = 40;
+            // 
+            // Mileage
+            // 
+            this.Mileage.DataPropertyName = "Mileage";
+            this.Mileage.HeaderText = "Mileage";
+            this.Mileage.Name = "Mileage";
+            this.Mileage.Width = 60;
+            // 
+            // SalePrice
+            // 
+            this.SalePrice.DataPropertyName = "SalePrice";
+            this.SalePrice.HeaderText = "SalePrice";
+            this.SalePrice.Name = "SalePrice";
+            this.SalePrice.Width = 78;
             // 
             // UploadImage
             // 
@@ -459,9 +559,9 @@
             this.groupBox3.Controls.Add(this.cbPrice);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(630, 97);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(442, 166);
             this.groupBox3.TabIndex = 73;
             this.groupBox3.TabStop = false;
@@ -614,7 +714,7 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::VinCLAPP.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(15, 46);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(286, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -790,7 +890,7 @@
             this.panel1.Controls.Add(this.dGridInventory);
             this.panel1.Controls.Add(this.progressPostingBar);
             this.panel1.Location = new System.Drawing.Point(19, 306);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1450, 672);
             this.panel1.TabIndex = 80;
@@ -823,12 +923,12 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Maroon;
             this.label15.Location = new System.Drawing.Point(36, 33);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(116, 35);
+            this.label15.Size = new System.Drawing.Size(87, 26);
             this.label15.TabIndex = 92;
             this.label15.Text = "Status : ";
             // 
@@ -838,7 +938,7 @@
             this.lblProcessing.BackColor = System.Drawing.Color.Transparent;
             this.lblProcessing.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProcessing.ForeColor = System.Drawing.Color.Maroon;
-            this.lblProcessing.Location = new System.Drawing.Point(160, 38);
+            this.lblProcessing.Location = new System.Drawing.Point(124, 33);
             this.lblProcessing.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProcessing.Name = "lblProcessing";
             this.lblProcessing.Size = new System.Drawing.Size(428, 26);
@@ -850,7 +950,7 @@
             this.ckAllSelect.AutoSize = true;
             this.ckAllSelect.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckAllSelect.Location = new System.Drawing.Point(9, 9);
-            this.ckAllSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckAllSelect.Margin = new System.Windows.Forms.Padding(4);
             this.ckAllSelect.Name = "ckAllSelect";
             this.ckAllSelect.Size = new System.Drawing.Size(18, 17);
             this.ckAllSelect.TabIndex = 89;
@@ -860,7 +960,7 @@
             // progressPostingBar
             // 
             this.progressPostingBar.Location = new System.Drawing.Point(36, 4);
-            this.progressPostingBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressPostingBar.Margin = new System.Windows.Forms.Padding(4);
             this.progressPostingBar.Name = "progressPostingBar";
             this.progressPostingBar.Size = new System.Drawing.Size(1414, 29);
             this.progressPostingBar.TabIndex = 88;
@@ -902,7 +1002,7 @@
             this.tableLayoutPanel3.Controls.Add(this.lblDealerAddress, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.lblPhone, 0, 2);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(15, 172);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.57143F));
@@ -921,9 +1021,9 @@
             this.groupBox4.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(1079, 98);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(292, 51);
             this.groupBox4.TabIndex = 74;
             this.groupBox4.TabStop = false;
@@ -933,7 +1033,7 @@
             // 
             this.rbCarToCity.AutoSize = true;
             this.rbCarToCity.Location = new System.Drawing.Point(155, 19);
-            this.rbCarToCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbCarToCity.Margin = new System.Windows.Forms.Padding(4);
             this.rbCarToCity.Name = "rbCarToCity";
             this.rbCarToCity.Size = new System.Drawing.Size(96, 22);
             this.rbCarToCity.TabIndex = 66;
@@ -946,7 +1046,7 @@
             // 
             this.rbCityToCar.AutoSize = true;
             this.rbCityToCar.Location = new System.Drawing.Point(12, 19);
-            this.rbCityToCar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbCityToCar.Margin = new System.Windows.Forms.Padding(4);
             this.rbCityToCar.Name = "rbCityToCar";
             this.rbCityToCar.Size = new System.Drawing.Size(96, 22);
             this.rbCityToCar.TabIndex = 65;
@@ -984,7 +1084,7 @@
             this.btnDelete.Enabled = false;
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Location = new System.Drawing.Point(717, 268);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(81, 29);
             this.btnDelete.TabIndex = 83;
@@ -1015,7 +1115,7 @@
             this.btnAddInventory.Enabled = false;
             this.btnAddInventory.ForeColor = System.Drawing.Color.Black;
             this.btnAddInventory.Location = new System.Drawing.Point(630, 268);
-            this.btnAddInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddInventory.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddInventory.Name = "btnAddInventory";
             this.btnAddInventory.Size = new System.Drawing.Size(79, 29);
             this.btnAddInventory.TabIndex = 91;
@@ -1036,9 +1136,9 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(1079, 152);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(292, 145);
             this.groupBox2.TabIndex = 92;
             this.groupBox2.TabStop = false;
@@ -1088,7 +1188,7 @@
             this.btnView.Enabled = false;
             this.btnView.ForeColor = System.Drawing.Color.Black;
             this.btnView.Location = new System.Drawing.Point(1374, 270);
-            this.btnView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnView.Margin = new System.Windows.Forms.Padding(4);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(96, 29);
             this.btnView.TabIndex = 93;
@@ -1146,7 +1246,7 @@
             // btnDailyReport
             // 
             this.btnDailyReport.Location = new System.Drawing.Point(1374, 228);
-            this.btnDailyReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDailyReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnDailyReport.Name = "btnDailyReport";
             this.btnDailyReport.Size = new System.Drawing.Size(96, 34);
             this.btnDailyReport.TabIndex = 99;
@@ -1159,7 +1259,7 @@
             this.btnSupport.BackgroundImage = global::VinCLAPP.Properties.Resources.support_btn;
             this.btnSupport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSupport.Location = new System.Drawing.Point(1374, 157);
-            this.btnSupport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSupport.Margin = new System.Windows.Forms.Padding(4);
             this.btnSupport.Name = "btnSupport";
             this.btnSupport.Size = new System.Drawing.Size(95, 64);
             this.btnSupport.TabIndex = 100;
@@ -1276,106 +1376,6 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "SalePrice";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.Width = 78;
-            // 
-            // ListingID
-            // 
-            this.ListingID.DataPropertyName = "ListingID";
-            this.ListingID.HeaderText = "ListingID";
-            this.ListingID.Name = "ListingID";
-            this.ListingID.Visible = false;
-            this.ListingID.Width = 19;
-            // 
-            // PostingCityId
-            // 
-            this.PostingCityId.DataPropertyName = "PostingCityId";
-            this.PostingCityId.HeaderText = "Posting City Id";
-            this.PostingCityId.Name = "PostingCityId";
-            this.PostingCityId.Visible = false;
-            // 
-            // AutoID
-            // 
-            this.AutoID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.AutoID.DataPropertyName = "AutoID";
-            this.AutoID.HeaderText = "Id";
-            this.AutoID.Name = "AutoID";
-            this.AutoID.Width = 40;
-            // 
-            // PostingCity
-            // 
-            this.PostingCity.DataPropertyName = "PostingCity";
-            this.PostingCity.HeaderText = "PostingCity";
-            this.PostingCity.Name = "PostingCity";
-            this.PostingCity.ReadOnly = true;
-            this.PostingCity.Width = 110;
-            // 
-            // Stock
-            // 
-            this.Stock.DataPropertyName = "Stock";
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            this.Stock.Width = 61;
-            // 
-            // LastPosted
-            // 
-            this.LastPosted.DataPropertyName = "LastPosted";
-            this.LastPosted.HeaderText = "Last Posted";
-            this.LastPosted.Name = "LastPosted";
-            // 
-            // Year
-            // 
-            this.Year.DataPropertyName = "Year";
-            this.Year.HeaderText = "Year";
-            this.Year.Name = "Year";
-            this.Year.Width = 57;
-            // 
-            // Make
-            // 
-            this.Make.DataPropertyName = "Make";
-            this.Make.HeaderText = "Make";
-            this.Make.Name = "Make";
-            this.Make.Width = 80;
-            // 
-            // Model
-            // 
-            this.Model.DataPropertyName = "Model";
-            this.Model.HeaderText = "Model";
-            this.Model.Name = "Model";
-            this.Model.Width = 90;
-            // 
-            // Trim
-            // 
-            this.Trim.DataPropertyName = "Trim";
-            this.Trim.HeaderText = "Trim";
-            this.Trim.Name = "Trim";
-            this.Trim.Width = 80;
-            // 
-            // Vin
-            // 
-            this.Vin.DataPropertyName = "Vin";
-            this.Vin.HeaderText = "Vin";
-            this.Vin.Name = "Vin";
-            this.Vin.Width = 101;
-            // 
-            // Pictures
-            // 
-            this.Pictures.DataPropertyName = "Pictures";
-            this.Pictures.HeaderText = "Pics";
-            this.Pictures.Name = "Pictures";
-            this.Pictures.Width = 40;
-            // 
-            // Mileage
-            // 
-            this.Mileage.DataPropertyName = "Mileage";
-            this.Mileage.HeaderText = "Mileage";
-            this.Mileage.Name = "Mileage";
-            this.Mileage.Width = 60;
-            // 
-            // SalePrice
-            // 
-            this.SalePrice.DataPropertyName = "SalePrice";
-            this.SalePrice.HeaderText = "SalePrice";
-            this.SalePrice.Name = "SalePrice";
-            this.SalePrice.Width = 78;
             // 
             // MainForm
             // 
