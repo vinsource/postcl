@@ -41,6 +41,8 @@ namespace Vinclapp.Craigslist
 
         public string CarImageUrl { get; set; }
 
+        public string ThumbnailImageURL { get; set; }
+
         public string Door { get; set; }
 
         public string Fuel { get; set; }
@@ -122,5 +124,7 @@ namespace Vinclapp.Craigslist
         public string ContactName { get; set; }
 
         public bool IsTruck { get; set; }
+
+        public string Condition { get; set; }
     }
 }

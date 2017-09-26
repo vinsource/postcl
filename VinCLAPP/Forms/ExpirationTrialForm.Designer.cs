@@ -61,14 +61,14 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(391, 30);
+            this.label1.Size = new System.Drawing.Size(473, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "                                          Your trial has been expired. \r\nPlease m" +
     "ake a payment on tools/billing to continue using our services. ";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(159, 49);
+            this.button1.Location = new System.Drawing.Point(210, 48);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 27);
             this.button1.TabIndex = 1;
@@ -78,9 +78,9 @@
             // 
             // ExpirationTrialForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 78);
+            this.ClientSize = new System.Drawing.Size(574, 78);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

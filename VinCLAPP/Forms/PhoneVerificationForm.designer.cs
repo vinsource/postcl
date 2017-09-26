@@ -44,7 +44,7 @@
             this.lblCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblCheck.Location = new System.Drawing.Point(22, 35);
             this.lblCheck.Name = "lblCheck";
-            this.lblCheck.Size = new System.Drawing.Size(298, 39);
+            this.lblCheck.Size = new System.Drawing.Size(376, 52);
             this.lblCheck.TabIndex = 4;
             this.lblCheck.Text = "Phone Verification";
             // 
@@ -57,9 +57,9 @@
             // 
             this.lblAccount.AutoSize = true;
             this.lblAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccount.Location = new System.Drawing.Point(50, 74);
+            this.lblAccount.Location = new System.Drawing.Point(31, 76);
             this.lblAccount.Name = "lblAccount";
-            this.lblAccount.Size = new System.Drawing.Size(51, 20);
+            this.lblAccount.Size = new System.Drawing.Size(64, 25);
             this.lblAccount.TabIndex = 5;
             this.lblAccount.Text = "label1";
             // 
@@ -77,7 +77,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(38, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Time Left";
             // 
@@ -85,9 +85,9 @@
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(51, 108);
+            this.lblPhone.Location = new System.Drawing.Point(33, 110);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(46, 18);
+            this.lblPhone.Size = new System.Drawing.Size(60, 24);
             this.lblPhone.TabIndex = 8;
             this.lblPhone.Text = "label2";
             // 
@@ -96,7 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(344, 144);
+            this.ClientSize = new System.Drawing.Size(406, 144);
             this.ControlBox = false;
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.txtTimer);
@@ -107,15 +107,15 @@
             this.Name = "PhoneVerificationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.PhoneVerificationForm_Load);
+            this.Click += new System.EventHandler(this.PhoneVerificationForm_Click);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PhoneVerificationForm_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneVerificationForm_KeyPress);
+            this.Leave += new System.EventHandler(this.PhoneVerificationForm_Leave);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PhoneVerificationForm_MouseClick);
             this.MouseEnter += new System.EventHandler(this.PhoneVerificationForm_MouseEnter);
-            this.Leave += new System.EventHandler(this.PhoneVerificationForm_Leave);
-            this.Click += new System.EventHandler(this.PhoneVerificationForm_Click);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneVerificationForm_KeyPress);
             this.MouseLeave += new System.EventHandler(this.PhoneVerificationForm_MouseLeave);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PhoneVerificationForm_MouseMove);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PhoneVerificationForm_KeyDown);
             this.MouseHover += new System.EventHandler(this.PhoneVerificationForm_MouseHover);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PhoneVerificationForm_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();
 

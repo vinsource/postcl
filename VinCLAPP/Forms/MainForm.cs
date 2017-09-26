@@ -360,11 +360,21 @@ namespace VinCLAPP
 
                         bgNewVersion.ReportProgress(9, vehicle);
 
+                        if (confirmationPayment.Status == CraigslistPostingStatus.Error)
+                        {
+                            vehicle.ProgessStatus = CraigslistPostingStatus.Error;
+                            vehicle.ErrorMessage = confirmationPayment.ErrorMessage;
+                            bgNewVersion.ReportProgress(10, vehicle);
+                            //lblProcessing.Text = confirmationPayment.ErrorMessage;
+                            break;
+                        }
+
                         if (confirmationPayment.Status == CraigslistPostingStatus.EmailVerification)
                         {
                             vehicle.ProgessStatus = CraigslistPostingStatus.EmailVerification;
                             vehicle.ErrorMessage = confirmationPayment.ErrorMessage;
                             bgNewVersion.ReportProgress(10, vehicle);
+                            //lblProcessing.Text = confirmationPayment.ErrorMessage;
                             break;
                         }
 
@@ -373,6 +383,8 @@ namespace VinCLAPP
                             vehicle.ProgessStatus = CraigslistPostingStatus.PaymentError;
                             vehicle.ErrorMessage = confirmationPayment.ErrorMessage;
                             bgNewVersion.ReportProgress(10, vehicle);
+                            //lblProcessing.Text = confirmationPayment.ErrorMessage;
+                            break;
                         }
 
                         if (confirmationPayment.Status == CraigslistPostingStatus.Success &&
@@ -409,9 +421,7 @@ namespace VinCLAPP
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show(ex.Message + " " + ex.StackTrace, "Message", MessageBoxButtons.OK,
-                    //    MessageBoxIcon.Warning);
-
+                    MessageBox.Show(ex.Message + " " + ex.StackTrace, "Unhandled exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             
@@ -625,17 +635,31 @@ namespace VinCLAPP
 
                             bgNewVersion.ReportProgress(9, vehicle);
 
+                            if (confirmationPayment.Status == CraigslistPostingStatus.Error)
+                            {
+                                vehicle.ProgessStatus = CraigslistPostingStatus.Error;
+                                vehicle.ErrorMessage = confirmationPayment.ErrorMessage;
+                                bgNewVersion.ReportProgress(10, vehicle);
+                                //lblProcessing.Text = confirmationPayment.ErrorMessage;
+                                break;
+                            }
+
                             if (confirmationPayment.Status == CraigslistPostingStatus.EmailVerification)
                             {
                                 vehicle.ProgessStatus = CraigslistPostingStatus.EmailVerification;
+                                vehicle.ErrorMessage = confirmationPayment.ErrorMessage;
                                 bgNewVersion.ReportProgress(10, vehicle);
+                                //lblProcessing.Text = confirmationPayment.ErrorMessage;
                                 break;
                             }
 
                             if (confirmationPayment.Status == CraigslistPostingStatus.PaymentError)
                             {
                                 vehicle.ProgessStatus = CraigslistPostingStatus.PaymentError;
+                                vehicle.ErrorMessage = confirmationPayment.ErrorMessage;
                                 bgNewVersion.ReportProgress(10, vehicle);
+                                //lblProcessing.Text = confirmationPayment.ErrorMessage;
+                                break;
                             }
 
                             if (confirmationPayment.Status == CraigslistPostingStatus.Success &&
@@ -737,7 +761,7 @@ namespace VinCLAPP
                     MessageBox.Show(vehicle.ContactName);
                     var confirmationPayment = clService.PostingAdsOnCraigslist(GlobalVar.CurrentDealer.EmailAccountList.First().CraigslistAccount, GlobalVar.CurrentDealer.EmailAccountList.First().CraigsListPassword, vehicle, creditCardInfo);
 
-                    if (confirmationPayment.PaymentId > 0 && confirmationPayment.PostingId > 0)
+                    if (confirmationPayment.Status == CraigslistPostingStatus.Success && confirmationPayment.PaymentId > 0 && confirmationPayment.PostingId > 0)
                     {
 
                         var clModel = new CraigsListTrackingModel
@@ -754,6 +778,11 @@ namespace VinCLAPP
 
                         _wholeList.ElementAt(0).HtmlCraigslistUrl = clModel.HtmlCraigslistUrl;
 
+                    }
+                    else
+                    {
+                        lblProcessing.Text = confirmationPayment.ErrorMessage;
+                        MessageBox.Show(confirmationPayment.ErrorMessage, "Failed to post the ad", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 

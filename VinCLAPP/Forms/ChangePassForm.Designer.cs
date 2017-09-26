@@ -55,6 +55,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblEmptyError = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRetypePass = new System.Windows.Forms.TextBox();
@@ -62,7 +63,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblEmptyError = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
@@ -80,18 +80,27 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(5, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(391, 118);
+            this.groupBox1.Size = new System.Drawing.Size(453, 166);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Change Password";
             // 
+            // lblEmptyError
+            // 
+            this.lblEmptyError.AutoSize = true;
+            this.lblEmptyError.Location = new System.Drawing.Point(7, 124);
+            this.lblEmptyError.Name = "lblEmptyError";
+            this.lblEmptyError.Size = new System.Drawing.Size(204, 20);
+            this.lblEmptyError.TabIndex = 13;
+            this.lblEmptyError.Text = "* Please fill all blank fields";
+            this.lblEmptyError.Visible = false;
+            // 
             // btnOK
             // 
-            //this.btnOK.BackgroundImage = global::VinCLAPP.Properties.Resources.btnBGblack;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOK.Location = new System.Drawing.Point(270, 86);
+            this.btnOK.Location = new System.Drawing.Point(297, 116);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(114, 21);
+            this.btnOK.Size = new System.Drawing.Size(135, 28);
             this.btnOK.TabIndex = 12;
             this.btnOK.Text = "Save And Close";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -102,24 +111,24 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 16);
+            this.label2.Size = new System.Drawing.Size(178, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Retype New Password";
             // 
             // txtRetypePass
             // 
-            this.txtRetypePass.Location = new System.Drawing.Point(157, 58);
+            this.txtRetypePass.Location = new System.Drawing.Point(189, 58);
             this.txtRetypePass.Name = "txtRetypePass";
             this.txtRetypePass.PasswordChar = '*';
-            this.txtRetypePass.Size = new System.Drawing.Size(227, 22);
+            this.txtRetypePass.Size = new System.Drawing.Size(243, 26);
             this.txtRetypePass.TabIndex = 2;
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Location = new System.Drawing.Point(157, 23);
+            this.txtNewPass.Location = new System.Drawing.Point(189, 23);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.PasswordChar = '*';
-            this.txtNewPass.Size = new System.Drawing.Size(227, 22);
+            this.txtNewPass.Size = new System.Drawing.Size(243, 26);
             this.txtNewPass.TabIndex = 1;
             // 
             // label1
@@ -127,7 +136,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 16);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "New Password";
             // 
@@ -139,22 +148,12 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
-            // lblEmptyError
-            // 
-            this.lblEmptyError.AutoSize = true;
-            this.lblEmptyError.Location = new System.Drawing.Point(7, 91);
-            this.lblEmptyError.Name = "lblEmptyError";
-            this.lblEmptyError.Size = new System.Drawing.Size(162, 16);
-            this.lblEmptyError.TabIndex = 13;
-            this.lblEmptyError.Text = "* Please fill all blank fields";
-            this.lblEmptyError.Visible = false;
-            // 
             // ChangePassForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(408, 131);
+            this.ClientSize = new System.Drawing.Size(469, 186);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

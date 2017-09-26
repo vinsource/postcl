@@ -43,14 +43,14 @@
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(19, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 30);
+            this.label1.Size = new System.Drawing.Size(238, 36);
             this.label1.TabIndex = 9;
             this.label1.Text = "             Please be patient.\r\nLoading may take up to one minute";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::VinCLAPP.Properties.Resources.progress;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(66, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(130, 17);
             this.pictureBox1.TabIndex = 10;
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(225, 73);
+            this.ClientSize = new System.Drawing.Size(266, 73);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);

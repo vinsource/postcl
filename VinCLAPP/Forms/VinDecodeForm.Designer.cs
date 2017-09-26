@@ -100,7 +100,7 @@
             this.lblMessage.ForeColor = System.Drawing.Color.LavenderBlush;
             this.lblMessage.Location = new System.Drawing.Point(10, 9);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 20);
+            this.lblMessage.Size = new System.Drawing.Size(0, 25);
             this.lblMessage.TabIndex = 57;
             // 
             // pnDecode
@@ -149,15 +149,15 @@
             this.pnDecode.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnDecode.Location = new System.Drawing.Point(0, 0);
             this.pnDecode.Name = "pnDecode";
-            this.pnDecode.Size = new System.Drawing.Size(563, 665);
+            this.pnDecode.Size = new System.Drawing.Size(583, 695);
             this.pnDecode.TabIndex = 73;
             // 
             // rbnCertified
             // 
             this.rbnCertified.AutoSize = true;
-            this.rbnCertified.Location = new System.Drawing.Point(336, 356);
+            this.rbnCertified.Location = new System.Drawing.Point(347, 422);
             this.rbnCertified.Name = "rbnCertified";
-            this.rbnCertified.Size = new System.Drawing.Size(71, 19);
+            this.rbnCertified.Size = new System.Drawing.Size(84, 22);
             this.rbnCertified.TabIndex = 78;
             this.rbnCertified.Text = "Certified";
             this.rbnCertified.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             this.lblVin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblVin.Location = new System.Drawing.Point(15, 6);
             this.lblVin.Name = "lblVin";
-            this.lblVin.Size = new System.Drawing.Size(31, 15);
+            this.lblVin.Size = new System.Drawing.Size(37, 18);
             this.lblVin.TabIndex = 14;
             this.lblVin.Text = "VIN*";
             // 
@@ -202,7 +202,7 @@
             this.lblStock.AutoSize = true;
             this.lblStock.Location = new System.Drawing.Point(15, 32);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(37, 15);
+            this.lblStock.Size = new System.Drawing.Size(47, 18);
             this.lblStock.TabIndex = 24;
             this.lblStock.Text = "Stock";
             // 
@@ -212,7 +212,7 @@
             this.lblDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDate.Location = new System.Drawing.Point(15, 58);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(33, 15);
+            this.lblDate.Size = new System.Drawing.Size(39, 18);
             this.lblDate.TabIndex = 25;
             this.lblDate.Text = "Date";
             // 
@@ -222,7 +222,7 @@
             this.lblYear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblYear.Location = new System.Drawing.Point(15, 84);
             this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(37, 15);
+            this.lblYear.Size = new System.Drawing.Size(44, 18);
             this.lblYear.TabIndex = 22;
             this.lblYear.Text = "Year*";
             // 
@@ -231,7 +231,7 @@
             this.lblMake.AutoSize = true;
             this.lblMake.Location = new System.Drawing.Point(15, 110);
             this.lblMake.Name = "lblMake";
-            this.lblMake.Size = new System.Drawing.Size(43, 15);
+            this.lblMake.Size = new System.Drawing.Size(51, 18);
             this.lblMake.TabIndex = 23;
             this.lblMake.Text = "Make*";
             // 
@@ -240,7 +240,7 @@
             this.lblModel.AutoSize = true;
             this.lblModel.Location = new System.Drawing.Point(15, 136);
             this.lblModel.Name = "lblModel";
-            this.lblModel.Size = new System.Drawing.Size(47, 15);
+            this.lblModel.Size = new System.Drawing.Size(55, 18);
             this.lblModel.TabIndex = 26;
             this.lblModel.Text = "Model*";
             // 
@@ -249,7 +249,7 @@
             this.lblTrim.AutoSize = true;
             this.lblTrim.Location = new System.Drawing.Point(15, 162);
             this.lblTrim.Name = "lblTrim";
-            this.lblTrim.Size = new System.Drawing.Size(37, 15);
+            this.lblTrim.Size = new System.Drawing.Size(44, 18);
             this.lblTrim.TabIndex = 28;
             this.lblTrim.Text = "Trim*";
             // 
@@ -258,7 +258,7 @@
             this.lblExteriorColor.AutoSize = true;
             this.lblExteriorColor.Location = new System.Drawing.Point(15, 216);
             this.lblExteriorColor.Name = "lblExteriorColor";
-            this.lblExteriorColor.Size = new System.Drawing.Size(81, 15);
+            this.lblExteriorColor.Size = new System.Drawing.Size(100, 18);
             this.lblExteriorColor.TabIndex = 15;
             this.lblExteriorColor.Text = "Exterior Color";
             // 
@@ -268,7 +268,7 @@
             this.lblInteriorColor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblInteriorColor.Location = new System.Drawing.Point(15, 270);
             this.lblInteriorColor.Name = "lblInteriorColor";
-            this.lblInteriorColor.Size = new System.Drawing.Size(77, 15);
+            this.lblInteriorColor.Size = new System.Drawing.Size(94, 18);
             this.lblInteriorColor.TabIndex = 16;
             this.lblInteriorColor.Text = "Interior Color";
             // 
@@ -277,7 +277,7 @@
             this.lblCylinders.AutoSize = true;
             this.lblCylinders.Location = new System.Drawing.Point(15, 348);
             this.lblCylinders.Name = "lblCylinders";
-            this.lblCylinders.Size = new System.Drawing.Size(57, 15);
+            this.lblCylinders.Size = new System.Drawing.Size(69, 18);
             this.lblCylinders.TabIndex = 13;
             this.lblCylinders.Text = "Cylinders";
             // 
@@ -286,7 +286,7 @@
             this.lblOdometer.AutoSize = true;
             this.lblOdometer.Location = new System.Drawing.Point(15, 323);
             this.lblOdometer.Name = "lblOdometer";
-            this.lblOdometer.Size = new System.Drawing.Size(67, 15);
+            this.lblOdometer.Size = new System.Drawing.Size(81, 18);
             this.lblOdometer.TabIndex = 32;
             this.lblOdometer.Text = "Odometer*";
             // 
@@ -295,7 +295,7 @@
             this.lblDoors.AutoSize = true;
             this.lblDoors.Location = new System.Drawing.Point(15, 430);
             this.lblDoors.Name = "lblDoors";
-            this.lblDoors.Size = new System.Drawing.Size(40, 15);
+            this.lblDoors.Size = new System.Drawing.Size(50, 18);
             this.lblDoors.TabIndex = 17;
             this.lblDoors.Text = "Doors";
             // 
@@ -304,7 +304,7 @@
             this.lblMsrp.AutoSize = true;
             this.lblMsrp.Location = new System.Drawing.Point(16, 539);
             this.lblMsrp.Name = "lblMsrp";
-            this.lblMsrp.Size = new System.Drawing.Size(89, 15);
+            this.lblMsrp.Size = new System.Drawing.Size(106, 18);
             this.lblMsrp.TabIndex = 20;
             this.lblMsrp.Text = "Original MSRP";
             // 
@@ -313,7 +313,7 @@
             this.lblLiters.AutoSize = true;
             this.lblLiters.Location = new System.Drawing.Point(15, 375);
             this.lblLiters.Name = "lblLiters";
-            this.lblLiters.Size = new System.Drawing.Size(37, 15);
+            this.lblLiters.Size = new System.Drawing.Size(44, 18);
             this.lblLiters.TabIndex = 21;
             this.lblLiters.Text = "Liters";
             // 
@@ -322,7 +322,7 @@
             this.lblTransmission.AutoSize = true;
             this.lblTransmission.Location = new System.Drawing.Point(15, 402);
             this.lblTransmission.Name = "lblTransmission";
-            this.lblTransmission.Size = new System.Drawing.Size(86, 15);
+            this.lblTransmission.Size = new System.Drawing.Size(104, 18);
             this.lblTransmission.TabIndex = 18;
             this.lblTransmission.Text = "Transmission*";
             // 
@@ -331,7 +331,7 @@
             this.lblStyle.AutoSize = true;
             this.lblStyle.Location = new System.Drawing.Point(15, 455);
             this.lblStyle.Name = "lblStyle";
-            this.lblStyle.Size = new System.Drawing.Size(33, 15);
+            this.lblStyle.Size = new System.Drawing.Size(40, 18);
             this.lblStyle.TabIndex = 19;
             this.lblStyle.Text = "Style";
             // 
@@ -340,7 +340,7 @@
             this.lblFuel.AutoSize = true;
             this.lblFuel.Location = new System.Drawing.Point(15, 482);
             this.lblFuel.Name = "lblFuel";
-            this.lblFuel.Size = new System.Drawing.Size(31, 15);
+            this.lblFuel.Size = new System.Drawing.Size(36, 18);
             this.lblFuel.TabIndex = 33;
             this.lblFuel.Text = "Fuel";
             // 
@@ -349,7 +349,7 @@
             this.lblDrive.AutoSize = true;
             this.lblDrive.Location = new System.Drawing.Point(15, 509);
             this.lblDrive.Name = "lblDrive";
-            this.lblDrive.Size = new System.Drawing.Size(35, 15);
+            this.lblDrive.Size = new System.Drawing.Size(42, 18);
             this.lblDrive.TabIndex = 31;
             this.lblDrive.Text = "Drive";
             // 
@@ -357,7 +357,7 @@
             // 
             this.pnVinDecodeType.Controls.Add(this.rbVindecodeYear);
             this.pnVinDecodeType.Controls.Add(this.rbDecodeVin);
-            this.pnVinDecodeType.Location = new System.Drawing.Point(13, 38);
+            this.pnVinDecodeType.Location = new System.Drawing.Point(13, 35);
             this.pnVinDecodeType.Name = "pnVinDecodeType";
             this.pnVinDecodeType.Size = new System.Drawing.Size(179, 34);
             this.pnVinDecodeType.TabIndex = 76;
@@ -367,7 +367,7 @@
             this.rbVindecodeYear.AutoSize = true;
             this.rbVindecodeYear.Location = new System.Drawing.Point(82, 9);
             this.rbVindecodeYear.Name = "rbVindecodeYear";
-            this.rbVindecodeYear.Size = new System.Drawing.Size(66, 19);
+            this.rbVindecodeYear.Size = new System.Drawing.Size(80, 22);
             this.rbVindecodeYear.TabIndex = 75;
             this.rbVindecodeYear.Text = "By Year";
             this.rbVindecodeYear.UseVisualStyleBackColor = true;
@@ -378,7 +378,7 @@
             this.rbDecodeVin.AutoSize = true;
             this.rbDecodeVin.Location = new System.Drawing.Point(3, 9);
             this.rbDecodeVin.Name = "rbDecodeVin";
-            this.rbDecodeVin.Size = new System.Drawing.Size(58, 19);
+            this.rbDecodeVin.Size = new System.Drawing.Size(70, 22);
             this.rbDecodeVin.TabIndex = 74;
             this.rbDecodeVin.Text = "By Vin";
             this.rbDecodeVin.UseVisualStyleBackColor = true;
@@ -400,9 +400,9 @@
             // 
             this.lblEmptyError.AutoSize = true;
             this.lblEmptyError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmptyError.Location = new System.Drawing.Point(331, 378);
+            this.lblEmptyError.Location = new System.Drawing.Point(10, 663);
             this.lblEmptyError.Name = "lblEmptyError";
-            this.lblEmptyError.Size = new System.Drawing.Size(111, 13);
+            this.lblEmptyError.Size = new System.Drawing.Size(149, 17);
             this.lblEmptyError.TabIndex = 73;
             this.lblEmptyError.Text = "Please fill all the field *";
             // 
@@ -411,7 +411,7 @@
             this.dtDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDate.Location = new System.Drawing.Point(128, 130);
             this.dtDate.Name = "dtDate";
-            this.dtDate.Size = new System.Drawing.Size(197, 21);
+            this.dtDate.Size = new System.Drawing.Size(197, 24);
             this.dtDate.TabIndex = 65;
             // 
             // cbxModel
@@ -420,7 +420,7 @@
             this.cbxModel.FormattingEnabled = true;
             this.cbxModel.Location = new System.Drawing.Point(128, 207);
             this.cbxModel.Name = "cbxModel";
-            this.cbxModel.Size = new System.Drawing.Size(197, 23);
+            this.cbxModel.Size = new System.Drawing.Size(197, 26);
             this.cbxModel.TabIndex = 64;
             // 
             // cbxMake
@@ -429,7 +429,7 @@
             this.cbxMake.FormattingEnabled = true;
             this.cbxMake.Location = new System.Drawing.Point(128, 181);
             this.cbxMake.Name = "cbxMake";
-            this.cbxMake.Size = new System.Drawing.Size(197, 23);
+            this.cbxMake.Size = new System.Drawing.Size(197, 26);
             this.cbxMake.TabIndex = 63;
             // 
             // txtDescription
@@ -437,7 +437,7 @@
             this.txtDescription.Location = new System.Drawing.Point(346, 185);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(215, 151);
+            this.txtDescription.Size = new System.Drawing.Size(225, 231);
             this.txtDescription.TabIndex = 62;
             // 
             // lblDexcription
@@ -445,15 +445,15 @@
             this.lblDexcription.AutoSize = true;
             this.lblDexcription.Location = new System.Drawing.Point(343, 162);
             this.lblDexcription.Name = "lblDexcription";
-            this.lblDexcription.Size = new System.Drawing.Size(69, 15);
+            this.lblDexcription.Size = new System.Drawing.Size(83, 18);
             this.lblDexcription.TabIndex = 61;
             this.lblDexcription.Text = "Description";
             // 
             // txtSalePrice
             // 
-            this.txtSalePrice.Location = new System.Drawing.Point(413, 126);
+            this.txtSalePrice.Location = new System.Drawing.Point(421, 126);
             this.txtSalePrice.Name = "txtSalePrice";
-            this.txtSalePrice.Size = new System.Drawing.Size(139, 21);
+            this.txtSalePrice.Size = new System.Drawing.Size(150, 24);
             this.txtSalePrice.TabIndex = 59;
             // 
             // lblSalePrice
@@ -462,7 +462,7 @@
             this.lblSalePrice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblSalePrice.Location = new System.Drawing.Point(344, 129);
             this.lblSalePrice.Name = "lblSalePrice";
-            this.lblSalePrice.Size = new System.Drawing.Size(63, 15);
+            this.lblSalePrice.Size = new System.Drawing.Size(75, 18);
             this.lblSalePrice.TabIndex = 58;
             this.lblSalePrice.Text = "Sale Price";
             // 
@@ -471,7 +471,7 @@
             this.btnDecode.BackColor = System.Drawing.SystemColors.GrayText;
             this.btnDecode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecode.ForeColor = System.Drawing.Color.White;
-            this.btnDecode.Location = new System.Drawing.Point(346, 78);
+            this.btnDecode.Location = new System.Drawing.Point(346, 74);
             this.btnDecode.Name = "btnDecode";
             this.btnDecode.Size = new System.Drawing.Size(75, 32);
             this.btnDecode.TabIndex = 56;
@@ -483,7 +483,7 @@
             this.btnComplete.BackColor = System.Drawing.SystemColors.InfoText;
             this.btnComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComplete.ForeColor = System.Drawing.Color.White;
-            this.btnComplete.Location = new System.Drawing.Point(336, 399);
+            this.btnComplete.Location = new System.Drawing.Point(458, 650);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(113, 42);
             this.btnComplete.TabIndex = 55;
@@ -497,7 +497,7 @@
             this.cbxDrive.FormattingEnabled = true;
             this.cbxDrive.Location = new System.Drawing.Point(128, 582);
             this.cbxDrive.Name = "cbxDrive";
-            this.cbxDrive.Size = new System.Drawing.Size(197, 23);
+            this.cbxDrive.Size = new System.Drawing.Size(197, 26);
             this.cbxDrive.TabIndex = 48;
             // 
             // cbxFuel
@@ -506,7 +506,7 @@
             this.cbxFuel.FormattingEnabled = true;
             this.cbxFuel.Location = new System.Drawing.Point(128, 555);
             this.cbxFuel.Name = "cbxFuel";
-            this.cbxFuel.Size = new System.Drawing.Size(197, 23);
+            this.cbxFuel.Size = new System.Drawing.Size(197, 26);
             this.cbxFuel.TabIndex = 52;
             // 
             // cbxStyle
@@ -515,7 +515,7 @@
             this.cbxStyle.FormattingEnabled = true;
             this.cbxStyle.Location = new System.Drawing.Point(128, 528);
             this.cbxStyle.Name = "cbxStyle";
-            this.cbxStyle.Size = new System.Drawing.Size(197, 23);
+            this.cbxStyle.Size = new System.Drawing.Size(197, 26);
             this.cbxStyle.TabIndex = 51;
             // 
             // cbxTransmission
@@ -524,7 +524,7 @@
             this.cbxTransmission.FormattingEnabled = true;
             this.cbxTransmission.Location = new System.Drawing.Point(128, 475);
             this.cbxTransmission.Name = "cbxTransmission";
-            this.cbxTransmission.Size = new System.Drawing.Size(197, 23);
+            this.cbxTransmission.Size = new System.Drawing.Size(197, 26);
             this.cbxTransmission.TabIndex = 49;
             // 
             // cbxLiters
@@ -533,7 +533,7 @@
             this.cbxLiters.FormattingEnabled = true;
             this.cbxLiters.Location = new System.Drawing.Point(128, 448);
             this.cbxLiters.Name = "cbxLiters";
-            this.cbxLiters.Size = new System.Drawing.Size(197, 23);
+            this.cbxLiters.Size = new System.Drawing.Size(197, 26);
             this.cbxLiters.TabIndex = 50;
             // 
             // cbxCylinders
@@ -542,7 +542,7 @@
             this.cbxCylinders.FormattingEnabled = true;
             this.cbxCylinders.Location = new System.Drawing.Point(128, 421);
             this.cbxCylinders.Name = "cbxCylinders";
-            this.cbxCylinders.Size = new System.Drawing.Size(197, 23);
+            this.cbxCylinders.Size = new System.Drawing.Size(197, 26);
             this.cbxCylinders.TabIndex = 46;
             // 
             // cbxInteriorColor
@@ -550,7 +550,7 @@
             this.cbxInteriorColor.FormattingEnabled = true;
             this.cbxInteriorColor.Location = new System.Drawing.Point(128, 343);
             this.cbxInteriorColor.Name = "cbxInteriorColor";
-            this.cbxInteriorColor.Size = new System.Drawing.Size(197, 23);
+            this.cbxInteriorColor.Size = new System.Drawing.Size(197, 26);
             this.cbxInteriorColor.TabIndex = 54;
             // 
             // cbxExteriorColor
@@ -558,7 +558,7 @@
             this.cbxExteriorColor.FormattingEnabled = true;
             this.cbxExteriorColor.Location = new System.Drawing.Point(128, 289);
             this.cbxExteriorColor.Name = "cbxExteriorColor";
-            this.cbxExteriorColor.Size = new System.Drawing.Size(197, 23);
+            this.cbxExteriorColor.Size = new System.Drawing.Size(197, 26);
             this.cbxExteriorColor.TabIndex = 53;
             // 
             // cbxTrim
@@ -566,21 +566,21 @@
             this.cbxTrim.FormattingEnabled = true;
             this.cbxTrim.Location = new System.Drawing.Point(128, 235);
             this.cbxTrim.Name = "cbxTrim";
-            this.cbxTrim.Size = new System.Drawing.Size(197, 23);
+            this.cbxTrim.Size = new System.Drawing.Size(197, 26);
             this.cbxTrim.TabIndex = 47;
             // 
             // txtCustomInteriorColor
             // 
             this.txtCustomInteriorColor.Location = new System.Drawing.Point(167, 370);
             this.txtCustomInteriorColor.Name = "txtCustomInteriorColor";
-            this.txtCustomInteriorColor.Size = new System.Drawing.Size(158, 21);
+            this.txtCustomInteriorColor.Size = new System.Drawing.Size(158, 24);
             this.txtCustomInteriorColor.TabIndex = 38;
             // 
             // txtCustomExteriorColor
             // 
             this.txtCustomExteriorColor.Location = new System.Drawing.Point(167, 316);
             this.txtCustomExteriorColor.Name = "txtCustomExteriorColor";
-            this.txtCustomExteriorColor.Size = new System.Drawing.Size(158, 21);
+            this.txtCustomExteriorColor.Size = new System.Drawing.Size(158, 24);
             this.txtCustomExteriorColor.TabIndex = 37;
             // 
             // lblCustomInteriorColor
@@ -589,7 +589,7 @@
             this.lblCustomInteriorColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomInteriorColor.Location = new System.Drawing.Point(125, 377);
             this.lblCustomInteriorColor.Name = "lblCustomInteriorColor";
-            this.lblCustomInteriorColor.Size = new System.Drawing.Size(36, 13);
+            this.lblCustomInteriorColor.Size = new System.Drawing.Size(48, 17);
             this.lblCustomInteriorColor.TabIndex = 27;
             this.lblCustomInteriorColor.Text = "Other:";
             // 
@@ -597,7 +597,7 @@
             // 
             this.txtCustomTrim.Location = new System.Drawing.Point(167, 262);
             this.txtCustomTrim.Name = "txtCustomTrim";
-            this.txtCustomTrim.Size = new System.Drawing.Size(158, 21);
+            this.txtCustomTrim.Size = new System.Drawing.Size(158, 24);
             this.txtCustomTrim.TabIndex = 42;
             // 
             // lblCustomExteriorColor
@@ -606,7 +606,7 @@
             this.lblCustomExteriorColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomExteriorColor.Location = new System.Drawing.Point(125, 323);
             this.lblCustomExteriorColor.Name = "lblCustomExteriorColor";
-            this.lblCustomExteriorColor.Size = new System.Drawing.Size(36, 13);
+            this.lblCustomExteriorColor.Size = new System.Drawing.Size(48, 17);
             this.lblCustomExteriorColor.TabIndex = 30;
             this.lblCustomExteriorColor.Text = "Other:";
             // 
@@ -616,7 +616,7 @@
             this.lblCustomTrim.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomTrim.Location = new System.Drawing.Point(125, 269);
             this.lblCustomTrim.Name = "lblCustomTrim";
-            this.lblCustomTrim.Size = new System.Drawing.Size(36, 13);
+            this.lblCustomTrim.Size = new System.Drawing.Size(48, 17);
             this.lblCustomTrim.TabIndex = 29;
             this.lblCustomTrim.Text = "Other:";
             // 
@@ -624,69 +624,68 @@
             // 
             this.txtMsrp.Location = new System.Drawing.Point(128, 609);
             this.txtMsrp.Name = "txtMsrp";
-            this.txtMsrp.Size = new System.Drawing.Size(197, 21);
+            this.txtMsrp.Size = new System.Drawing.Size(197, 24);
             this.txtMsrp.TabIndex = 39;
             // 
             // txtDoors
             // 
             this.txtDoors.Location = new System.Drawing.Point(128, 502);
             this.txtDoors.Name = "txtDoors";
-            this.txtDoors.Size = new System.Drawing.Size(109, 21);
+            this.txtDoors.Size = new System.Drawing.Size(109, 24);
             this.txtDoors.TabIndex = 35;
             // 
             // txtOdometer
             // 
             this.txtOdometer.Location = new System.Drawing.Point(128, 395);
             this.txtOdometer.Name = "txtOdometer";
-            this.txtOdometer.Size = new System.Drawing.Size(89, 21);
+            this.txtOdometer.Size = new System.Drawing.Size(89, 24);
             this.txtOdometer.TabIndex = 36;
             // 
             // txtModel
             // 
             this.txtModel.Location = new System.Drawing.Point(128, 208);
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(150, 21);
+            this.txtModel.Size = new System.Drawing.Size(150, 24);
             this.txtModel.TabIndex = 34;
             // 
             // txtMake
             // 
             this.txtMake.Location = new System.Drawing.Point(128, 182);
             this.txtMake.Name = "txtMake";
-            this.txtMake.Size = new System.Drawing.Size(150, 21);
+            this.txtMake.Size = new System.Drawing.Size(150, 24);
             this.txtMake.TabIndex = 43;
             // 
             // txtYear
             // 
             this.txtYear.Location = new System.Drawing.Point(128, 156);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(197, 21);
+            this.txtYear.Size = new System.Drawing.Size(197, 24);
             this.txtYear.TabIndex = 44;
             // 
             // txtStock
             // 
             this.txtStock.Location = new System.Drawing.Point(128, 104);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(197, 21);
+            this.txtStock.Size = new System.Drawing.Size(197, 24);
             this.txtStock.TabIndex = 40;
             // 
             // txtVin
             // 
             this.txtVin.Location = new System.Drawing.Point(128, 78);
             this.txtVin.Name = "txtVin";
-            this.txtVin.Size = new System.Drawing.Size(197, 21);
+            this.txtVin.Size = new System.Drawing.Size(197, 24);
             this.txtVin.TabIndex = 41;
             // 
             // VinDecodeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 665);
+            this.ClientSize = new System.Drawing.Size(583, 695);
             this.Controls.Add(this.pnDecode);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "VinDecodeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Decode";
-          
             this.pnDecode.ResumeLayout(false);
             this.pnDecode.PerformLayout();
             this.pnLabel.ResumeLayout(false);

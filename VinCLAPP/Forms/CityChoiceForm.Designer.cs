@@ -81,9 +81,9 @@
             // 
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(30, 425);
+            this.btnReset.Location = new System.Drawing.Point(63, 412);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(67, 21);
+            this.btnReset.Size = new System.Drawing.Size(67, 34);
             this.btnReset.TabIndex = 14;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -92,9 +92,9 @@
             // StateTreeview
             // 
             this.StateTreeview.CheckBoxes = true;
-            this.StateTreeview.Location = new System.Drawing.Point(15, 51);
+            this.StateTreeview.Location = new System.Drawing.Point(6, 51);
             this.StateTreeview.Name = "StateTreeview";
-            this.StateTreeview.Size = new System.Drawing.Size(216, 355);
+            this.StateTreeview.Size = new System.Drawing.Size(236, 355);
             this.StateTreeview.TabIndex = 13;
             this.StateTreeview.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.StateTreeview_AfterCheck);
             // 
@@ -104,7 +104,7 @@
             this.cbCityList.FormattingEnabled = true;
             this.cbCityList.Location = new System.Drawing.Point(6, 21);
             this.cbCityList.Name = "cbCityList";
-            this.cbCityList.Size = new System.Drawing.Size(236, 24);
+            this.cbCityList.Size = new System.Drawing.Size(236, 28);
             this.cbCityList.TabIndex = 12;
             // 
             // btnOK
@@ -112,9 +112,9 @@
             this.btnOK.BackgroundImage = global::VinCLAPP.Properties.Resources.btnBGblack;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(125, 425);
+            this.btnOK.Location = new System.Drawing.Point(136, 412);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(106, 21);
+            this.btnOK.Size = new System.Drawing.Size(106, 34);
             this.btnOK.TabIndex = 10;
             this.btnOK.Text = "Save And Close";
             this.btnOK.UseVisualStyleBackColor = true;

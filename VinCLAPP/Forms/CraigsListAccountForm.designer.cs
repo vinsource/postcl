@@ -105,7 +105,7 @@
             this.lblFillUp.AutoSize = true;
             this.lblFillUp.Location = new System.Drawing.Point(12, 279);
             this.lblFillUp.Name = "lblFillUp";
-            this.lblFillUp.Size = new System.Drawing.Size(113, 13);
+            this.lblFillUp.Size = new System.Drawing.Size(132, 15);
             this.lblFillUp.TabIndex = 16;
             this.lblFillUp.Text = "* Fill up all blank fields ";
             // 

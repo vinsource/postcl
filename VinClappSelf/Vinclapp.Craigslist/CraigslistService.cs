@@ -53,10 +53,20 @@ namespace Vinclapp.Craigslist
 
         public ConfirmationPayment PostingAdsOnCraigslist(string email, string password, VehicleInfo vehicle, CreditCardInfo creditCard)
         {
-
             //Step 2: log on
-            if (StatusCode==0)
+            if (StatusCode == 0)
+            {
                 WebRequestPost(email, password);
+                if (StatusCode != 302)
+                {
+                    return new ConfirmationPayment { Status = CraigslistPostingStatus.Error, ErrorMessage = "You forgot to input Username/Password in Admin setting? or Your account is invalid." };
+                }
+            }
+
+            if (string.IsNullOrEmpty(vehicle.CraigslistCityUrl))
+            {
+                return new ConfirmationPayment { Status = CraigslistPostingStatus.Error, ErrorMessage = "You forgot to set State/City/Location in Admin setting. Let's do that first." };
+            }
 
             var locationPostUrl = GetLocationPostUrl(vehicle.CraigslistCityUrl);
 
@@ -102,7 +112,7 @@ namespace Vinclapp.Craigslist
                 return new ConfirmationPayment()
                 {
                     Status = CraigslistPostingStatus.EmailVerification,
-                    ErrorMessage = billingUrl
+                    ErrorMessage = "This is your first post on this device so you should receive an email shortly, with a link to confirm your ad. Please check Inbox or Spam " + email
                 };
             }
 
@@ -114,7 +124,7 @@ namespace Vinclapp.Craigslist
                 return new ConfirmationPayment()
                 {
                     Status = CraigslistPostingStatus.PaymentError,
-                    ErrorMessage = "Billing URL " + billingUrl
+                    ErrorMessage = "PaymentError: please look at billing URL for more detail " + billingUrl
                 };
                 
             }
@@ -131,7 +141,7 @@ namespace Vinclapp.Craigslist
                     return new ConfirmationPayment()
                     {
                         Status = CraigslistPostingStatus.PaymentError,
-                        ErrorMessage = "Cannot purchase " + confirmationPaymentUrl
+                        ErrorMessage = "PaymentError: Cannot purchase " + confirmationPaymentUrl
                     };
 
                 }
@@ -143,15 +153,14 @@ namespace Vinclapp.Craigslist
                 return new ConfirmationPayment()
                 {
                     Status = CraigslistPostingStatus.PaymentError,
-                    ErrorMessage = "Cannot purchase (Exception) " + confirmationPaymentUrl
+                    ErrorMessage = "PaymentError: Cannot purchase (Exception) " + confirmationPaymentUrl
                 };
             }
             
         }
     
         public PostingPreview GoToPostingPreviewPage(string email, string password, VehicleInfo vehicle)
-        {
-           
+        {           
             //Step 2: log on
             WebRequestPost(email, password);
 
@@ -374,60 +383,86 @@ namespace Vinclapp.Craigslist
             postingBody = postingBody.Replace(EmailTemplateReader.Transmission, vehicle.Tranmission);
             postingBody = postingBody.Replace(EmailTemplateReader.Stock, vehicle.StockNumber);
             postingBody = postingBody.Replace(EmailTemplateReader.Vin, vehicle.Vin);
-            postingBody = postingBody.Replace(EmailTemplateReader.Option, vehicle.Options);
+            postingBody = postingBody.Replace(EmailTemplateReader.Option, (!String.IsNullOrEmpty(vehicle.Options)) ? vehicle.Options : string.Empty);
             postingBody = postingBody.Replace(EmailTemplateReader.EndingSentence, vehicle.EndingSentence);
             if (!String.IsNullOrEmpty(vehicle.Description))
                 postingBody = postingBody.Replace(EmailTemplateReader.Description, "<br/><b>Description</b><br/><br/>" + ReplaceEmails(vehicle.Description, string.Empty));
-
+            else
+                postingBody = postingBody.Replace(EmailTemplateReader.Description, string.Empty);
             return postingBody;
         }
 
         public string Posting(VehicleInfo vehicle, string locationUrl, string cryptedStepCheck)
         {
-            
-            var postData = String.Format("id2={0}&" +
-                                          "browserinfo={1}&" +
-                                          "contact_method={2}&" +
-                                          "contact_phone_ok=1&" +
-                                          "contact_phone={3}&" +
-                                          "contact_name={4}&" +
-                                          "FromEMail={5}&" +
-                                          "PostingTitle={6}&" +
-                                          "Ask={7}&" +
-                                          "GeographicArea={8}&" +
-                                          "postal={9}&" +
-                                          "PostingBody={10}&" +
-                                          "auto_year={11}&" +
-                                          "auto_make_model={12}&" +
-                                          "auto_miles={13}&" +
-                                          "auto_vin={14}&" +
-                                          "see_my_other={15}&" +
-                                          "auto_title_status={16}&" +
-                                          "Privacy=C&cryptedStepCheck={17}&" +
-                                          "auto_fuel_type={18}&" +
-                                          "auto_transmission={19}&sale_condition=excellent&go=Continue&language=5",
-                                          "1903x1045X1903x602X1920x1080",
-                                          "%257B%250A%2509%2522plugins%2522%253A%2520%2522Plugin%25200%253A%2520Google%2520Update%253B%2520Google%2520Update%253B%2520npGoogleUpdate3.dll%253B%2520%2528%253B%2520application%2Fx-vnd.google.update3webcontrol.3%253B%2520%2529%2520%2528%253B%2520application%2Fx-vnd.google.oneclickctrl.9%253B%2520%2529.%2520Plugin%25201%253A%2520Silverlight%2520Plug-In%253B%25204.0.50826.0%253B%2520npctrl.dll%253B%2520%2528npctrl%253B%2520application%2Fx-silverlight%253B%2520scr%2529%2520%2528%253B%2520application%2Fx-silverlight-2%253B%2520%2529.%2520%2522%252C%250A%2509%2522timezone%2522%253A%2520480%252C%250A%2509%2522video%2522%253A%2520%25221920x1080x16%2522%252C%250A%2509%2522supercookies%2522%253A%2520%2522DOM%2520localStorage%253A%2520Yes%252C%2520DOM%2520sessionStorage%253A%2520Yes%252C%2520IE%2520userData%253A%2520No%2522%250A%257D",
-                                          1,
-                                          vehicle.PhoneNumber,
-                                          vehicle.ContactName,
-                                          vehicle.LeadEmail,
-                                          String.Format("{0} {1} {2} {3}", vehicle.ModelYear, vehicle.Make, vehicle.Model, vehicle.Trim),
-                                          vehicle.SalePrice > 0 ? vehicle.SalePrice.ToString() : string.Empty,
-                                          HttpUtility.UrlEncode(vehicle.CityOveride),
-                                          vehicle.ZipCode,
-                                          HttpUtility.UrlEncode(GeneratePostingBody(vehicle)),
-                                          vehicle.ModelYear,
-                                          String.Format("{0} {1}", vehicle.Make, vehicle.Model),
-                                          vehicle.Mileage,
-                                          vehicle.Vin,
-                                          1,
-                                          1,
-                                          cryptedStepCheck,
-                                          1,
-                                          vehicle.Tranmission.ToLower().Contains("auto")?2:1);
+            var postData = String.Format("language=5&condition=40&id2={0}&" +
+                                         "browserinfo={1}&" +
+                                         "contact_method={2}&" +
+                                         "contact_phone_ok=1&" +
+                                         "contact_phone={3}&" +
+                                         "contact_name={4}&" +
+                                         "FromEMail={5}&" +
+                                         "PostingTitle={6}&" +
+                                         "Ask={7}&" +
+                                         "GeographicArea={8}&" +
+                                         "postal={9}&" +
+                                         "PostingBody={10}&" +
+                                         "auto_year={11}&" +
+                                         "auto_make_model={12}&" +
+                                         "auto_miles={13}&" +
+                                         "auto_vin={14}&" +
+                                         "auto_fuel_type={15}&" +
+                                         "auto_transmission={16}&" +
+                                         "see_my_other={17}&" +
+                                         "auto_title_status={18}&" +
+                                         "Privacy=C&cryptedStepCheck={19}&condition={20}&sale_condition=excellent&oc=1&go=Continue",
+                                         "1903x1045X1903x602X1920x1080",
+                                         "%257B%250A%2509%2522plugins%2522%253A%2520%2522Plugin%25200%253A%2520Google%2520Update%253B%2520Google%2520Update%253B%2520npGoogleUpdate3.dll%253B%2520%2528%253B%2520application%2Fx-vnd.google.update3webcontrol.3%253B%2520%2529%2520%2528%253B%2520application%2Fx-vnd.google.oneclickctrl.9%253B%2520%2529.%2520Plugin%25201%253A%2520Silverlight%2520Plug-In%253B%25204.0.50826.0%253B%2520npctrl.dll%253B%2520%2528npctrl%253B%2520application%2Fx-silverlight%253B%2520scr%2529%2520%2528%253B%2520application%2Fx-silverlight-2%253B%2520%2529.%2520%2522%252C%250A%2509%2522timezone%2522%253A%2520480%252C%250A%2509%2522video%2522%253A%2520%25221920x1080x16%2522%252C%250A%2509%2522supercookies%2522%253A%2520%2522DOM%2520localStorage%253A%2520Yes%252C%2520DOM%2520sessionStorage%253A%2520Yes%252C%2520IE%2520userData%253A%2520No%2522%250A%257D",
+                                         1,
+                                         vehicle.PhoneNumber,
+                                         vehicle.ContactName,
+                                         vehicle.LeadEmail,
+                                         String.Format("{0} {1} {2} {3}", vehicle.ModelYear, vehicle.Make, vehicle.Model, vehicle.Trim),
+                                         vehicle.SalePrice,
+                                         HttpUtility.UrlEncode(vehicle.CityOveride),
+                                         vehicle.ZipCode,
+                                         HttpUtility.UrlEncode(GeneratePostingBody(vehicle)),
+                                         vehicle.ModelYear,
+                                         String.Format("{0} {1}", vehicle.Make, vehicle.Model),
+                                         vehicle.Mileage,
+                                         vehicle.Vin,
+                                         GetFuelType(vehicle),
+                                         GetTransmission(vehicle),
+                                         1,
+                                         1,
+                                         cryptedStepCheck,
+                                         GetCondition(vehicle));
 
             return ExecutePost(locationUrl, postData);
+        }
+
+        private int GetCondition(VehicleInfo vehicle)
+        {
+            return vehicle.Condition.ToLower().Equals("new") ? 10 : 40;
+        }
+
+        private int GetFuelType(VehicleInfo vehicle)
+        {
+            var fuel = vehicle.Fuel.ToLower();
+            if (fuel.Contains("gas")) return 1;
+            if (fuel.Contains("diesel")) return 2;
+            if (fuel.Contains("hybrid")) return 3;
+            if (fuel.Contains("electric")) return 4;
+
+            return 6;
+        }
+
+        private int GetTransmission(VehicleInfo vehicle)
+        {
+            var tm = vehicle.Tranmission.ToLower();
+            if (tm.Contains("manual")) return 1;
+            if (tm.Contains("automatic")) return 2;
+
+            return 3;
         }
 
         public string UploadImages(string locationUrl, string cryptedStepCheck, VehicleInfo vehicle)
@@ -456,11 +491,21 @@ namespace Vinclapp.Craigslist
 
             try
             {
+                string[] carImage = vehicle.CarImageUrl.Split(new[] { ",", "|" }, StringSplitOptions.RemoveEmptyEntries);
+                var tempDir = GetTemporaryDirectory(vehicle.Vin);
+                using (WebClient client = new WebClient())
+                {
+                    foreach (var item in carImage)
+                    {
+                        client.DownloadFile(new Uri(item), tempDir + "/" + Path.GetFileName(item));
+                    }                    
+                }                
+
                 using (Stream requestStream = request.GetRequestStream())
                 {
                     postData.WriteMultipartFormData(requestStream, boundary);
 
-                    var dirInfo = new DirectoryInfo(@"C:\ImageWarehouse\"  + vehicle.Vin );
+                    var dirInfo = new DirectoryInfo(tempDir);
                     if (dirInfo.Exists)
                     {
                         var limit = 1;
@@ -498,6 +543,13 @@ namespace Vinclapp.Craigslist
             }
         }
 
+        private string GetTemporaryDirectory(string vin)
+        {
+            string tempDirectory = Path.Combine(Path.GetTempPath(), vin);//Path.GetRandomFileName()
+            Directory.CreateDirectory(tempDirectory);
+            return tempDirectory;
+        }
+        
         public string GetPreviewUrl(string locationUrl, string cryptedStepCheck)
         {
             var postData = String.Format("a=fin&cryptedStepCheck={0}&go=Done+with+Images", cryptedStepCheck);

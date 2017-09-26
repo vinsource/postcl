@@ -70,9 +70,9 @@
             // btnEditHTML
             // 
             this.btnEditHTML.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnEditHTML.Location = new System.Drawing.Point(0, 176);
+            this.btnEditHTML.Location = new System.Drawing.Point(0, 173);
             this.btnEditHTML.Name = "btnEditHTML";
-            this.btnEditHTML.Size = new System.Drawing.Size(92, 23);
+            this.btnEditHTML.Size = new System.Drawing.Size(92, 29);
             this.btnEditHTML.TabIndex = 8;
             this.btnEditHTML.Text = "Edit HTML";
             this.btnEditHTML.UseVisualStyleBackColor = true;
@@ -81,9 +81,9 @@
             // btnSave
             // 
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSave.Location = new System.Drawing.Point(0, 236);
+            this.btnSave.Location = new System.Drawing.Point(0, 208);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(92, 23);
+            this.btnSave.Size = new System.Drawing.Size(92, 29);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(95, 487);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(480, 32);
+            this.label6.Size = new System.Drawing.Size(607, 40);
             this.label6.TabIndex = 11;
             this.label6.Text = "*Remember that Craigslist has some limitations on HTML postings\r\nPlease check at " +
     "http://www.craigslist.org/about/help/html_in_craigslist_postings/";
@@ -106,7 +106,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(695, 528);
+            this.ClientSize = new System.Drawing.Size(717, 528);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnEditHTML);

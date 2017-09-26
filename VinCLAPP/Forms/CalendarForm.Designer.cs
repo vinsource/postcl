@@ -57,32 +57,32 @@
             // 
             // dateTimePickerFrom
             // 
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(49, 4);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(4, 24);
             this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFrom.MaxDate = new System.DateTime(2020, 11, 7, 0, 0, 0, 0);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
-            this.dateTimePickerFrom.Size = new System.Drawing.Size(231, 22);
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(292, 26);
             this.dateTimePickerFrom.TabIndex = 0;
             // 
             // dateTimePickerEnd
             // 
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(35, 34);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(4, 78);
             this.dateTimePickerEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerEnd.MaxDate = new System.DateTime(2020, 11, 7, 0, 0, 0, 0);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(234, 22);
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(292, 26);
             this.dateTimePickerEnd.TabIndex = 1;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnSend);
-            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             this.groupBox1.Controls.Add(this.btnView);
+            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(455, 134);
+            this.groupBox1.Size = new System.Drawing.Size(517, 192);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Report Filter";
@@ -90,9 +90,9 @@
             // btnSend
             // 
             this.btnSend.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSend.Location = new System.Drawing.Point(317, 74);
+            this.btnSend.Location = new System.Drawing.Point(391, 145);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(116, 23);
+            this.btnSend.Size = new System.Drawing.Size(116, 35);
             this.btnSend.TabIndex = 9;
             this.btnSend.Text = "Send Email";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             this.flowLayoutPanel1.Controls.Add(this.cbCity);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 21);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(299, 99);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(322, 165);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // From
@@ -116,25 +116,25 @@
             this.From.AutoSize = true;
             this.From.Location = new System.Drawing.Point(3, 0);
             this.From.Name = "From";
-            this.From.Size = new System.Drawing.Size(39, 16);
+            this.From.Size = new System.Drawing.Size(48, 20);
             this.From.TabIndex = 0;
             this.From.Text = "From";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 30);
+            this.label5.Location = new System.Drawing.Point(3, 54);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 16);
+            this.label5.Size = new System.Drawing.Size(28, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "To";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 60);
+            this.label2.Location = new System.Drawing.Point(3, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 16);
+            this.label2.Size = new System.Drawing.Size(38, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "City";
             // 
@@ -142,17 +142,17 @@
             // 
             this.cbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCity.FormattingEnabled = true;
-            this.cbCity.Location = new System.Drawing.Point(39, 63);
+            this.cbCity.Location = new System.Drawing.Point(3, 131);
             this.cbCity.Name = "cbCity";
-            this.cbCity.Size = new System.Drawing.Size(219, 24);
+            this.cbCity.Size = new System.Drawing.Size(293, 28);
             this.cbCity.TabIndex = 5;
             // 
             // btnView
             // 
             this.btnView.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnView.Location = new System.Drawing.Point(318, 27);
+            this.btnView.Location = new System.Drawing.Point(391, 96);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(116, 23);
+            this.btnView.Size = new System.Drawing.Size(116, 35);
             this.btnView.TabIndex = 7;
             this.btnView.Text = "View Report";
             this.btnView.UseVisualStyleBackColor = true;
@@ -160,10 +160,10 @@
             // 
             // CalendarForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(474, 156);
+            this.ClientSize = new System.Drawing.Size(541, 216);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);

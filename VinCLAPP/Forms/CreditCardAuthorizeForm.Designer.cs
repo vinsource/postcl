@@ -133,7 +133,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(5, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(464, 398);
+            this.groupBox1.Size = new System.Drawing.Size(523, 398);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Credit Card Info";
@@ -141,9 +141,9 @@
             // cbkOnetimeSetupFeed
             // 
             this.cbkOnetimeSetupFeed.AutoSize = true;
-            this.cbkOnetimeSetupFeed.Location = new System.Drawing.Point(161, 243);
+            this.cbkOnetimeSetupFeed.Location = new System.Drawing.Point(164, 244);
             this.cbkOnetimeSetupFeed.Name = "cbkOnetimeSetupFeed";
-            this.cbkOnetimeSetupFeed.Size = new System.Drawing.Size(221, 20);
+            this.cbkOnetimeSetupFeed.Size = new System.Drawing.Size(279, 24);
             this.cbkOnetimeSetupFeed.TabIndex = 47;
             this.cbkOnetimeSetupFeed.Text = "One time datafeed setup - $99.00";
             this.cbkOnetimeSetupFeed.UseVisualStyleBackColor = true;
@@ -177,7 +177,7 @@
             this.label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label15.Location = new System.Drawing.Point(3, 29);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(145, 20);
+            this.label15.Size = new System.Drawing.Size(181, 25);
             this.label15.TabIndex = 38;
             this.label15.Text = "Please wait..............";
             // 
@@ -185,7 +185,7 @@
             // 
             this.pcBoxCreditCardType.BackColor = System.Drawing.Color.Transparent;
             this.pcBoxCreditCardType.Image = global::VinCLAPP.Properties.Resources.visa_48;
-            this.pcBoxCreditCardType.Location = new System.Drawing.Point(391, 93);
+            this.pcBoxCreditCardType.Location = new System.Drawing.Point(396, 98);
             this.pcBoxCreditCardType.Name = "pcBoxCreditCardType";
             this.pcBoxCreditCardType.Size = new System.Drawing.Size(49, 45);
             this.pcBoxCreditCardType.TabIndex = 46;
@@ -205,26 +205,26 @@
             this.grbBilling.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grbBilling.Location = new System.Drawing.Point(9, 269);
             this.grbBilling.Name = "grbBilling";
-            this.grbBilling.Size = new System.Drawing.Size(447, 93);
+            this.grbBilling.Size = new System.Drawing.Size(505, 93);
             this.grbBilling.TabIndex = 44;
             this.grbBilling.TabStop = false;
             this.grbBilling.Text = "Billing Address";
             // 
             // txtZipcode
             // 
-            this.txtZipcode.Location = new System.Drawing.Point(76, 52);
+            this.txtZipcode.Location = new System.Drawing.Point(150, 58);
             this.txtZipcode.Mask = "00000";
             this.txtZipcode.Name = "txtZipcode";
-            this.txtZipcode.Size = new System.Drawing.Size(64, 22);
+            this.txtZipcode.Size = new System.Drawing.Size(64, 26);
             this.txtZipcode.TabIndex = 8;
             this.txtZipcode.Leave += new System.EventHandler(this.txtZipcode_Leave);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 19);
+            this.label9.Location = new System.Drawing.Point(6, 28);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 16);
+            this.label9.Size = new System.Drawing.Size(121, 20);
             this.label9.TabIndex = 36;
             this.label9.Text = "Street Address";
             // 
@@ -232,49 +232,49 @@
             // 
             this.cbState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbState.FormattingEnabled = true;
-            this.cbState.Location = new System.Drawing.Point(323, 50);
+            this.cbState.Location = new System.Drawing.Point(380, 59);
             this.cbState.Name = "cbState";
-            this.cbState.Size = new System.Drawing.Size(118, 24);
+            this.cbState.Size = new System.Drawing.Size(118, 28);
             this.cbState.TabIndex = 10;
             // 
             // txtStreetAddress
             // 
-            this.txtStreetAddress.Location = new System.Drawing.Point(122, 16);
+            this.txtStreetAddress.Location = new System.Drawing.Point(150, 25);
             this.txtStreetAddress.Name = "txtStreetAddress";
-            this.txtStreetAddress.Size = new System.Drawing.Size(319, 22);
+            this.txtStreetAddress.Size = new System.Drawing.Size(349, 26);
             this.txtStreetAddress.TabIndex = 7;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(278, 55);
+            this.label12.Location = new System.Drawing.Point(335, 64);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 16);
+            this.label12.Size = new System.Drawing.Size(48, 20);
             this.label12.TabIndex = 42;
             this.label12.Text = "State";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(146, 55);
+            this.label10.Location = new System.Drawing.Point(210, 64);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(30, 16);
+            this.label10.Size = new System.Drawing.Size(38, 20);
             this.label10.TabIndex = 38;
             this.label10.Text = "City";
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(182, 50);
+            this.txtCity.Location = new System.Drawing.Point(248, 59);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(90, 22);
+            this.txtCity.Size = new System.Drawing.Size(84, 26);
             this.txtCity.TabIndex = 9;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 55);
+            this.label11.Location = new System.Drawing.Point(6, 64);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 16);
+            this.label11.Size = new System.Drawing.Size(70, 20);
             this.label11.TabIndex = 39;
             this.label11.Text = "ZipCode";
             // 
@@ -284,7 +284,7 @@
             this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(11, 21);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(124, 20);
+            this.radioButton1.Size = new System.Drawing.Size(152, 24);
             this.radioButton1.TabIndex = 23;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Accept Payment";
@@ -293,7 +293,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::VinCLAPP.Properties.Resources.CreditPaymentSmallIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(158, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(163, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(195, 37);
             this.pictureBox1.TabIndex = 22;
@@ -302,9 +302,9 @@
             // cbPackages
             // 
             this.cbPackages.FormattingEnabled = true;
-            this.cbPackages.Location = new System.Drawing.Point(159, 212);
+            this.cbPackages.Location = new System.Drawing.Point(163, 214);
             this.cbPackages.Name = "cbPackages";
-            this.cbPackages.Size = new System.Drawing.Size(178, 24);
+            this.cbPackages.Size = new System.Drawing.Size(178, 28);
             this.cbPackages.TabIndex = 6;
             this.cbPackages.SelectedIndexChanged += new System.EventHandler(this.cbPackages_SelectedIndexChanged);
             // 
@@ -313,15 +313,15 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(9, 220);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 16);
+            this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 19;
             this.label5.Text = "Services";
             // 
             // txtSecurityCode
             // 
-            this.txtSecurityCode.Location = new System.Drawing.Point(159, 182);
+            this.txtSecurityCode.Location = new System.Drawing.Point(163, 182);
             this.txtSecurityCode.Name = "txtSecurityCode";
-            this.txtSecurityCode.Size = new System.Drawing.Size(119, 22);
+            this.txtSecurityCode.Size = new System.Drawing.Size(119, 26);
             this.txtSecurityCode.TabIndex = 5;
             this.txtSecurityCode.Leave += new System.EventHandler(this.txtSecurityCode_Leave);
             // 
@@ -330,7 +330,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 185);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 16);
+            this.label4.Size = new System.Drawing.Size(114, 20);
             this.label4.TabIndex = 17;
             this.label4.Text = "Security Code";
             // 
@@ -338,18 +338,18 @@
             // 
             this.cbExpireYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExpireYear.FormattingEnabled = true;
-            this.cbExpireYear.Location = new System.Drawing.Point(284, 142);
+            this.cbExpireYear.Location = new System.Drawing.Point(288, 140);
             this.cbExpireYear.Name = "cbExpireYear";
-            this.cbExpireYear.Size = new System.Drawing.Size(102, 24);
+            this.cbExpireYear.Size = new System.Drawing.Size(102, 28);
             this.cbExpireYear.TabIndex = 4;
             // 
             // cbExpireMonths
             // 
             this.cbExpireMonths.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExpireMonths.FormattingEnabled = true;
-            this.cbExpireMonths.Location = new System.Drawing.Point(159, 142);
+            this.cbExpireMonths.Location = new System.Drawing.Point(163, 140);
             this.cbExpireMonths.Name = "cbExpireMonths";
-            this.cbExpireMonths.Size = new System.Drawing.Size(119, 24);
+            this.cbExpireMonths.Size = new System.Drawing.Size(119, 28);
             this.cbExpireMonths.TabIndex = 3;
             // 
             // label3
@@ -357,16 +357,16 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 150);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 16);
+            this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 14;
             this.label3.Text = "Expires";
             // 
             // btnOK
             // 
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOK.Location = new System.Drawing.Point(344, 368);
+            this.btnOK.Location = new System.Drawing.Point(400, 368);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(114, 21);
+            this.btnOK.Size = new System.Drawing.Size(114, 30);
             this.btnOK.TabIndex = 11;
             this.btnOK.Text = "Submit Order";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -377,23 +377,23 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 16);
+            this.label2.Size = new System.Drawing.Size(109, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Card Number";
             // 
             // txtCardNumber
             // 
-            this.txtCardNumber.Location = new System.Drawing.Point(159, 107);
+            this.txtCardNumber.Location = new System.Drawing.Point(163, 108);
             this.txtCardNumber.Name = "txtCardNumber";
-            this.txtCardNumber.Size = new System.Drawing.Size(227, 22);
+            this.txtCardNumber.Size = new System.Drawing.Size(227, 26);
             this.txtCardNumber.TabIndex = 2;
             this.txtCardNumber.Leave += new System.EventHandler(this.txtCardNumber_Leave);
             // 
             // txtNameOnCard
             // 
-            this.txtNameOnCard.Location = new System.Drawing.Point(158, 76);
+            this.txtNameOnCard.Location = new System.Drawing.Point(163, 76);
             this.txtNameOnCard.Name = "txtNameOnCard";
-            this.txtNameOnCard.Size = new System.Drawing.Size(227, 22);
+            this.txtNameOnCard.Size = new System.Drawing.Size(227, 26);
             this.txtNameOnCard.TabIndex = 1;
             this.txtNameOnCard.Leave += new System.EventHandler(this.txtNameOnCard_Leave);
             // 
@@ -402,7 +402,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 16);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name On Card";
             // 
@@ -448,7 +448,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(473, 407);
+            this.ClientSize = new System.Drawing.Size(531, 407);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

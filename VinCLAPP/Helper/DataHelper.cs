@@ -169,8 +169,8 @@ namespace VinCLAPP.Helper
                                 City = GlobalVar.CurrentDealer.City,
                                 State = GlobalVar.CurrentDealer.State,
                                 ZipCode = GlobalVar.CurrentDealer.ZipCode,
-                                VinListingId=tmp.VincontrolListingId.GetValueOrDefault()
-                                
+                                VinListingId=tmp.VincontrolListingId.GetValueOrDefault(),
+                                Condition = tmp.NewUsed
 
                             };
 
@@ -262,9 +262,8 @@ namespace VinCLAPP.Helper
                         State = GlobalVar.CurrentDealer.State,
                         ZipCode = GlobalVar.CurrentDealer.ZipCode,
                         PostingCityId = 0,
-                        VinListingId = tmp.VincontrolListingId.GetValueOrDefault()
-                   
-
+                        VinListingId = tmp.VincontrolListingId.GetValueOrDefault(),
+                        Condition = tmp.NewUsed                        
                     };
 
                     var lastDateStamp =
@@ -630,36 +629,34 @@ namespace VinCLAPP.Helper
 
         public static void UpdateDealerInfo(PostClCustomer customer)
         {
-               using (var context = new CLDMSEntities())
-               {
-                   var findDealer =
-                       context.Dealers.First(x => x.DealerId == GlobalVar.CurrentDealer.DealerId);
+            using (var context = new CLDMSEntities())
+            {
+                var findDealer = context.Dealers.First(x => x.DealerId == GlobalVar.CurrentDealer.DealerId);
 
-                   if (findDealer != null)
-                   {
+                if (findDealer != null)
+                {
 
-                       findDealer.WebSiteURL = customer.WebSiteAddress;
+                    findDealer.WebSiteURL = customer.WebSiteAddress;
 
-                       findDealer.Phone = customer.DealerPhone;
+                    findDealer.Phone = customer.DealerPhone;
 
-                       findDealer.LeadEmail = customer.LeadEmail;
-                   }
-                   var findAccount =
-                       context.Accounts.First(x => x.DealerId == GlobalVar.CurrentAccount.AccountId);
-                   if (findAccount != null)
-                   {
+                    findDealer.LeadEmail = customer.LeadEmail;
+                }
+                var findAccount = context.Accounts.First(x => x.DealerId == GlobalVar.CurrentAccount.DealerId);
+                if (findAccount != null)
+                {
 
-                       findAccount.DailyLimit = customer.DailyLimit;
-
-                       GlobalVar.CurrentAccount.DailyLimit = customer.DailyLimit;
-
-                   }
+                    findAccount.DailyLimit = customer.DailyLimit;                                        
+                    GlobalVar.CurrentAccount.DailyLimit = customer.DailyLimit;
+                    findAccount.PersonalPhone = customer.CustomerPhone;
+                    GlobalVar.CurrentAccount.PersonalPhone = customer.CustomerPhone;
+                }
 
 
-                   context.SaveChanges();
-               }
+                context.SaveChanges();
+            }
 
-            
+
 
         }
 

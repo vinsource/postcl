@@ -65,9 +65,9 @@
             // btnOK
             // 
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOK.Location = new System.Drawing.Point(207, 60);
+            this.btnOK.Location = new System.Drawing.Point(184, 60);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(165, 21);
+            this.btnOK.Size = new System.Drawing.Size(188, 23);
             this.btnOK.TabIndex = 12;
             this.btnOK.Text = "Reset password to email";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -77,7 +77,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(10, 32);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(362, 22);
+            this.txtEmail.Size = new System.Drawing.Size(362, 26);
             this.txtEmail.TabIndex = 1;
             // 
             // errorProvider1

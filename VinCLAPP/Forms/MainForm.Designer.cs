@@ -50,21 +50,7 @@
             this.bgWorker = new System.ComponentModel.BackgroundWorker();
             this.dGridInventory = new System.Windows.Forms.DataGridView();
             this.IsSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ListingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PostingCityId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AutoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PostingCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAds = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.LastPosted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Make = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Trim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pictures = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UploadImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.ViewImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
@@ -151,6 +137,20 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ListingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PostingCityId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AutoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PostingCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastPosted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Make = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Trim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pictures = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridInventory)).BeginInit();
@@ -171,9 +171,10 @@
             this.lblVersion.AutoSize = true;
             this.lblVersion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVersion.ForeColor = System.Drawing.Color.Red;
-            this.lblVersion.Location = new System.Drawing.Point(104, 215);
+            this.lblVersion.Location = new System.Drawing.Point(130, 269);
+            this.lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(0, 18);
+            this.lblVersion.Size = new System.Drawing.Size(0, 23);
             this.lblVersion.TabIndex = 70;
             // 
             // btnPause
@@ -182,10 +183,10 @@
             this.btnPause.Enabled = false;
             this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnPause.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnPause.Location = new System.Drawing.Point(795, 204);
-            this.btnPause.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPause.Location = new System.Drawing.Point(1001, 268);
+            this.btnPause.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(57, 24);
+            this.btnPause.Size = new System.Drawing.Size(71, 30);
             this.btnPause.TabIndex = 65;
             this.btnPause.Text = "Pause";
             this.btnPause.UseVisualStyleBackColor = true;
@@ -204,11 +205,11 @@
             this.groupBox1.Controls.Add(this.btnLogin);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(248, 91);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(318, 96);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(243, 108);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.groupBox1.Size = new System.Drawing.Size(304, 135);
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
@@ -217,9 +218,10 @@
             // 
             this.cbRemember.AutoSize = true;
             this.cbRemember.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRemember.Location = new System.Drawing.Point(77, 80);
+            this.cbRemember.Location = new System.Drawing.Point(96, 100);
+            this.cbRemember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbRemember.Name = "cbRemember";
-            this.cbRemember.Size = new System.Drawing.Size(108, 19);
+            this.cbRemember.Size = new System.Drawing.Size(127, 21);
             this.cbRemember.TabIndex = 76;
             this.cbRemember.Text = "Remember Me";
             this.cbRemember.UseVisualStyleBackColor = true;
@@ -234,29 +236,32 @@
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtUsername, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 19);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 24);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.61111F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.38889F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(234, 55);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(292, 69);
             this.tableLayoutPanel2.TabIndex = 75;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(75, 29);
+            this.txtPassword.Location = new System.Drawing.Point(94, 37);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(148, 21);
+            this.txtPassword.Size = new System.Drawing.Size(193, 25);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 26);
+            this.label1.Location = new System.Drawing.Point(4, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
+            this.label1.Size = new System.Drawing.Size(74, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "Password";
             // 
@@ -264,20 +269,20 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(5, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 18);
+            this.label4.Size = new System.Drawing.Size(76, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "Username";
             // 
             // txtUsername
             // 
             this.txtUsername.AcceptsTab = true;
-            this.txtUsername.Location = new System.Drawing.Point(76, 5);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUsername.Location = new System.Drawing.Point(95, 6);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(147, 21);
+            this.txtUsername.Size = new System.Drawing.Size(192, 25);
             this.txtUsername.TabIndex = 0;
             this.txtUsername.Validating += new System.ComponentModel.CancelEventHandler(this.txtUsername_Validating);
             // 
@@ -287,10 +292,10 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnLogin.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnLogin.Location = new System.Drawing.Point(6, 76);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogin.Location = new System.Drawing.Point(8, 95);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(66, 23);
+            this.btnLogin.Size = new System.Drawing.Size(82, 29);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -300,12 +305,12 @@
             // 
             this.cbPrice.AutoSize = true;
             this.cbPrice.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPrice.Location = new System.Drawing.Point(10, 75);
-            this.cbPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbPrice.Location = new System.Drawing.Point(12, 139);
+            this.cbPrice.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cbPrice.Name = "cbPrice";
-            this.cbPrice.Size = new System.Drawing.Size(66, 18);
+            this.cbPrice.Size = new System.Drawing.Size(119, 20);
             this.cbPrice.TabIndex = 54;
-            this.cbPrice.Text = "No Price";
+            this.cbPrice.Text = "No Price         ";
             this.cbPrice.UseVisualStyleBackColor = true;
             // 
             // lblDealerAddress
@@ -314,10 +319,10 @@
             this.lblDealerAddress.BackColor = System.Drawing.Color.Transparent;
             this.lblDealerAddress.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDealerAddress.ForeColor = System.Drawing.Color.White;
-            this.lblDealerAddress.Location = new System.Drawing.Point(4, 28);
-            this.lblDealerAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDealerAddress.Location = new System.Drawing.Point(5, 35);
+            this.lblDealerAddress.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblDealerAddress.Name = "lblDealerAddress";
-            this.lblDealerAddress.Size = new System.Drawing.Size(70, 16);
+            this.lblDealerAddress.Size = new System.Drawing.Size(87, 18);
             this.lblDealerAddress.TabIndex = 50;
             this.lblDealerAddress.Text = "Dealer Name";
             this.lblDealerAddress.Visible = false;
@@ -325,21 +330,21 @@
             // txtDCity
             // 
             this.txtDCity.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDCity.Location = new System.Drawing.Point(120, 17);
-            this.txtDCity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDCity.Location = new System.Drawing.Point(150, 21);
+            this.txtDCity.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtDCity.MaxLength = 40;
             this.txtDCity.Name = "txtDCity";
-            this.txtDCity.Size = new System.Drawing.Size(226, 22);
+            this.txtDCity.Size = new System.Drawing.Size(282, 26);
             this.txtDCity.TabIndex = 49;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 21);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(9, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 16);
+            this.label2.Size = new System.Drawing.Size(135, 18);
             this.label2.TabIndex = 48;
             this.label2.Text = "Dealer City Override";
             // 
@@ -386,12 +391,13 @@
             this.ViewImage,
             this.Edit,
             this.AdsLink});
-            this.dGridInventory.Location = new System.Drawing.Point(0, 54);
+            this.dGridInventory.Location = new System.Drawing.Point(0, 68);
+            this.dGridInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dGridInventory.Name = "dGridInventory";
             this.dGridInventory.RowHeadersWidth = 25;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.dGridInventory.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dGridInventory.Size = new System.Drawing.Size(1160, 493);
+            this.dGridInventory.Size = new System.Drawing.Size(1450, 616);
             this.dGridInventory.TabIndex = 78;
             // 
             // IsSelected
@@ -401,112 +407,12 @@
             this.IsSelected.Name = "IsSelected";
             this.IsSelected.Width = 44;
             // 
-            // ListingID
-            // 
-            this.ListingID.DataPropertyName = "ListingID";
-            this.ListingID.HeaderText = "ListingID";
-            this.ListingID.Name = "ListingID";
-            this.ListingID.Visible = false;
-            this.ListingID.Width = 19;
-            // 
-            // PostingCityId
-            // 
-            this.PostingCityId.DataPropertyName = "PostingCityId";
-            this.PostingCityId.HeaderText = "Posting City Id";
-            this.PostingCityId.Name = "PostingCityId";
-            this.PostingCityId.Visible = false;
-            // 
-            // AutoID
-            // 
-            this.AutoID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.AutoID.DataPropertyName = "AutoID";
-            this.AutoID.HeaderText = "Id";
-            this.AutoID.Name = "AutoID";
-            this.AutoID.Width = 40;
-            // 
-            // PostingCity
-            // 
-            this.PostingCity.DataPropertyName = "PostingCity";
-            this.PostingCity.HeaderText = "PostingCity";
-            this.PostingCity.Name = "PostingCity";
-            this.PostingCity.ReadOnly = true;
-            this.PostingCity.Width = 110;
-            // 
-            // Stock
-            // 
-            this.Stock.DataPropertyName = "Stock";
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            this.Stock.Width = 61;
-            // 
             // TotalAds
             // 
             this.TotalAds.DataPropertyName = "TotalAds";
             this.TotalAds.HeaderText = "Ads";
             this.TotalAds.Name = "TotalAds";
             this.TotalAds.Width = 30;
-            // 
-            // LastPosted
-            // 
-            this.LastPosted.DataPropertyName = "LastPosted";
-            this.LastPosted.HeaderText = "Last Posted";
-            this.LastPosted.Name = "LastPosted";
-            // 
-            // Year
-            // 
-            this.Year.DataPropertyName = "Year";
-            this.Year.HeaderText = "Year";
-            this.Year.Name = "Year";
-            this.Year.Width = 57;
-            // 
-            // Make
-            // 
-            this.Make.DataPropertyName = "Make";
-            this.Make.HeaderText = "Make";
-            this.Make.Name = "Make";
-            this.Make.Width = 80;
-            // 
-            // Model
-            // 
-            this.Model.DataPropertyName = "Model";
-            this.Model.HeaderText = "Model";
-            this.Model.Name = "Model";
-            this.Model.Width = 90;
-            // 
-            // Trim
-            // 
-            this.Trim.DataPropertyName = "Trim";
-            this.Trim.HeaderText = "Trim";
-            this.Trim.Name = "Trim";
-            this.Trim.Width = 80;
-            // 
-            // Vin
-            // 
-            this.Vin.DataPropertyName = "Vin";
-            this.Vin.HeaderText = "Vin";
-            this.Vin.Name = "Vin";
-            this.Vin.Width = 101;
-            // 
-            // Pictures
-            // 
-            this.Pictures.DataPropertyName = "Pictures";
-            this.Pictures.HeaderText = "Pics";
-            this.Pictures.Name = "Pictures";
-            this.Pictures.Width = 40;
-            // 
-            // Mileage
-            // 
-            this.Mileage.DataPropertyName = "Mileage";
-            this.Mileage.HeaderText = "Mileage";
-            this.Mileage.Name = "Mileage";
-            this.Mileage.Width = 60;
-            // 
-            // SalePrice
-            // 
-            this.SalePrice.DataPropertyName = "SalePrice";
-            this.SalePrice.HeaderText = "SalePrice";
-            this.SalePrice.Name = "SalePrice";
-            this.SalePrice.Width = 78;
             // 
             // UploadImage
             // 
@@ -552,9 +458,11 @@
             this.groupBox3.Controls.Add(this.txtDCity);
             this.groupBox3.Controls.Add(this.cbPrice);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(498, 86);
+            this.groupBox3.Location = new System.Drawing.Point(630, 97);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(354, 113);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(442, 166);
             this.groupBox3.TabIndex = 73;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Setting";
@@ -564,9 +472,10 @@
             this.linkEditEnding.AutoSize = true;
             this.linkEditEnding.BackColor = System.Drawing.Color.White;
             this.linkEditEnding.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkEditEnding.Location = new System.Drawing.Point(303, 53);
+            this.linkEditEnding.Location = new System.Drawing.Point(392, 136);
+            this.linkEditEnding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkEditEnding.Name = "linkEditEnding";
-            this.linkEditEnding.Size = new System.Drawing.Size(31, 18);
+            this.linkEditEnding.Size = new System.Drawing.Size(40, 23);
             this.linkEditEnding.TabIndex = 63;
             this.linkEditEnding.TabStop = true;
             this.linkEditEnding.Text = "Edit";
@@ -576,20 +485,22 @@
             // txtEndingSentence
             // 
             this.txtEndingSentence.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndingSentence.Location = new System.Drawing.Point(97, 50);
-            this.txtEndingSentence.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEndingSentence.Location = new System.Drawing.Point(150, 54);
+            this.txtEndingSentence.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEndingSentence.Multiline = true;
             this.txtEndingSentence.Name = "txtEndingSentence";
             this.txtEndingSentence.ReadOnly = true;
-            this.txtEndingSentence.Size = new System.Drawing.Size(200, 21);
+            this.txtEndingSentence.Size = new System.Drawing.Size(282, 74);
             this.txtEndingSentence.TabIndex = 62;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(7, 50);
+            this.label13.Location = new System.Drawing.Point(9, 57);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(90, 16);
+            this.label13.Size = new System.Drawing.Size(115, 18);
             this.label13.TabIndex = 61;
             this.label13.Text = "Ending Sentence";
             // 
@@ -597,35 +508,39 @@
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(131, 15);
+            this.lblCity.Location = new System.Drawing.Point(164, 19);
+            this.lblCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(0, 16);
+            this.lblCity.Size = new System.Drawing.Size(0, 18);
             this.lblCity.TabIndex = 61;
             // 
             // lblTotalPost
             // 
             this.lblTotalPost.AutoSize = true;
-            this.lblTotalPost.Location = new System.Drawing.Point(131, 70);
+            this.lblTotalPost.Location = new System.Drawing.Point(164, 88);
+            this.lblTotalPost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalPost.Name = "lblTotalPost";
-            this.lblTotalPost.Size = new System.Drawing.Size(14, 16);
+            this.lblTotalPost.Size = new System.Drawing.Size(15, 18);
             this.lblTotalPost.TabIndex = 63;
             this.lblTotalPost.Text = "0";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 72);
+            this.label9.Location = new System.Drawing.Point(8, 90);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 16);
+            this.label9.Size = new System.Drawing.Size(126, 18);
             this.label9.TabIndex = 62;
             this.label9.Text = "Total Posts Today =";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 16);
+            this.label3.Location = new System.Drawing.Point(9, 20);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 16);
+            this.label3.Size = new System.Drawing.Size(98, 18);
             this.label3.TabIndex = 60;
             this.label3.Text = "Current City : ";
             // 
@@ -644,10 +559,10 @@
             this.btnPost.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnPost.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPost.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnPost.Location = new System.Drawing.Point(1053, 48);
-            this.btnPost.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPost.Location = new System.Drawing.Point(1316, 62);
+            this.btnPost.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnPost.Name = "btnPost";
-            this.btnPost.Size = new System.Drawing.Size(107, 29);
+            this.btnPost.Size = new System.Drawing.Size(134, 36);
             this.btnPost.TabIndex = 52;
             this.btnPost.Text = "Post";
             this.btnPost.UseVisualStyleBackColor = true;
@@ -659,9 +574,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(321, 48);
+            this.label5.Location = new System.Drawing.Point(401, 60);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 29);
+            this.label5.Size = new System.Drawing.Size(105, 38);
             this.label5.TabIndex = 75;
             this.label5.Text = "Step 1";
             // 
@@ -671,9 +587,10 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(565, 48);
+            this.label7.Location = new System.Drawing.Point(706, 60);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 29);
+            this.label7.Size = new System.Drawing.Size(105, 38);
             this.label7.TabIndex = 76;
             this.label7.Text = "Step 2";
             // 
@@ -683,9 +600,10 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(834, 48);
+            this.label8.Location = new System.Drawing.Point(1042, 60);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 29);
+            this.label8.Size = new System.Drawing.Size(105, 38);
             this.label8.TabIndex = 77;
             this.label8.Text = "Step 3";
             // 
@@ -695,9 +613,10 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::VinCLAPP.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 46);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(229, 99);
+            this.pictureBox1.Size = new System.Drawing.Size(286, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -706,10 +625,10 @@
             // 
             this.pbPicLoad.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pbPicLoad.Image = global::VinCLAPP.Properties.Resources.ajax_loader_mainform;
-            this.pbPicLoad.Location = new System.Drawing.Point(459, 186);
-            this.pbPicLoad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbPicLoad.Location = new System.Drawing.Point(677, 285);
+            this.pbPicLoad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbPicLoad.Name = "pbPicLoad";
-            this.pbPicLoad.Size = new System.Drawing.Size(101, 122);
+            this.pbPicLoad.Size = new System.Drawing.Size(101, 113);
             this.pbPicLoad.TabIndex = 71;
             this.pbPicLoad.TabStop = false;
             this.pbPicLoad.Visible = false;
@@ -717,6 +636,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackgroundImage = global::VinCLAPP.Properties.Resources.btnBGblack;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.accountToolStripMenuItem,
@@ -725,7 +645,8 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1200, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1500, 28);
             this.menuStrip1.TabIndex = 79;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -736,18 +657,18 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(89, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(105, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -758,20 +679,20 @@
             this.editToolStripMenuItem});
             this.accountToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.accountToolStripMenuItem.Text = "Account/Billing";
             // 
             // editBillingToolStripMenuItem
             // 
             this.editBillingToolStripMenuItem.Name = "editBillingToolStripMenuItem";
-            this.editBillingToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.editBillingToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             this.editBillingToolStripMenuItem.Text = "Billing";
             this.editBillingToolStripMenuItem.Click += new System.EventHandler(this.editBillingToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             this.editToolStripMenuItem.Text = "Account";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
@@ -782,20 +703,20 @@
             this.craigslistFToolStripMenuItem,
             this.craigslistAPIAccountToolStripMenuItem});
             this.craigslistBillingToolStripMenuItem.Name = "craigslistBillingToolStripMenuItem";
-            this.craigslistBillingToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.craigslistBillingToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.craigslistBillingToolStripMenuItem.Text = "Craigslist";
             // 
             // craigslistFToolStripMenuItem
             // 
             this.craigslistFToolStripMenuItem.Name = "craigslistFToolStripMenuItem";
-            this.craigslistFToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.craigslistFToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.craigslistFToolStripMenuItem.Text = "Craigslist Credit Payment";
             this.craigslistFToolStripMenuItem.Click += new System.EventHandler(this.craigslistFToolStripMenuItem_Click);
             // 
             // craigslistAPIAccountToolStripMenuItem
             // 
             this.craigslistAPIAccountToolStripMenuItem.Name = "craigslistAPIAccountToolStripMenuItem";
-            this.craigslistAPIAccountToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.craigslistAPIAccountToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.craigslistAPIAccountToolStripMenuItem.Text = "Craigslist API Account";
             this.craigslistAPIAccountToolStripMenuItem.Click += new System.EventHandler(this.craigslistAPIAccountToolStripMenuItem_Click);
             // 
@@ -807,27 +728,27 @@
             this.datafeedToolStripMenuItem});
             this.toolsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // EmailToolStripMenuItem
             // 
             this.EmailToolStripMenuItem.Name = "EmailToolStripMenuItem";
-            this.EmailToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.EmailToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.EmailToolStripMenuItem.Text = "&Email";
             this.EmailToolStripMenuItem.Click += new System.EventHandler(this.EmailToolStripMenuItemClick);
             // 
             // postingCitiesToolStripMenuItem
             // 
             this.postingCitiesToolStripMenuItem.Name = "postingCitiesToolStripMenuItem";
-            this.postingCitiesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.postingCitiesToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.postingCitiesToolStripMenuItem.Text = "Posting Cities";
             this.postingCitiesToolStripMenuItem.Click += new System.EventHandler(this.postingCitiesToolStripMenuItem_Click);
             // 
             // datafeedToolStripMenuItem
             // 
             this.datafeedToolStripMenuItem.Name = "datafeedToolStripMenuItem";
-            this.datafeedToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.datafeedToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.datafeedToolStripMenuItem.Text = "Datafeed";
             this.datafeedToolStripMenuItem.Click += new System.EventHandler(this.datafeedToolStripMenuItem_Click);
             // 
@@ -838,20 +759,20 @@
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // videoToolStripMenuItem
             // 
             this.videoToolStripMenuItem.Name = "videoToolStripMenuItem";
-            this.videoToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.videoToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
             this.videoToolStripMenuItem.Text = "Video";
             this.videoToolStripMenuItem.Click += new System.EventHandler(this.videoToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -868,19 +789,20 @@
             this.panel1.Controls.Add(this.ckAllSelect);
             this.panel1.Controls.Add(this.dGridInventory);
             this.panel1.Controls.Add(this.progressPostingBar);
-            this.panel1.Location = new System.Drawing.Point(15, 245);
+            this.panel1.Location = new System.Drawing.Point(19, 306);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1160, 538);
+            this.panel1.Size = new System.Drawing.Size(1450, 672);
             this.panel1.TabIndex = 80;
             // 
             // txtError
             // 
             this.txtError.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtError.Location = new System.Drawing.Point(91, 57);
-            this.txtError.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtError.Location = new System.Drawing.Point(150, 71);
+            this.txtError.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtError.MaxLength = 40;
             this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(1053, 22);
+            this.txtError.Size = new System.Drawing.Size(1298, 26);
             this.txtError.TabIndex = 94;
             this.txtError.Visible = false;
             // 
@@ -890,9 +812,10 @@
             this.lblError.BackColor = System.Drawing.Color.Transparent;
             this.lblError.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Maroon;
-            this.lblError.Location = new System.Drawing.Point(33, 56);
+            this.lblError.Location = new System.Drawing.Point(68, 70);
+            this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(64, 22);
+            this.lblError.Size = new System.Drawing.Size(80, 26);
             this.lblError.TabIndex = 93;
             this.lblError.Text = "Error = ";
             this.lblError.Visible = false;
@@ -902,9 +825,10 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Maroon;
-            this.label15.Location = new System.Drawing.Point(32, 29);
+            this.label15.Location = new System.Drawing.Point(36, 33);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(89, 27);
+            this.label15.Size = new System.Drawing.Size(116, 35);
             this.label15.TabIndex = 92;
             this.label15.Text = "Status : ";
             // 
@@ -914,28 +838,31 @@
             this.lblProcessing.BackColor = System.Drawing.Color.Transparent;
             this.lblProcessing.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProcessing.ForeColor = System.Drawing.Color.Maroon;
-            this.lblProcessing.Location = new System.Drawing.Point(128, 29);
+            this.lblProcessing.Location = new System.Drawing.Point(160, 38);
+            this.lblProcessing.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProcessing.Name = "lblProcessing";
-            this.lblProcessing.Size = new System.Drawing.Size(261, 22);
+            this.lblProcessing.Size = new System.Drawing.Size(428, 26);
             this.lblProcessing.TabIndex = 90;
-            this.lblProcessing.Text = "Posting status of each ad here......";
+            this.lblProcessing.Text = "Posting status of each ad here......                 ";
             // 
             // ckAllSelect
             // 
             this.ckAllSelect.AutoSize = true;
             this.ckAllSelect.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckAllSelect.Location = new System.Drawing.Point(7, 7);
+            this.ckAllSelect.Location = new System.Drawing.Point(9, 9);
+            this.ckAllSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckAllSelect.Name = "ckAllSelect";
-            this.ckAllSelect.Size = new System.Drawing.Size(15, 14);
+            this.ckAllSelect.Size = new System.Drawing.Size(18, 17);
             this.ckAllSelect.TabIndex = 89;
             this.ckAllSelect.UseVisualStyleBackColor = true;
             this.ckAllSelect.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // progressPostingBar
             // 
-            this.progressPostingBar.Location = new System.Drawing.Point(29, 3);
+            this.progressPostingBar.Location = new System.Drawing.Point(36, 4);
+            this.progressPostingBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progressPostingBar.Name = "progressPostingBar";
-            this.progressPostingBar.Size = new System.Drawing.Size(1131, 23);
+            this.progressPostingBar.Size = new System.Drawing.Size(1414, 29);
             this.progressPostingBar.TabIndex = 88;
             // 
             // lblPhone
@@ -944,10 +871,10 @@
             this.lblPhone.BackColor = System.Drawing.Color.Transparent;
             this.lblPhone.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.ForeColor = System.Drawing.Color.White;
-            this.lblPhone.Location = new System.Drawing.Point(4, 52);
-            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPhone.Location = new System.Drawing.Point(5, 65);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(101, 22);
+            this.lblPhone.Size = new System.Drawing.Size(129, 26);
             this.lblPhone.TabIndex = 81;
             this.lblPhone.Text = "Dealer Name";
             this.lblPhone.Visible = false;
@@ -958,10 +885,10 @@
             this.lblDealerName.BackColor = System.Drawing.Color.Transparent;
             this.lblDealerName.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDealerName.ForeColor = System.Drawing.Color.White;
-            this.lblDealerName.Location = new System.Drawing.Point(4, 0);
-            this.lblDealerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDealerName.Location = new System.Drawing.Point(5, 0);
+            this.lblDealerName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblDealerName.Name = "lblDealerName";
-            this.lblDealerName.Size = new System.Drawing.Size(82, 18);
+            this.lblDealerName.Size = new System.Drawing.Size(107, 23);
             this.lblDealerName.TabIndex = 82;
             this.lblDealerName.Text = "Dealer Name";
             this.lblDealerName.Visible = false;
@@ -974,13 +901,14 @@
             this.tableLayoutPanel3.Controls.Add(this.lblDealerName, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.lblDealerAddress, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.lblPhone, 0, 2);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(12, 138);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(15, 172);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.57143F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.42857F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(229, 91);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(286, 114);
             this.tableLayoutPanel3.TabIndex = 82;
             // 
             // groupBox4
@@ -992,9 +920,11 @@
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(858, 95);
+            this.groupBox4.Location = new System.Drawing.Point(1079, 98);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(234, 41);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Size = new System.Drawing.Size(292, 51);
             this.groupBox4.TabIndex = 74;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Group By";
@@ -1002,9 +932,10 @@
             // rbCarToCity
             // 
             this.rbCarToCity.AutoSize = true;
-            this.rbCarToCity.Location = new System.Drawing.Point(124, 15);
+            this.rbCarToCity.Location = new System.Drawing.Point(155, 19);
+            this.rbCarToCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbCarToCity.Name = "rbCarToCity";
-            this.rbCarToCity.Size = new System.Drawing.Size(82, 20);
+            this.rbCarToCity.Size = new System.Drawing.Size(96, 22);
             this.rbCarToCity.TabIndex = 66;
             this.rbCarToCity.TabStop = true;
             this.rbCarToCity.Text = "Car to City";
@@ -1014,9 +945,10 @@
             // rbCityToCar
             // 
             this.rbCityToCar.AutoSize = true;
-            this.rbCityToCar.Location = new System.Drawing.Point(10, 15);
+            this.rbCityToCar.Location = new System.Drawing.Point(12, 19);
+            this.rbCityToCar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbCityToCar.Name = "rbCityToCar";
-            this.rbCityToCar.Size = new System.Drawing.Size(82, 20);
+            this.rbCityToCar.Size = new System.Drawing.Size(96, 22);
             this.rbCityToCar.TabIndex = 65;
             this.rbCityToCar.TabStop = true;
             this.rbCityToCar.Text = "City to Car";
@@ -1026,9 +958,10 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(352, 100);
+            this.label10.Location = new System.Drawing.Point(440, 125);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(14, 16);
+            this.label10.Size = new System.Drawing.Size(15, 18);
             this.label10.TabIndex = 63;
             this.label10.Text = "0";
             // 
@@ -1036,9 +969,10 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(95, 97);
+            this.label12.Location = new System.Drawing.Point(119, 121);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(0, 16);
+            this.label12.Size = new System.Drawing.Size(0, 18);
             this.label12.TabIndex = 61;
             // 
             // timerPause
@@ -1049,9 +983,10 @@
             // 
             this.btnDelete.Enabled = false;
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(567, 206);
+            this.btnDelete.Location = new System.Drawing.Point(717, 268);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(65, 23);
+            this.btnDelete.Size = new System.Drawing.Size(81, 29);
             this.btnDelete.TabIndex = 83;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -1062,9 +997,10 @@
             this.linkSignup.AutoSize = true;
             this.linkSignup.BackColor = System.Drawing.Color.White;
             this.linkSignup.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkSignup.Location = new System.Drawing.Point(253, 221);
+            this.linkSignup.Location = new System.Drawing.Point(318, 276);
+            this.linkSignup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkSignup.Name = "linkSignup";
-            this.linkSignup.Size = new System.Drawing.Size(191, 18);
+            this.linkSignup.Size = new System.Drawing.Size(245, 23);
             this.linkSignup.TabIndex = 90;
             this.linkSignup.TabStop = true;
             this.linkSignup.Text = "Need an account? Sign up here!";
@@ -1078,9 +1014,10 @@
             // 
             this.btnAddInventory.Enabled = false;
             this.btnAddInventory.ForeColor = System.Drawing.Color.Black;
-            this.btnAddInventory.Location = new System.Drawing.Point(498, 205);
+            this.btnAddInventory.Location = new System.Drawing.Point(630, 268);
+            this.btnAddInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddInventory.Name = "btnAddInventory";
-            this.btnAddInventory.Size = new System.Drawing.Size(63, 23);
+            this.btnAddInventory.Size = new System.Drawing.Size(79, 29);
             this.btnAddInventory.TabIndex = 91;
             this.btnAddInventory.Text = "Add Car";
             this.btnAddInventory.UseVisualStyleBackColor = true;
@@ -1098,9 +1035,11 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(858, 141);
+            this.groupBox2.Location = new System.Drawing.Point(1079, 152);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(234, 98);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(292, 145);
             this.groupBox2.TabIndex = 92;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Posting Info";
@@ -1108,35 +1047,39 @@
             // lblSupposedPosts
             // 
             this.lblSupposedPosts.AutoSize = true;
-            this.lblSupposedPosts.Location = new System.Drawing.Point(131, 33);
+            this.lblSupposedPosts.Location = new System.Drawing.Point(164, 41);
+            this.lblSupposedPosts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSupposedPosts.Name = "lblSupposedPosts";
-            this.lblSupposedPosts.Size = new System.Drawing.Size(14, 16);
+            this.lblSupposedPosts.Size = new System.Drawing.Size(15, 18);
             this.lblSupposedPosts.TabIndex = 67;
             this.lblSupposedPosts.Text = "0";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 33);
+            this.label14.Location = new System.Drawing.Point(9, 41);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 16);
+            this.label14.Size = new System.Drawing.Size(49, 18);
             this.label14.TabIndex = 66;
             this.label14.Text = "Left = ";
             // 
             // lblEstimatedTimeLeft
             // 
             this.lblEstimatedTimeLeft.AutoSize = true;
-            this.lblEstimatedTimeLeft.Location = new System.Drawing.Point(131, 54);
+            this.lblEstimatedTimeLeft.Location = new System.Drawing.Point(164, 68);
+            this.lblEstimatedTimeLeft.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstimatedTimeLeft.Name = "lblEstimatedTimeLeft";
-            this.lblEstimatedTimeLeft.Size = new System.Drawing.Size(0, 16);
+            this.lblEstimatedTimeLeft.Size = new System.Drawing.Size(0, 18);
             this.lblEstimatedTimeLeft.TabIndex = 65;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 54);
+            this.label11.Location = new System.Drawing.Point(9, 68);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 16);
+            this.label11.Size = new System.Drawing.Size(149, 18);
             this.label11.TabIndex = 64;
             this.label11.Text = "Estimated Time Left : ";
             // 
@@ -1144,9 +1087,10 @@
             // 
             this.btnView.Enabled = false;
             this.btnView.ForeColor = System.Drawing.Color.Black;
-            this.btnView.Location = new System.Drawing.Point(1098, 210);
+            this.btnView.Location = new System.Drawing.Point(1374, 270);
+            this.btnView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(77, 23);
+            this.btnView.Size = new System.Drawing.Size(96, 29);
             this.btnView.TabIndex = 93;
             this.btnView.Text = "Daily Ads";
             this.btnView.UseVisualStyleBackColor = true;
@@ -1164,9 +1108,10 @@
             this.lnlfogotPass.AutoSize = true;
             this.lnlfogotPass.BackColor = System.Drawing.Color.White;
             this.lnlfogotPass.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnlfogotPass.Location = new System.Drawing.Point(253, 201);
+            this.lnlfogotPass.Location = new System.Drawing.Point(318, 251);
+            this.lnlfogotPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnlfogotPass.Name = "lnlfogotPass";
-            this.lnlfogotPass.Size = new System.Drawing.Size(122, 16);
+            this.lnlfogotPass.Size = new System.Drawing.Size(149, 18);
             this.lnlfogotPass.TabIndex = 96;
             this.lnlfogotPass.TabStop = true;
             this.lnlfogotPass.Text = "Forgot your password?";
@@ -1183,10 +1128,10 @@
             this.btnPostAPI.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnPostAPI.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPostAPI.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnPostAPI.Location = new System.Drawing.Point(929, 48);
-            this.btnPostAPI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPostAPI.Location = new System.Drawing.Point(1161, 62);
+            this.btnPostAPI.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnPostAPI.Name = "btnPostAPI";
-            this.btnPostAPI.Size = new System.Drawing.Size(135, 29);
+            this.btnPostAPI.Size = new System.Drawing.Size(169, 36);
             this.btnPostAPI.TabIndex = 98;
             this.btnPostAPI.Text = "Post With API";
             this.btnPostAPI.UseVisualStyleBackColor = true;
@@ -1200,9 +1145,10 @@
             // 
             // btnDailyReport
             // 
-            this.btnDailyReport.Location = new System.Drawing.Point(1098, 163);
+            this.btnDailyReport.Location = new System.Drawing.Point(1374, 228);
+            this.btnDailyReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDailyReport.Name = "btnDailyReport";
-            this.btnDailyReport.Size = new System.Drawing.Size(75, 27);
+            this.btnDailyReport.Size = new System.Drawing.Size(96, 34);
             this.btnDailyReport.TabIndex = 99;
             this.btnDailyReport.Text = "Report";
             this.btnDailyReport.UseVisualStyleBackColor = true;
@@ -1212,9 +1158,10 @@
             // 
             this.btnSupport.BackgroundImage = global::VinCLAPP.Properties.Resources.support_btn;
             this.btnSupport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSupport.Location = new System.Drawing.Point(1099, 99);
+            this.btnSupport.Location = new System.Drawing.Point(1374, 157);
+            this.btnSupport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSupport.Name = "btnSupport";
-            this.btnSupport.Size = new System.Drawing.Size(75, 52);
+            this.btnSupport.Size = new System.Drawing.Size(95, 64);
             this.btnSupport.TabIndex = 100;
             this.btnSupport.UseVisualStyleBackColor = true;
             this.btnSupport.Click += new System.EventHandler(this.btnSupport_Click);
@@ -1330,15 +1277,115 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.Width = 78;
             // 
+            // ListingID
+            // 
+            this.ListingID.DataPropertyName = "ListingID";
+            this.ListingID.HeaderText = "ListingID";
+            this.ListingID.Name = "ListingID";
+            this.ListingID.Visible = false;
+            this.ListingID.Width = 19;
+            // 
+            // PostingCityId
+            // 
+            this.PostingCityId.DataPropertyName = "PostingCityId";
+            this.PostingCityId.HeaderText = "Posting City Id";
+            this.PostingCityId.Name = "PostingCityId";
+            this.PostingCityId.Visible = false;
+            // 
+            // AutoID
+            // 
+            this.AutoID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.AutoID.DataPropertyName = "AutoID";
+            this.AutoID.HeaderText = "Id";
+            this.AutoID.Name = "AutoID";
+            this.AutoID.Width = 40;
+            // 
+            // PostingCity
+            // 
+            this.PostingCity.DataPropertyName = "PostingCity";
+            this.PostingCity.HeaderText = "PostingCity";
+            this.PostingCity.Name = "PostingCity";
+            this.PostingCity.ReadOnly = true;
+            this.PostingCity.Width = 110;
+            // 
+            // Stock
+            // 
+            this.Stock.DataPropertyName = "Stock";
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.Width = 61;
+            // 
+            // LastPosted
+            // 
+            this.LastPosted.DataPropertyName = "LastPosted";
+            this.LastPosted.HeaderText = "Last Posted";
+            this.LastPosted.Name = "LastPosted";
+            // 
+            // Year
+            // 
+            this.Year.DataPropertyName = "Year";
+            this.Year.HeaderText = "Year";
+            this.Year.Name = "Year";
+            this.Year.Width = 57;
+            // 
+            // Make
+            // 
+            this.Make.DataPropertyName = "Make";
+            this.Make.HeaderText = "Make";
+            this.Make.Name = "Make";
+            this.Make.Width = 80;
+            // 
+            // Model
+            // 
+            this.Model.DataPropertyName = "Model";
+            this.Model.HeaderText = "Model";
+            this.Model.Name = "Model";
+            this.Model.Width = 90;
+            // 
+            // Trim
+            // 
+            this.Trim.DataPropertyName = "Trim";
+            this.Trim.HeaderText = "Trim";
+            this.Trim.Name = "Trim";
+            this.Trim.Width = 80;
+            // 
+            // Vin
+            // 
+            this.Vin.DataPropertyName = "Vin";
+            this.Vin.HeaderText = "Vin";
+            this.Vin.Name = "Vin";
+            this.Vin.Width = 101;
+            // 
+            // Pictures
+            // 
+            this.Pictures.DataPropertyName = "Pictures";
+            this.Pictures.HeaderText = "Pics";
+            this.Pictures.Name = "Pictures";
+            this.Pictures.Width = 40;
+            // 
+            // Mileage
+            // 
+            this.Mileage.DataPropertyName = "Mileage";
+            this.Mileage.HeaderText = "Mileage";
+            this.Mileage.Name = "Mileage";
+            this.Mileage.Width = 60;
+            // 
+            // SalePrice
+            // 
+            this.SalePrice.DataPropertyName = "SalePrice";
+            this.SalePrice.HeaderText = "SalePrice";
+            this.SalePrice.Name = "SalePrice";
+            this.SalePrice.Width = 78;
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImage = global::VinCLAPP.Properties.Resources.bg_vinclapp1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1200, 795);
+            this.ClientSize = new System.Drawing.Size(1500, 994);
             this.Controls.Add(this.btnSupport);
             this.Controls.Add(this.btnDailyReport);
             this.Controls.Add(this.btnPostAPI);
@@ -1366,7 +1413,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
