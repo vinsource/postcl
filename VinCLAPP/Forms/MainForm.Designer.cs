@@ -106,7 +106,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtError = new System.Windows.Forms.TextBox();
             this.lblError = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.lblProcessing = new System.Windows.Forms.Label();
             this.ckAllSelect = new System.Windows.Forms.CheckBox();
             this.progressPostingBar = new System.Windows.Forms.ProgressBar();
@@ -883,7 +882,6 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txtError);
             this.panel1.Controls.Add(this.lblError);
-            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.lblProcessing);
             this.panel1.Controls.Add(this.pbPicLoad);
             this.panel1.Controls.Add(this.ckAllSelect);
@@ -920,25 +918,13 @@
             this.lblError.Text = "Error = ";
             this.lblError.Visible = false;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Maroon;
-            this.label15.Location = new System.Drawing.Point(36, 33);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(87, 26);
-            this.label15.TabIndex = 92;
-            this.label15.Text = "Status : ";
-            // 
             // lblProcessing
             // 
             this.lblProcessing.AutoSize = true;
             this.lblProcessing.BackColor = System.Drawing.Color.Transparent;
             this.lblProcessing.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProcessing.ForeColor = System.Drawing.Color.Maroon;
-            this.lblProcessing.Location = new System.Drawing.Point(124, 33);
+            this.lblProcessing.Location = new System.Drawing.Point(31, 34);
             this.lblProcessing.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProcessing.Name = "lblProcessing";
             this.lblProcessing.Size = new System.Drawing.Size(428, 26);
@@ -1566,7 +1552,6 @@
         private System.Windows.Forms.ToolStripMenuItem videoToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker bgNewVersion;
         private System.Windows.Forms.Label lblProcessing;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.TextBox txtError;
 

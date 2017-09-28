@@ -72,18 +72,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dGridViewSameCity = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewLinkColumn3 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Clbrowser = new System.Windows.Forms.WebBrowser();
-            this.dGridViewOtherCities = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ListingId = new System.Windows.Forms.DataGridViewLinkColumn();
             this.ClpostingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CityId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +79,12 @@
             this.StockNumber = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Title = new System.Windows.Forms.DataGridViewLinkColumn();
             this.CityName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewLinkColumn3 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Clbrowser = new System.Windows.Forms.WebBrowser();
+            this.dGridViewOtherCities = new System.Windows.Forms.DataGridView();
             this.ListingIdOtherCities = new System.Windows.Forms.DataGridViewLinkColumn();
             this.ClpostingIdOther = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,6 +92,12 @@
             this.dataGridViewLinkColumn5 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewLinkColumn6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewSameCity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewOtherCities)).BeginInit();
             this.SuspendLayout();
@@ -129,14 +129,68 @@
             this.dGridViewSameCity.TabIndex = 3;
             this.dGridViewSameCity.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewToday_CellClick_1);
             // 
+            // ListingId
+            // 
+            this.ListingId.DataPropertyName = "ListingId";
+            this.ListingId.HeaderText = "Id";
+            this.ListingId.Name = "ListingId";
+            this.ListingId.Width = 30;
+            // 
+            // ClpostingId
+            // 
+            this.ClpostingId.DataPropertyName = "TrackingId";
+            this.ClpostingId.HeaderText = "ClpostingId";
+            this.ClpostingId.Name = "ClpostingId";
+            this.ClpostingId.Visible = false;
+            // 
+            // CityId
+            // 
+            this.CityId.DataPropertyName = "CityId";
+            this.CityId.HeaderText = "CityId";
+            this.CityId.Name = "CityId";
+            this.CityId.Visible = false;
+            // 
+            // HtmlCraigslistUrl
+            // 
+            this.HtmlCraigslistUrl.DataPropertyName = "HtmlCraigslistUrl";
+            this.HtmlCraigslistUrl.HeaderText = "HtmlCraigslistUrl";
+            this.HtmlCraigslistUrl.Name = "HtmlCraigslistUrl";
+            this.HtmlCraigslistUrl.Visible = false;
+            // 
+            // StockNumber
+            // 
+            this.StockNumber.DataPropertyName = "StockNumber";
+            this.StockNumber.HeaderText = "Stock";
+            this.StockNumber.Name = "StockNumber";
+            this.StockNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.StockNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.StockNumber.Width = 70;
+            // 
+            // Title
+            // 
+            this.Title.DataPropertyName = "Title";
+            this.Title.HeaderText = "Posted";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            this.Title.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Title.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Title.Width = 170;
+            // 
+            // CityName
+            // 
+            this.CityName.DataPropertyName = "CityName";
+            this.CityName.HeaderText = "City";
+            this.CityName.Name = "CityName";
+            this.CityName.Width = 120;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(781, 266);
+            this.label1.Location = new System.Drawing.Point(782, 264);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 20);
+            this.label1.Size = new System.Drawing.Size(266, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "Same posting in other cities : ";
             // 
@@ -202,108 +256,6 @@
             this.dGridViewOtherCities.TabIndex = 8;
             this.dGridViewOtherCities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewOtherCities_CellClick_1);
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CityName";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Posted/Renew Cars";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CityId";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CityId";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "HtmlCraigslistUrl";
-            this.dataGridViewTextBoxColumn3.HeaderText = "HtmlCraigslistUrl";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            this.dataGridViewTextBoxColumn3.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CityName";
-            this.dataGridViewTextBoxColumn4.HeaderText = "City";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            this.dataGridViewTextBoxColumn4.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "HtmlCraigslistUrl";
-            this.dataGridViewTextBoxColumn5.HeaderText = "HtmlCraigslistUrl";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            this.dataGridViewTextBoxColumn5.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "CityName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "City";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            this.dataGridViewTextBoxColumn6.Width = 120;
-            // 
-            // ListingId
-            // 
-            this.ListingId.DataPropertyName = "ListingId";
-            this.ListingId.HeaderText = "Id";
-            this.ListingId.Name = "ListingId";
-            this.ListingId.Width = 30;
-            // 
-            // ClpostingId
-            // 
-            this.ClpostingId.DataPropertyName = "TrackingId";
-            this.ClpostingId.HeaderText = "ClpostingId";
-            this.ClpostingId.Name = "ClpostingId";
-            this.ClpostingId.Visible = false;
-            // 
-            // CityId
-            // 
-            this.CityId.DataPropertyName = "CityId";
-            this.CityId.HeaderText = "CityId";
-            this.CityId.Name = "CityId";
-            this.CityId.Visible = false;
-            // 
-            // HtmlCraigslistUrl
-            // 
-            this.HtmlCraigslistUrl.DataPropertyName = "HtmlCraigslistUrl";
-            this.HtmlCraigslistUrl.HeaderText = "HtmlCraigslistUrl";
-            this.HtmlCraigslistUrl.Name = "HtmlCraigslistUrl";
-            this.HtmlCraigslistUrl.Visible = false;
-            // 
-            // StockNumber
-            // 
-            this.StockNumber.DataPropertyName = "StockNumber";
-            this.StockNumber.HeaderText = "Stock";
-            this.StockNumber.Name = "StockNumber";
-            this.StockNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.StockNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.StockNumber.Width = 70;
-            // 
-            // Title
-            // 
-            this.Title.DataPropertyName = "Title";
-            this.Title.HeaderText = "Posted";
-            this.Title.Name = "Title";
-            this.Title.ReadOnly = true;
-            this.Title.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Title.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Title.Width = 170;
-            // 
-            // CityName
-            // 
-            this.CityName.DataPropertyName = "CityName";
-            this.CityName.HeaderText = "City";
-            this.CityName.Name = "CityName";
-            this.CityName.Width = 120;
-            // 
             // ListingIdOtherCities
             // 
             this.ListingIdOtherCities.DataPropertyName = "ListingId";
@@ -359,6 +311,54 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "City";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CityName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Posted/Renew Cars";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CityId";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CityId";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "HtmlCraigslistUrl";
+            this.dataGridViewTextBoxColumn3.HeaderText = "HtmlCraigslistUrl";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            this.dataGridViewTextBoxColumn3.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CityName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "City";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "HtmlCraigslistUrl";
+            this.dataGridViewTextBoxColumn5.HeaderText = "HtmlCraigslistUrl";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            this.dataGridViewTextBoxColumn5.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "CityName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "City";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            this.dataGridViewTextBoxColumn6.Width = 120;
             // 
             // TrackingAdsForm
             // 
