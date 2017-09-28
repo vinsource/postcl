@@ -49,26 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.bgWorker = new System.ComponentModel.BackgroundWorker();
             this.dGridInventory = new System.Windows.Forms.DataGridView();
-            this.IsSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ListingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PostingCityId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AutoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PostingCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAds = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.LastPosted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Make = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Trim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pictures = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UploadImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ViewImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.AdsLink = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.linkEditEnding = new System.Windows.Forms.LinkLabel();
             this.txtEndingSentence = new System.Windows.Forms.TextBox();
@@ -150,6 +130,25 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ListingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PostingCityId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PostingCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAds = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.LastPosted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Make = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Trim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pictures = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UploadImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ViewImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.AdsLink = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridInventory)).BeginInit();
@@ -373,7 +372,6 @@
             this.IsSelected,
             this.ListingID,
             this.PostingCityId,
-            this.AutoID,
             this.PostingCity,
             this.Stock,
             this.TotalAds,
@@ -398,154 +396,6 @@
             this.dGridInventory.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGridInventory.Size = new System.Drawing.Size(1450, 616);
             this.dGridInventory.TabIndex = 78;
-            // 
-            // IsSelected
-            // 
-            this.IsSelected.DataPropertyName = "IsSelected";
-            this.IsSelected.HeaderText = "Select";
-            this.IsSelected.Name = "IsSelected";
-            this.IsSelected.Width = 44;
-            // 
-            // ListingID
-            // 
-            this.ListingID.DataPropertyName = "ListingID";
-            this.ListingID.HeaderText = "ListingID";
-            this.ListingID.Name = "ListingID";
-            this.ListingID.Visible = false;
-            this.ListingID.Width = 19;
-            // 
-            // PostingCityId
-            // 
-            this.PostingCityId.DataPropertyName = "PostingCityId";
-            this.PostingCityId.HeaderText = "Posting City Id";
-            this.PostingCityId.Name = "PostingCityId";
-            this.PostingCityId.Visible = false;
-            // 
-            // AutoID
-            // 
-            this.AutoID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.AutoID.DataPropertyName = "AutoID";
-            this.AutoID.HeaderText = "Id";
-            this.AutoID.Name = "AutoID";
-            this.AutoID.Width = 40;
-            // 
-            // PostingCity
-            // 
-            this.PostingCity.DataPropertyName = "PostingCity";
-            this.PostingCity.HeaderText = "PostingCity";
-            this.PostingCity.Name = "PostingCity";
-            this.PostingCity.ReadOnly = true;
-            this.PostingCity.Width = 110;
-            // 
-            // Stock
-            // 
-            this.Stock.DataPropertyName = "Stock";
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            this.Stock.Width = 61;
-            // 
-            // TotalAds
-            // 
-            this.TotalAds.DataPropertyName = "TotalAds";
-            this.TotalAds.HeaderText = "Ads";
-            this.TotalAds.Name = "TotalAds";
-            this.TotalAds.Width = 30;
-            // 
-            // LastPosted
-            // 
-            this.LastPosted.DataPropertyName = "LastPosted";
-            this.LastPosted.HeaderText = "Last Posted";
-            this.LastPosted.Name = "LastPosted";
-            // 
-            // Year
-            // 
-            this.Year.DataPropertyName = "Year";
-            this.Year.HeaderText = "Year";
-            this.Year.Name = "Year";
-            this.Year.Width = 57;
-            // 
-            // Make
-            // 
-            this.Make.DataPropertyName = "Make";
-            this.Make.HeaderText = "Make";
-            this.Make.Name = "Make";
-            this.Make.Width = 80;
-            // 
-            // Model
-            // 
-            this.Model.DataPropertyName = "Model";
-            this.Model.HeaderText = "Model";
-            this.Model.Name = "Model";
-            this.Model.Width = 90;
-            // 
-            // Trim
-            // 
-            this.Trim.DataPropertyName = "Trim";
-            this.Trim.HeaderText = "Trim";
-            this.Trim.Name = "Trim";
-            this.Trim.Width = 80;
-            // 
-            // Vin
-            // 
-            this.Vin.DataPropertyName = "Vin";
-            this.Vin.HeaderText = "Vin";
-            this.Vin.Name = "Vin";
-            this.Vin.Width = 101;
-            // 
-            // Pictures
-            // 
-            this.Pictures.DataPropertyName = "Pictures";
-            this.Pictures.HeaderText = "Pics";
-            this.Pictures.Name = "Pictures";
-            this.Pictures.Width = 40;
-            // 
-            // Mileage
-            // 
-            this.Mileage.DataPropertyName = "Mileage";
-            this.Mileage.HeaderText = "Mileage";
-            this.Mileage.Name = "Mileage";
-            this.Mileage.Width = 60;
-            // 
-            // SalePrice
-            // 
-            this.SalePrice.DataPropertyName = "SalePrice";
-            this.SalePrice.HeaderText = "SalePrice";
-            this.SalePrice.Name = "SalePrice";
-            this.SalePrice.Width = 78;
-            // 
-            // UploadImage
-            // 
-            this.UploadImage.HeaderText = "Up";
-            this.UploadImage.Image = global::VinCLAPP.Properties.Resources.upload;
-            this.UploadImage.Name = "UploadImage";
-            this.UploadImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.UploadImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.UploadImage.ToolTipText = "Upload Images";
-            this.UploadImage.Width = 25;
-            // 
-            // ViewImage
-            // 
-            this.ViewImage.HeaderText = "View";
-            this.ViewImage.Image = global::VinCLAPP.Properties.Resources.view;
-            this.ViewImage.Name = "ViewImage";
-            this.ViewImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ViewImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ViewImage.ToolTipText = "View images";
-            this.ViewImage.Width = 30;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Image = global::VinCLAPP.Properties.Resources.edit;
-            this.Edit.Name = "Edit";
-            this.Edit.ToolTipText = "Edit Info";
-            this.Edit.Width = 30;
-            // 
-            // AdsLink
-            // 
-            this.AdsLink.DataPropertyName = "AdsLink";
-            this.AdsLink.HeaderText = "View Ad";
-            this.AdsLink.Name = "AdsLink";
             // 
             // groupBox3
             // 
@@ -1363,6 +1213,146 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.Width = 78;
             // 
+            // IsSelected
+            // 
+            this.IsSelected.DataPropertyName = "IsSelected";
+            this.IsSelected.HeaderText = "Select";
+            this.IsSelected.Name = "IsSelected";
+            this.IsSelected.Width = 44;
+            // 
+            // ListingID
+            // 
+            this.ListingID.DataPropertyName = "ListingID";
+            this.ListingID.HeaderText = "ListingID";
+            this.ListingID.Name = "ListingID";
+            this.ListingID.Visible = false;
+            this.ListingID.Width = 19;
+            // 
+            // PostingCityId
+            // 
+            this.PostingCityId.DataPropertyName = "PostingCityId";
+            this.PostingCityId.HeaderText = "Posting City Id";
+            this.PostingCityId.Name = "PostingCityId";
+            this.PostingCityId.Visible = false;
+            // 
+            // PostingCity
+            // 
+            this.PostingCity.DataPropertyName = "PostingCity";
+            this.PostingCity.HeaderText = "PostingCity";
+            this.PostingCity.Name = "PostingCity";
+            this.PostingCity.ReadOnly = true;
+            this.PostingCity.Width = 110;
+            // 
+            // Stock
+            // 
+            this.Stock.DataPropertyName = "Stock";
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.Width = 61;
+            // 
+            // TotalAds
+            // 
+            this.TotalAds.DataPropertyName = "TotalAds";
+            this.TotalAds.HeaderText = "Ads";
+            this.TotalAds.Name = "TotalAds";
+            this.TotalAds.Width = 30;
+            // 
+            // LastPosted
+            // 
+            this.LastPosted.DataPropertyName = "LastPosted";
+            this.LastPosted.HeaderText = "Last Posted";
+            this.LastPosted.Name = "LastPosted";
+            // 
+            // Year
+            // 
+            this.Year.DataPropertyName = "Year";
+            this.Year.HeaderText = "Year";
+            this.Year.Name = "Year";
+            this.Year.Width = 57;
+            // 
+            // Make
+            // 
+            this.Make.DataPropertyName = "Make";
+            this.Make.HeaderText = "Make";
+            this.Make.Name = "Make";
+            this.Make.Width = 80;
+            // 
+            // Model
+            // 
+            this.Model.DataPropertyName = "Model";
+            this.Model.HeaderText = "Model";
+            this.Model.Name = "Model";
+            this.Model.Width = 90;
+            // 
+            // Trim
+            // 
+            this.Trim.DataPropertyName = "Trim";
+            this.Trim.HeaderText = "Trim";
+            this.Trim.Name = "Trim";
+            this.Trim.Width = 80;
+            // 
+            // Vin
+            // 
+            this.Vin.DataPropertyName = "Vin";
+            this.Vin.HeaderText = "Vin";
+            this.Vin.Name = "Vin";
+            this.Vin.Width = 101;
+            // 
+            // Pictures
+            // 
+            this.Pictures.DataPropertyName = "Pictures";
+            this.Pictures.HeaderText = "Pics";
+            this.Pictures.Name = "Pictures";
+            this.Pictures.Width = 40;
+            // 
+            // Mileage
+            // 
+            this.Mileage.DataPropertyName = "Mileage";
+            this.Mileage.HeaderText = "Mileage";
+            this.Mileage.Name = "Mileage";
+            this.Mileage.Width = 60;
+            // 
+            // SalePrice
+            // 
+            this.SalePrice.DataPropertyName = "SalePrice";
+            this.SalePrice.HeaderText = "SalePrice";
+            this.SalePrice.Name = "SalePrice";
+            this.SalePrice.Width = 78;
+            // 
+            // UploadImage
+            // 
+            this.UploadImage.HeaderText = "Up";
+            this.UploadImage.Image = global::VinCLAPP.Properties.Resources.upload;
+            this.UploadImage.Name = "UploadImage";
+            this.UploadImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.UploadImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.UploadImage.ToolTipText = "Upload Images";
+            this.UploadImage.Width = 25;
+            // 
+            // ViewImage
+            // 
+            this.ViewImage.HeaderText = "View";
+            this.ViewImage.Image = global::VinCLAPP.Properties.Resources.view;
+            this.ViewImage.Name = "ViewImage";
+            this.ViewImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ViewImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ViewImage.ToolTipText = "View images";
+            this.ViewImage.Width = 30;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = global::VinCLAPP.Properties.Resources.edit;
+            this.Edit.Name = "Edit";
+            this.Edit.ToolTipText = "Edit Info";
+            this.Edit.Width = 30;
+            // 
+            // AdsLink
+            // 
+            this.AdsLink.DataPropertyName = "AdsLink";
+            this.AdsLink.HeaderText = "View Ad";
+            this.AdsLink.Name = "AdsLink";
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnLogin;
@@ -1527,10 +1517,16 @@
         private System.ComponentModel.BackgroundWorker bgAPICall;
         private System.Windows.Forms.LinkLabel linkEditEnding;
         private System.Windows.Forms.Button btnDailyReport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.Button btnSupport;
+        private System.Windows.Forms.ToolStripMenuItem videoToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker bgNewVersion;
+        private System.Windows.Forms.Label lblProcessing;
+        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.TextBox txtError;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsSelected;
         private System.Windows.Forms.DataGridViewTextBoxColumn ListingID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PostingCityId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AutoID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PostingCity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewLinkColumn TotalAds;
@@ -1547,14 +1543,6 @@
         private System.Windows.Forms.DataGridViewImageColumn ViewImage;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewLinkColumn AdsLink;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.Button btnSupport;
-        private System.Windows.Forms.ToolStripMenuItem videoToolStripMenuItem;
-        private System.ComponentModel.BackgroundWorker bgNewVersion;
-        private System.Windows.Forms.Label lblProcessing;
-        private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.TextBox txtError;
-
     }
 }
 
