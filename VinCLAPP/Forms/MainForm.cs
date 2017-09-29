@@ -465,7 +465,8 @@ namespace VinCLAPP
                 if (vehicle.ProgessStatus == CraigslistPostingStatus.Error)
                 {
                     lblProcessing.Text = vehicle.ErrorMessage;
-
+                    var rowindex = GetIndexOfRowWithAutoId(vehicle.AutoId);
+                    dGridInventory.Rows[rowindex].DefaultCellStyle.BackColor = Color.Yellow;
                     var list = (BindingList<SimpleVehicleInfo>)dGridInventory.DataSource;
 
                     foreach (var item in list)
@@ -481,7 +482,9 @@ namespace VinCLAPP
                 if (vehicle.ProgessStatus == CraigslistPostingStatus.EmailVerification)
                 {
                     lblProcessing.Text = "Email verification is required by craigslist. Login to your email, and follow craigslist instructions to finish the first purchase";
-                    
+                    var rowindex = GetIndexOfRowWithAutoId(vehicle.AutoId);
+                    dGridInventory.Rows[rowindex].DefaultCellStyle.BackColor = Color.Yellow;
+
                     var list = (BindingList<SimpleVehicleInfo>)dGridInventory.DataSource;
 
                     foreach (var item in list)
