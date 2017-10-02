@@ -116,12 +116,6 @@
             this.btnDailyReport = new System.Windows.Forms.Button();
             this.btnSupport = new System.Windows.Forms.Button();
             this.bgNewVersion = new System.ComponentModel.BackgroundWorker();
-            this.IsSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.TotalAds = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.UploadImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ViewImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.AdsLink = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,12 +130,14 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LastPosted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ListingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AutoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PostingCityId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PostingCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAds = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Make = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,6 +146,10 @@
             this.Pictures = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UploadImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ViewImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.AdsLink = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridInventory)).BeginInit();
@@ -396,7 +396,7 @@
             this.dGridInventory.RowHeadersWidth = 25;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.dGridInventory.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dGridInventory.Size = new System.Drawing.Size(1450, 616);
+            this.dGridInventory.Size = new System.Drawing.Size(1462, 616);
             this.dGridInventory.TabIndex = 78;
             // 
             // groupBox3
@@ -742,7 +742,7 @@
             this.panel1.Location = new System.Drawing.Point(19, 306);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1450, 672);
+            this.panel1.Size = new System.Drawing.Size(1468, 672);
             this.panel1.TabIndex = 80;
             // 
             // txtError
@@ -752,7 +752,7 @@
             this.txtError.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtError.MaxLength = 40;
             this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(1298, 26);
+            this.txtError.Size = new System.Drawing.Size(1311, 26);
             this.txtError.TabIndex = 94;
             this.txtError.Visible = false;
             // 
@@ -800,7 +800,7 @@
             this.progressPostingBar.Location = new System.Drawing.Point(36, 4);
             this.progressPostingBar.Margin = new System.Windows.Forms.Padding(4);
             this.progressPostingBar.Name = "progressPostingBar";
-            this.progressPostingBar.Size = new System.Drawing.Size(1414, 29);
+            this.progressPostingBar.Size = new System.Drawing.Size(1426, 29);
             this.progressPostingBar.TabIndex = 88;
             // 
             // lblPhone
@@ -1111,54 +1111,6 @@
             this.bgNewVersion.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgNewVersion_ProgressChanged);
             this.bgNewVersion.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgNewVersion_RunWorkerCompleted);
             // 
-            // IsSelected
-            // 
-            this.IsSelected.DataPropertyName = "IsSelected";
-            this.IsSelected.HeaderText = "Select";
-            this.IsSelected.Name = "IsSelected";
-            this.IsSelected.Width = 44;
-            // 
-            // TotalAds
-            // 
-            this.TotalAds.DataPropertyName = "TotalAds";
-            this.TotalAds.HeaderText = "Ads";
-            this.TotalAds.Name = "TotalAds";
-            this.TotalAds.Width = 30;
-            // 
-            // UploadImage
-            // 
-            this.UploadImage.HeaderText = "Up";
-            this.UploadImage.Image = global::VinCLAPP.Properties.Resources.upload;
-            this.UploadImage.Name = "UploadImage";
-            this.UploadImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.UploadImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.UploadImage.ToolTipText = "Upload Images";
-            this.UploadImage.Width = 25;
-            // 
-            // ViewImage
-            // 
-            this.ViewImage.HeaderText = "View";
-            this.ViewImage.Image = global::VinCLAPP.Properties.Resources.view;
-            this.ViewImage.Name = "ViewImage";
-            this.ViewImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ViewImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ViewImage.ToolTipText = "View images";
-            this.ViewImage.Width = 30;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Image = global::VinCLAPP.Properties.Resources.edit;
-            this.Edit.Name = "Edit";
-            this.Edit.ToolTipText = "Edit Info";
-            this.Edit.Width = 30;
-            // 
-            // AdsLink
-            // 
-            this.AdsLink.DataPropertyName = "AdsLink";
-            this.AdsLink.HeaderText = "View Ad";
-            this.AdsLink.Name = "AdsLink";
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ListingID";
@@ -1267,6 +1219,13 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.Width = 78;
             // 
+            // IsSelected
+            // 
+            this.IsSelected.DataPropertyName = "IsSelected";
+            this.IsSelected.HeaderText = "Select";
+            this.IsSelected.Name = "IsSelected";
+            this.IsSelected.Width = 44;
+            // 
             // LastPosted
             // 
             this.LastPosted.DataPropertyName = "LastPosted";
@@ -1304,7 +1263,7 @@
             this.PostingCity.HeaderText = "PostingCity";
             this.PostingCity.Name = "PostingCity";
             this.PostingCity.ReadOnly = true;
-            this.PostingCity.Width = 130;
+            this.PostingCity.Width = 160;
             // 
             // Stock
             // 
@@ -1312,6 +1271,13 @@
             this.Stock.HeaderText = "Stock";
             this.Stock.Name = "Stock";
             this.Stock.Width = 61;
+            // 
+            // TotalAds
+            // 
+            this.TotalAds.DataPropertyName = "TotalAds";
+            this.TotalAds.HeaderText = "Ads";
+            this.TotalAds.Name = "TotalAds";
+            this.TotalAds.Width = 30;
             // 
             // Year
             // 
@@ -1346,7 +1312,7 @@
             this.Vin.DataPropertyName = "Vin";
             this.Vin.HeaderText = "Vin";
             this.Vin.Name = "Vin";
-            this.Vin.Width = 101;
+            this.Vin.Width = 125;
             // 
             // Pictures
             // 
@@ -1368,6 +1334,42 @@
             this.SalePrice.HeaderText = "SalePrice";
             this.SalePrice.Name = "SalePrice";
             this.SalePrice.Width = 78;
+            // 
+            // UploadImage
+            // 
+            this.UploadImage.HeaderText = "Up";
+            this.UploadImage.Image = global::VinCLAPP.Properties.Resources.upload;
+            this.UploadImage.Name = "UploadImage";
+            this.UploadImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.UploadImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.UploadImage.ToolTipText = "Upload Images";
+            this.UploadImage.Visible = false;
+            this.UploadImage.Width = 25;
+            // 
+            // ViewImage
+            // 
+            this.ViewImage.HeaderText = "View";
+            this.ViewImage.Image = global::VinCLAPP.Properties.Resources.view;
+            this.ViewImage.Name = "ViewImage";
+            this.ViewImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ViewImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ViewImage.ToolTipText = "View images";
+            this.ViewImage.Visible = false;
+            this.ViewImage.Width = 30;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = global::VinCLAPP.Properties.Resources.edit;
+            this.Edit.Name = "Edit";
+            this.Edit.ToolTipText = "Edit Info";
+            this.Edit.Width = 30;
+            // 
+            // AdsLink
+            // 
+            this.AdsLink.DataPropertyName = "AdsLink";
+            this.AdsLink.HeaderText = "View Ad";
+            this.AdsLink.Name = "AdsLink";
             // 
             // MainForm
             // 
