@@ -19,7 +19,6 @@ using VinCLAPP.Model;
 using VinCLAPP.DatabaseModel;
 using Form = System.Windows.Forms.Form;
 
-
 namespace VinCLAPP
 {
     public partial class MainForm : Form
@@ -32,12 +31,11 @@ namespace VinCLAPP
         private IE _browser = null;
 
         private List<VehicleInfo> _wholeList = null;
-
-        //private const string SingleLogonWarning = "You logged in from another computer. Do you want to continue?";
+                
 
         private int _numberofSelectedCars;
 
-        private XmlDocument _apiResponse=new XmlDocument();
+        private XmlDocument _apiResponse = new XmlDocument();
 
         public static void CloseInternetExplorers()
         {
@@ -115,7 +113,7 @@ namespace VinCLAPP
 
             var emailAccount = GlobalVar.CurrentDealer.EmailAccountList.First(t => t.IsCurrentlyUsed);
 
-            _browser.TextField(Find.ByName("inputEmailHandle")).Value=emailAccount.CraigslistAccount;
+            _browser.TextField(Find.ByName("inputEmailHandle")).Value = emailAccount.CraigslistAccount;
 
             _browser.TextField(Find.ByName("inputPassword")).Value = emailAccount.CraigsListPassword;
 
@@ -201,7 +199,7 @@ namespace VinCLAPP
 
                 _wholeList = new List<VehicleInfo>();
 
-                var list = (BindingList<SimpleVehicleInfo>) dGridInventory.DataSource;
+                var list = (BindingList<SimpleVehicleInfo>)dGridInventory.DataSource;
 
                 foreach (var item in list)
                 {
@@ -218,14 +216,14 @@ namespace VinCLAPP
                     cForm.Show();
 
                     cForm.Activate();
-                   
+
                 }
                 else
                 {
                     MessageBox.Show("You must choose at least one vehicle to post", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                
+
 
             }
 
@@ -249,11 +247,11 @@ namespace VinCLAPP
                 if (GlobalVar.CurrentDealer.DelayTimer > 0)
 
                     timerPost10.Interval = GlobalVar.CurrentDealer.DelayTimer;
-                
+
 
                 CraigslistLogin();
             }
-           
+
         }
 
         public void RunFirstExecuteNewVersion()
@@ -265,9 +263,9 @@ namespace VinCLAPP
                 var citySelected = GlobalVar.CurrentDealer.CityList.First(x => x.CityID == vehicle.PostingCityId);
 
                 lblCity.Text = citySelected.CityName;
-                
+
                 _numberofSelectedCars = _wholeList.Count;
-                
+
                 lblSupposedPosts.Text = _wholeList.Count.ToString(CultureInfo.InvariantCulture);
 
                 lblEstimatedTimeLeft.Text = (_wholeList.Count() * 3).ToString(CultureInfo.InvariantCulture) + " minutes";
@@ -290,7 +288,6 @@ namespace VinCLAPP
             }
 
         }
-
 
         private void bgNewVersion_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -348,7 +345,7 @@ namespace VinCLAPP
                             Postal = Properties.Settings.Default.cardzipcode,
                             VerificationNumber = Properties.Settings.Default.securitycode,
                             ListingId = vehicle.ListingId,
-                          
+
 
                         };
 
@@ -408,7 +405,7 @@ namespace VinCLAPP
                                 CityName = vehicle.PostingCityName
 
                             };
-                           
+
                             DataHelper.AddNewTracking(clModel);
 
                             vehicle.HtmlCraigslistUrl = clModel.HtmlCraigslistUrl;
@@ -424,7 +421,7 @@ namespace VinCLAPP
                     MessageBox.Show(ex.Message + " " + ex.StackTrace, "Unhandled exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
+
 
 
         }
@@ -432,7 +429,7 @@ namespace VinCLAPP
         private void bgNewVersion_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
 
-            var vehicle = (VehicleInfo) e.UserState;
+            var vehicle = (VehicleInfo)e.UserState;
 
             lblProcessing.Visible = true;
 
@@ -441,19 +438,12 @@ namespace VinCLAPP
             if (ix < 2)
             {
 
-                lblProcessing.Text = "Donwloading images for " + vehicle.ModelYear + " " +
-                                     " " + vehicle.Make + " " + vehicle.Model + " " +
-
-                                     vehicle.Trim + ". Stock : " + vehicle.StockNumber + ".";
+                lblProcessing.Text = "Donwloading images for " + vehicle.ModelYear + " " + " " + vehicle.Make.TrimEnd() + " " + vehicle.Model.TrimEnd() + " " + vehicle.Trim.TrimEnd() + ". Stock: " + vehicle.StockNumber + ".";
             }
 
             else if (ix >= 2 && ix < 9)
             {
-                lblProcessing.Text = "Posting " + vehicle.ModelYear + " " + vehicle.Make + " " + vehicle.Model + " " +
-                                     vehicle.Trim + ". Stock : " + vehicle.StockNumber + " on Craigslist in " +
-                                     vehicle.PostingCityName + ".";
-
-
+                lblProcessing.Text = "Posting " + vehicle.ModelYear + " " + vehicle.Make.TrimEnd() + " " + vehicle.Model.TrimEnd() + " " + vehicle.Trim.TrimEnd() + ". Stock: " + vehicle.StockNumber.TrimEnd() + " on Craigslist in " + vehicle.PostingCityName.TrimEnd() + ".";
             }
 
             else if (ix >= 9 && ix < 10)
@@ -500,10 +490,9 @@ namespace VinCLAPP
 
                 if (vehicle.ProgessStatus == CraigslistPostingStatus.PaymentError)
                 {
-                    lblProcessing.Text = "There was a payment error with " + vehicle.ModelYear + " " + vehicle.Make + " " + vehicle.Model + " " +
-                                     vehicle.Trim + ". Stock : " + vehicle.StockNumber +". CLDMS will try to process later.";
+                    lblProcessing.Text = "There was a payment error with " + vehicle.ModelYear + " " + vehicle.Make.TrimEnd() + " " + vehicle.Model.TrimEnd() + " " + vehicle.Trim.TrimEnd() + ". Stock: " + vehicle.StockNumber.TrimEnd() + ". CLDMS will try to process later.";
 
-                    txtError.Text =  vehicle.ErrorMessage;
+                    txtError.Text = vehicle.ErrorMessage;
 
 
                     var rowindex = GetIndexOfRowWithAutoId(vehicle.AutoId);
@@ -522,9 +511,7 @@ namespace VinCLAPP
 
                 if (vehicle.ProgessStatus == CraigslistPostingStatus.Success)
                 {
-                    lblProcessing.Text = vehicle.ModelYear + " " + vehicle.Make + " " + vehicle.Model + " " +
-                                   vehicle.Trim + " was posted successfully on Craigslist in " +
-                                   vehicle.PostingCityName + ".";
+                    lblProcessing.Text = vehicle.ModelYear + " " + vehicle.Make.TrimEnd() + " " + vehicle.Model.TrimEnd() + " " + vehicle.Trim.TrimEnd() + " was posted successfully on Craigslist in " + vehicle.PostingCityName.TrimEnd() + ".";
 
                     var rowindex = GetIndexOfRowWithAutoId(vehicle.AutoId);
 
@@ -554,12 +541,12 @@ namespace VinCLAPP
                 }
                 else
                 {
-                    var progressPercentage = (vehicle.AdsPoistion * 100) /_numberofSelectedCars;
+                    var progressPercentage = (vehicle.AdsPoistion * 100) / _numberofSelectedCars;
 
                     progressPostingBar.Value = progressPercentage;
                 }
 
-             
+
             }
 
         }
@@ -730,9 +717,9 @@ namespace VinCLAPP
                 btnPost.Text = "Post";
             }
 
-           
 
-   
+
+
         }
 
         private void RunPatternNewVersion()
@@ -740,9 +727,9 @@ namespace VinCLAPP
             try
             {
                 var vehicle = _wholeList.ElementAt(0);
-                
+
                 var imageModel = ImageHelper.GenerateRunTimePhysicalImageByComputerAccount(vehicle);
-                
+
                 if (imageModel.PhysicalImageUrl.Any())
                 {
                     timerPost10.Enabled = true;
@@ -756,7 +743,7 @@ namespace VinCLAPP
                     vehicle.LeadEmail = GlobalVar.CurrentDealer.LeadEmail;
 
                     vehicle.ContactName = GlobalVar.CurrentAccount.FirstName + " " + GlobalVar.CurrentAccount.LastName;
-                    
+
                     var creditCardInfo = new CreditCardInfo()
                     {
                         Address = Properties.Settings.Default.cardaddress,
@@ -774,8 +761,8 @@ namespace VinCLAPP
                         Postal = Properties.Settings.Default.cardzipcode,
                         VerificationNumber = Properties.Settings.Default.securitycode,
                         ListingId = vehicle.ListingId
-                        
-                        
+
+
                     };
                     var clService = new CraigslistService();
                     MessageBox.Show(vehicle.ContactName);
@@ -806,9 +793,9 @@ namespace VinCLAPP
                     }
                 }
 
-               
+
             }
-        
+
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message + " "  + ex.StackTrace, "Message", MessageBoxButtons.OK,
@@ -821,409 +808,409 @@ namespace VinCLAPP
         {
             try
             {
-               GlobalVar.CurrentDealer.CityOveride = txtDCity.Text.Trim();
+                GlobalVar.CurrentDealer.CityOveride = txtDCity.Text.Trim();
 
-                    GlobalVar.CurrentDealer.EmailAccountList.First(t => t.IsCurrentlyUsed).IntervalofAds--;
+                GlobalVar.CurrentDealer.EmailAccountList.First(t => t.IsCurrentlyUsed).IntervalofAds--;
 
-                    var vehicle = _wholeList.ElementAt(0);
+                var vehicle = _wholeList.ElementAt(0);
 
-                    var citySelected = GlobalVar.CurrentDealer.CityList.First(x => x.CityID == vehicle.PostingCityId);
+                var citySelected = GlobalVar.CurrentDealer.CityList.First(x => x.CityID == vehicle.PostingCityId);
 
-                    lblCity.Text = citySelected.CityName;
+                lblCity.Text = citySelected.CityName;
 
-                    string title = CommonHelper.GenerateCraiglistTitle(vehicle, cbPrice.Checked);
+                string title = CommonHelper.GenerateCraiglistTitle(vehicle, cbPrice.Checked);
 
-                    string index = "0";
+                string index = "0";
 
+                if (citySelected.SubCity)
+                    index = citySelected.CLIndex.ToString(CultureInfo.InvariantCulture);
+
+                /////GO TO CRAIGLIST PAGE
+
+                if (_browser == null)
+                {
+                    _browser = new IE(citySelected.CraigsListCityURL);
+
+                    _browser.ShowWindow(WatiN.Core.Native.Windows.NativeMethods.WindowShowStyle.ShowMaximized);
+                }
+                else
+                {
+                    CloseInternetExplorers();
+
+                    System.Threading.Thread.Sleep(1000);
+
+                    _browser = new IE();
+
+                    System.Threading.Thread.Sleep(2000);
+
+                    _browser.GoTo(citySelected.CraigsListCityURL);
+
+                    _browser.ShowWindow(WatiN.Core.Native.Windows.NativeMethods.WindowShowStyle.ShowMaximized);
+                }
+
+                System.Threading.Thread.Sleep(1000);
+                //GO TO POST CLASSIFIED
+
+                _browser.Link(Find.ById("post")).Click();
+
+                //MessageBox.Show("Step 1");
+
+                System.Threading.Thread.Sleep(1000);
+
+                if (IsAlreadyLogin())
+                {
+
+                    //GO TO TYPE
+                    //MessageBox.Show("Step 2");
+                    _browser.RadioButton(Find.ByValue("fsd")).Checked = true;
+
+                    System.Threading.Thread.Sleep(1000);
+
+                    //CATEGORY
+
+                    _browser.RadioButton(Find.ByValue("146")).Checked = true;
+
+                    //SUB AREA
                     if (citySelected.SubCity)
-                        index = citySelected.CLIndex.ToString(CultureInfo.InvariantCulture);
-
-                    /////GO TO CRAIGLIST PAGE
-
-                    if (_browser == null)
                     {
-                        _browser = new IE(citySelected.CraigsListCityURL);
+                        _browser.RadioButton(Find.ByValue(index)).Checked = true;
 
-                        _browser.ShowWindow(WatiN.Core.Native.Windows.NativeMethods.WindowShowStyle.ShowMaximized);
                     }
+
+                    if (citySelected.CraigsListCityURL.Equals("http://sfbay.craigslist.org/"))
+                    {
+                        _browser.RadioButton(Find.ByValue("0")).Checked = true;
+
+
+                    }
+                    //MessageBox.Show("Step 3");
+                    //CONTENT
+                    System.Threading.Thread.Sleep(1000);
+
+
+
+                    _browser.TextField(Find.ById("contact_phone")).Value = GlobalVar.CurrentDealer.PhoneNumber;
+
+                    _browser.TextField(Find.ById("contact_name")).Value = Properties.Settings.Default.cardcontactname;
+
+                    _browser.CheckBox(Find.ByName("contact_phone_ok")).Checked = true;
+                    _browser.CheckBox(Find.ByName("contact_text_ok")).Checked = true;
+
+                    _browser.TextField(Find.ById("PostingTitle")).Value = title;
+
+
+                    //_browser.RadioButton(Find.ById("A")).Checked = true;
+
+                    if (cbPrice.Checked)
+                        _browser.TextField(Find.ById("Ask")).Value = "";
+                    else
+
+                        _browser.TextField(Find.ById("Ask")).Value = vehicle.SalePrice.ToString();
+
+
+                    if (String.IsNullOrEmpty(GlobalVar.CurrentDealer.CityOveride))
+                        _browser.TextField(Find.ById("GeographicArea")).Value = citySelected.CityName;
+                    else
+                        _browser.TextField(Find.ById("GeographicArea")).Value =
+                            GlobalVar.CurrentDealer.CityOveride.ToUpperInvariant();
+
+                    _browser.TextField(Find.ById("postal_code")).Value = vehicle.ZipCode;
+
+                    _browser.TextField(Find.ById("PostingBody")).Value =
+                        ComputerAccountHelper.GenerateCraiglistContentBySimpleText(vehicle);
+
+                    System.Threading.Thread.Sleep(2000);
+
+                    _browser.SelectList(Find.ById("auto_year"))
+                        .Options.FirstOrDefault(x => x.Value == vehicle.ModelYear).Select();
+
+
+                    _browser.TextField(Find.ById("auto_make_model")).Value =
+                        vehicle.Make + " " + vehicle.Model;
+
+                    _browser.TextField(Find.ById("auto_miles")).Value =
+                        vehicle.Mileage;
+
+                    _browser.TextField(Find.ById("auto_vin")).Value =
+                        vehicle.Vin;
+
+                    _browser.SelectList(Find.ById("auto_title_status")).Options.FirstOrDefault(x => x.Value == "1").Select();
+
+                    _browser.SelectList(Find.ByIndex(2))
+                       .Options.FirstOrDefault(x => x.Value == "excellent").Select();
+
+                    if (vehicle.Tranmission.ToLower().Contains("automatic"))
+                        _browser.CheckBox(Find.ById("auto_trans_auto")).Checked = true;
+                    else if (vehicle.Tranmission.ToLower().Contains("manual"))
+
+                        _browser.CheckBox(Find.ById("auto_trans_manual")).Checked = true;
                     else
                     {
-                        CloseInternetExplorers();
-
-                        System.Threading.Thread.Sleep(1000);
-
-                        _browser = new IE();
-
-                        System.Threading.Thread.Sleep(2000);
-
-                        _browser.GoTo(citySelected.CraigsListCityURL);
-
-                        _browser.ShowWindow(WatiN.Core.Native.Windows.NativeMethods.WindowShowStyle.ShowMaximized);
+                        _browser.CheckBox(Find.ById("auto_trans_manual")).Checked = true;
+                        _browser.CheckBox(Find.ById("auto_trans_auto")).Checked = true;
                     }
+                    _browser.CheckBox(Find.ById("see_my_other")).Checked = true;
+
+
+                    //_browser.TextField(Find.ById("xstreet0")).Value = vehicle.StreetAddress;
+
+                    //System.Threading.Thread.Sleep(1000);
+
+                    //_browser.TextField(Find.ById("city")).Value = vehicle.City;
+
+                    //System.Threading.Thread.Sleep(1000);
+
+                    //_browser.TextField(Find.ById("region")).Value = vehicle.State;
+
+                    //System.Threading.Thread.Sleep(1000);
+
+                    //_browser.CheckBox(Find.ByName("outsideContactOK")).Checked = true;
+
 
                     System.Threading.Thread.Sleep(1000);
-                    //GO TO POST CLASSIFIED
 
-                    _browser.Link(Find.ById("post")).Click();
+                    _browser.Button(Find.ByName("go")).Click();
 
-                    //MessageBox.Show("Step 1");
+                    //System.Threading.Thread.Sleep(1000);
 
-                    System.Threading.Thread.Sleep(1000);
+                    //_browser.Button(Find.ByClass("continue bigbutton")).Click();
 
-                    if (IsAlreadyLogin())
+
+                    System.Threading.Thread.Sleep(2000);
+
+
+                    _browser.Button(Find.ByValue("add image")).Click();
+
+                    var imageModel = ImageHelper.GenerateRunTimePhysicalImageByComputerAccount(vehicle);
+
+
+                    if (imageModel.PhysicalImageUrl.Any())
                     {
-
-                        //GO TO TYPE
-                        //MessageBox.Show("Step 2");
-                        _browser.RadioButton(Find.ByValue("fsd")).Checked = true;
-
-                        System.Threading.Thread.Sleep(1000);
-
-                        //CATEGORY
-
-                        _browser.RadioButton(Find.ByValue("146")).Checked = true;
-
-                        //SUB AREA
-                        if (citySelected.SubCity)
-                        {
-                            _browser.RadioButton(Find.ByValue(index)).Checked = true;
-
-                        }
-
-                        if (citySelected.CraigsListCityURL.Equals("http://sfbay.craigslist.org/"))
-                        {
-                            _browser.RadioButton(Find.ByValue("0")).Checked = true;
-
-
-                        }
-                        //MessageBox.Show("Step 3");
-                        //CONTENT
-                        System.Threading.Thread.Sleep(1000);
-
-
-
-                        _browser.TextField(Find.ById("contact_phone")).Value = GlobalVar.CurrentDealer.PhoneNumber;
-
-                        _browser.TextField(Find.ById("contact_name")).Value = Properties.Settings.Default.cardcontactname;
-
-                        _browser.CheckBox(Find.ByName("contact_phone_ok")).Checked = true;
-                        _browser.CheckBox(Find.ByName("contact_text_ok")).Checked = true;
-
-                        _browser.TextField(Find.ById("PostingTitle")).Value = title;
-
-
-                        //_browser.RadioButton(Find.ById("A")).Checked = true;
-
-                        if (cbPrice.Checked)
-                            _browser.TextField(Find.ById("Ask")).Value = "";
-                        else
-
-                            _browser.TextField(Find.ById("Ask")).Value = vehicle.SalePrice.ToString();
-
-
-                        if (String.IsNullOrEmpty(GlobalVar.CurrentDealer.CityOveride))
-                            _browser.TextField(Find.ById("GeographicArea")).Value = citySelected.CityName;
-                        else
-                            _browser.TextField(Find.ById("GeographicArea")).Value =
-                                GlobalVar.CurrentDealer.CityOveride.ToUpperInvariant();
-
-                        _browser.TextField(Find.ById("postal_code")).Value = vehicle.ZipCode;
-
-                        _browser.TextField(Find.ById("PostingBody")).Value =
-                            ComputerAccountHelper.GenerateCraiglistContentBySimpleText(vehicle);
-
                         System.Threading.Thread.Sleep(2000);
 
-                        _browser.SelectList(Find.ById("auto_year"))
-                            .Options.FirstOrDefault(x => x.Value == vehicle.ModelYear).Select();
-
-
-                        _browser.TextField(Find.ById("auto_make_model")).Value =
-                            vehicle.Make + " " + vehicle.Model;
-
-                        _browser.TextField(Find.ById("auto_miles")).Value =
-                            vehicle.Mileage;
-
-                        _browser.TextField(Find.ById("auto_vin")).Value =
-                            vehicle.Vin;
-
-                        _browser.SelectList(Find.ById("auto_title_status")).Options.FirstOrDefault(x => x.Value == "1").Select();
-
-                        _browser.SelectList(Find.ByIndex(2))
-                           .Options.FirstOrDefault(x => x.Value == "excellent").Select();
-
-                        if (vehicle.Tranmission.ToLower().Contains("automatic"))
-                            _browser.CheckBox(Find.ById("auto_trans_auto")).Checked = true;
-                        else if (vehicle.Tranmission.ToLower().Contains("manual"))
-
-                            _browser.CheckBox(Find.ById("auto_trans_manual")).Checked = true;
-                        else
+                        foreach (var uploadLocalImage in imageModel.PhysicalImageUrl)
                         {
-                            _browser.CheckBox(Find.ById("auto_trans_manual")).Checked = true;
-                            _browser.CheckBox(Find.ById("auto_trans_auto")).Checked = true;
+                            _browser.FileUpload(Find.ByName("file")).Set(uploadLocalImage);
+
+                            System.Threading.Thread.Sleep(4000);
+
                         }
-                        _browser.CheckBox(Find.ById("see_my_other")).Checked = true;
-                        
 
-                        //_browser.TextField(Find.ById("xstreet0")).Value = vehicle.StreetAddress;
+                        _browser.Button(Find.ByValue("Done with Images")).Click();
 
-                        //System.Threading.Thread.Sleep(1000);
-
-                        //_browser.TextField(Find.ById("city")).Value = vehicle.City;
-
-                        //System.Threading.Thread.Sleep(1000);
-
-                        //_browser.TextField(Find.ById("region")).Value = vehicle.State;
-
-                        //System.Threading.Thread.Sleep(1000);
-
-                        //_browser.CheckBox(Find.ByName("outsideContactOK")).Checked = true;
-
-
-                        System.Threading.Thread.Sleep(1000);
+                        System.Threading.Thread.Sleep(5000);
 
                         _browser.Button(Find.ByName("go")).Click();
 
-                        //System.Threading.Thread.Sleep(1000);
-
-                        //_browser.Button(Find.ByClass("continue bigbutton")).Click();
+                        int clStatus = CraigsListHelper.DetecStatusFromURL(_browser.Uri.AbsoluteUri);
 
 
-                        System.Threading.Thread.Sleep(2000);
-
-
-                        _browser.Button(Find.ByValue("add image")).Click();
-
-                        var imageModel = ImageHelper.GenerateRunTimePhysicalImageByComputerAccount(vehicle);
-
-
-                        if (imageModel.PhysicalImageUrl.Any())
+                        if (clStatus == 2 || clStatus == 3)
                         {
-                            System.Threading.Thread.Sleep(2000);
+                            var rowindex = GetIndexOfRowWithAutoId(vehicle.AutoId);
+                            dGridInventory.Rows[rowindex].DefaultCellStyle.BackColor = Color.Red;
 
-                            foreach (var uploadLocalImage in imageModel.PhysicalImageUrl)
+                            if (_wholeList.Any())
+                                _wholeList.RemoveAt(0);
+
+                            timerPost10.Enabled = false;
+
+                            btnPause.Text = "UnPause";
+
+                            if (clStatus == 2)
                             {
-                                _browser.FileUpload(Find.ByName("file")).Set(uploadLocalImage);
 
-                                System.Threading.Thread.Sleep(4000);
+                                string phoneNumber =
+                                    GlobalVar.CurrentDealer.EmailAccountList.First(x => x.IsCurrentlyUsed).
+                                        CraigsAccountPhoneNumber;
 
-                            }
-
-                            _browser.Button(Find.ByValue("Done with Images")).Click();
-
-                            System.Threading.Thread.Sleep(5000);
-
-                            _browser.Button(Find.ByName("go")).Click();
-
-                            int clStatus = CraigsListHelper.DetecStatusFromURL(_browser.Uri.AbsoluteUri);
-
-
-                            if (clStatus == 2 || clStatus == 3)
-                            {
-                                var rowindex = GetIndexOfRowWithAutoId(vehicle.AutoId);
-                                dGridInventory.Rows[rowindex].DefaultCellStyle.BackColor = Color.Red;
-
-                                if (_wholeList.Any())
-                                    _wholeList.RemoveAt(0);
-
-                                timerPost10.Enabled = false;
-
-                                btnPause.Text = "UnPause";
-
-                                if (clStatus == 2)
+                                try
                                 {
-
-                                    string phoneNumber =
-                                        GlobalVar.CurrentDealer.EmailAccountList.First(x => x.IsCurrentlyUsed).
-                                            CraigsAccountPhoneNumber;
-
-                                    try
+                                    if (!String.IsNullOrEmpty(phoneNumber))
                                     {
-                                        if (!String.IsNullOrEmpty(phoneNumber))
+                                        if (phoneNumber.Contains("(") && phoneNumber.Contains(")"))
                                         {
-                                            if (phoneNumber.Contains("(") && phoneNumber.Contains(")"))
-                                            {
-                                                phoneNumber = phoneNumber.Replace("(", "");
-                                                phoneNumber = phoneNumber.Replace(")", "");
-                                            }
-
-                                            string firstPart = phoneNumber.Substring(0, 3);
-
-                                            string secondPart =
-                                                phoneNumber.Substring(
-                                                    phoneNumber.IndexOf("-", System.StringComparison.Ordinal) + 1, 3);
-
-                                            string lastPart =
-                                                phoneNumber.Substring(
-                                                    phoneNumber.LastIndexOf("-", System.StringComparison.Ordinal) + 1);
-
-
-                                            _browser.TextFields[1].Value =
-                                                firstPart;
-
-                                            _browser.TextFields[2].Value =
-                                                secondPart;
-
-                                            _browser.TextFields.Last().Value =
-                                                lastPart;
-
-                                            _browser.RadioButton(Find.ByValue("voice")).Checked = true;
-
+                                            phoneNumber = phoneNumber.Replace("(", "");
+                                            phoneNumber = phoneNumber.Replace(")", "");
                                         }
-                                    }
-                                    catch (Exception)
-                                    {
+
+                                        string firstPart = phoneNumber.Substring(0, 3);
+
+                                        string secondPart =
+                                            phoneNumber.Substring(
+                                                phoneNumber.IndexOf("-", System.StringComparison.Ordinal) + 1, 3);
+
+                                        string lastPart =
+                                            phoneNumber.Substring(
+                                                phoneNumber.LastIndexOf("-", System.StringComparison.Ordinal) + 1);
+
+
+                                        _browser.TextFields[1].Value =
+                                            firstPart;
+
+                                        _browser.TextFields[2].Value =
+                                            secondPart;
+
+                                        _browser.TextFields.Last().Value =
+                                            lastPart;
+
+                                        _browser.RadioButton(Find.ByValue("voice")).Checked = true;
 
                                     }
-
+                                }
+                                catch (Exception)
+                                {
 
                                 }
 
 
-                                var tForm =
-                                    new PhoneVerificationForm(clStatus);
+                            }
 
-                                tForm.Show();
 
-                                tForm.Activate();
+                            var tForm =
+                                new PhoneVerificationForm(clStatus);
+
+                            tForm.Show();
+
+                            tForm.Activate();
+                        }
+                        else
+                        {
+                            timerPost10.Enabled = true;
+                            //lblTotalPost.Text = (LogicHelper.GetDailyUse() + 1).ToString(CultureInfo.InvariantCulture);
+
+                            System.Threading.Thread.Sleep(3000);
+
+                            _browser.Button(Find.ByName("go")).Click();
+                            System.Threading.Thread.Sleep(2000);
+
+                            _browser.TextField(Find.ById("cardNumber")).Value = Properties.Settings.Default.cardnumber;
+
+                            _browser.TextField(Find.ByName("cvNumber")).Value = Properties.Settings.Default.securitycode;
+
+                            var expirationmonth = "";
+
+                            var expirationyear = "";
+
+                            if (Properties.Settings.Default.expirationmonth < 10)
+                                expirationmonth = "0" + Properties.Settings.Default.expirationmonth;
+                            else
+                            {
+                                expirationmonth = "" + Properties.Settings.Default.expirationmonth;
+                            }
+
+                            expirationyear = Properties.Settings.Default.expirationyear.ToString(CultureInfo.InvariantCulture);
+
+                            _browser.SelectList(Find.ByName("expMonth"))
+                                .Options.FirstOrDefault(x => x.Value == expirationmonth).Select();
+
+                            _browser.SelectList(Find.ByName("expYear"))
+                                .Options.FirstOrDefault(x => x.Value == expirationyear).Select();
+
+                            _browser.TextField(Find.ByName("cardFirstName")).Value =
+                                Properties.Settings.Default.cardfirstname;
+
+                            _browser.TextField(Find.ByName("cardLastName")).Value =
+                                Properties.Settings.Default.cardlastname;
+
+                            _browser.TextField(Find.ByName("cardAddress")).Value =
+                                Properties.Settings.Default.cardaddress;
+
+                            _browser.TextField(Find.ByName("cardCity")).Value = Properties.Settings.Default.cardcity;
+
+                            _browser.TextField(Find.ByName("cardState")).Value = Properties.Settings.Default.cardstate;
+
+                            _browser.TextField(Find.ByName("cardPostal")).Value =
+                                Properties.Settings.Default.cardzipcode;
+
+                            _browser.TextField(Find.ByName("contactName")).Value =
+                                Properties.Settings.Default.cardcontactname;
+
+                            _browser.TextField(Find.ByName("contactPhone")).Value =
+                                Properties.Settings.Default.cardcontactphone;
+
+                            _browser.TextField(Find.ByName("contactEmail")).Value =
+                                Properties.Settings.Default.cardcontactemail;
+
+                            System.Threading.Thread.Sleep(2000);
+
+                            _browser.Button(Find.ByName("finishForm")).Click();
+
+                            System.Threading.Thread.Sleep(45000);
+
+                            //EXTRA
+
+
+                            _browser.GoTo("https://accounts.craigslist.org/");
+
+                            _browser.Links.First(x => x.Url.Contains("https://post.craigslist.org/manage")).Click();
+
+                            System.Threading.Thread.Sleep(1000);
+
+                            _browser.GoTo(_browser.Links[3].Url);
+
+                            System.Threading.Thread.Sleep(2000);
+
+                            var clModel = new CraigsListTrackingModel
+                            {
+                                ListingId = vehicle.ListingId,
+                                CityId = citySelected.CityID,
+                                DealerId = GlobalVar.CurrentDealer.DealerId,
+                                EmailAccount =
+                                    GlobalVar.CurrentDealer.EmailAccountList.First(x => x.IsCurrentlyUsed)
+                                        .CraigslistAccount,
+                                HtmlCraigslistUrl = _browser.Url,
+
+                            };
+
+
+                            DataHelper.AddNewTracking(clModel);
+
+                            _browser.Close();
+
+                            var rowindex = GetIndexOfRowWithAutoId(vehicle.AutoId);
+
+                            dGridInventory.Rows[rowindex].DefaultCellStyle.BackColor = Color.Red;
+
+                            dGridInventory.Rows[rowindex].Cells["AdsLink"].Value = "Click";
+
+                            dGridInventory.Rows[rowindex].Cells["AdsLink"].Tag = clModel.HtmlCraigslistUrl;
+
+
+                            if (progressPostingBar.Value > 100)
+                            {
+                                progressPostingBar.Value = 100;
+
                             }
                             else
                             {
-                                timerPost10.Enabled = true;
-                                //lblTotalPost.Text = (LogicHelper.GetDailyUse() + 1).ToString(CultureInfo.InvariantCulture);
+                                var progressPercentage = ((_numberofSelectedCars - (_wholeList.Count - 1)) * 100) /
+                                                         _numberofSelectedCars;
 
-                                System.Threading.Thread.Sleep(3000);
-
-                                _browser.Button(Find.ByName("go")).Click();
-                                System.Threading.Thread.Sleep(2000);
-
-                                _browser.TextField(Find.ById("cardNumber")).Value = Properties.Settings.Default.cardnumber;
-
-                                _browser.TextField(Find.ByName("cvNumber")).Value = Properties.Settings.Default.securitycode;
-
-                                var expirationmonth = "";
-
-                                var expirationyear = "";
-
-                                if (Properties.Settings.Default.expirationmonth < 10)
-                                    expirationmonth = "0" + Properties.Settings.Default.expirationmonth;
-                                else
-                                {
-                                    expirationmonth = "" + Properties.Settings.Default.expirationmonth;
-                                }
-
-                                expirationyear = Properties.Settings.Default.expirationyear.ToString(CultureInfo.InvariantCulture);
-
-                                _browser.SelectList(Find.ByName("expMonth"))
-                                    .Options.FirstOrDefault(x => x.Value == expirationmonth).Select();
-
-                                _browser.SelectList(Find.ByName("expYear"))
-                                    .Options.FirstOrDefault(x => x.Value == expirationyear).Select();
-
-                                _browser.TextField(Find.ByName("cardFirstName")).Value =
-                                    Properties.Settings.Default.cardfirstname;
-
-                                _browser.TextField(Find.ByName("cardLastName")).Value =
-                                    Properties.Settings.Default.cardlastname;
-
-                                _browser.TextField(Find.ByName("cardAddress")).Value =
-                                    Properties.Settings.Default.cardaddress;
-
-                                _browser.TextField(Find.ByName("cardCity")).Value = Properties.Settings.Default.cardcity;
-
-                                _browser.TextField(Find.ByName("cardState")).Value = Properties.Settings.Default.cardstate;
-
-                                _browser.TextField(Find.ByName("cardPostal")).Value =
-                                    Properties.Settings.Default.cardzipcode;
-
-                                _browser.TextField(Find.ByName("contactName")).Value =
-                                    Properties.Settings.Default.cardcontactname;
-
-                                _browser.TextField(Find.ByName("contactPhone")).Value =
-                                    Properties.Settings.Default.cardcontactphone;
-
-                                _browser.TextField(Find.ByName("contactEmail")).Value =
-                                    Properties.Settings.Default.cardcontactemail;
-
-                                System.Threading.Thread.Sleep(2000);
-
-                                _browser.Button(Find.ByName("finishForm")).Click();
-
-                                System.Threading.Thread.Sleep(45000);
-
-                                //EXTRA
-
-
-                                _browser.GoTo("https://accounts.craigslist.org/");
-
-                                _browser.Links.First(x => x.Url.Contains("https://post.craigslist.org/manage")).Click();
-
-                                System.Threading.Thread.Sleep(1000);
-
-                                _browser.GoTo(_browser.Links[3].Url);
-
-                                System.Threading.Thread.Sleep(2000);
-
-                                var clModel = new CraigsListTrackingModel
-                                {
-                                    ListingId = vehicle.ListingId,
-                                    CityId = citySelected.CityID,
-                                    DealerId = GlobalVar.CurrentDealer.DealerId,
-                                    EmailAccount =
-                                        GlobalVar.CurrentDealer.EmailAccountList.First(x => x.IsCurrentlyUsed)
-                                            .CraigslistAccount,
-                                    HtmlCraigslistUrl = _browser.Url,
-
-                                };
-
-
-                                DataHelper.AddNewTracking(clModel);
-
-                                _browser.Close();
-                          
-                                var rowindex = GetIndexOfRowWithAutoId(vehicle.AutoId);
-
-                                dGridInventory.Rows[rowindex].DefaultCellStyle.BackColor = Color.Red;
-
-                                dGridInventory.Rows[rowindex].Cells["AdsLink"].Value = "Click";
-
-                                dGridInventory.Rows[rowindex].Cells["AdsLink"].Tag = clModel.HtmlCraigslistUrl;
-
-
-                                if (progressPostingBar.Value > 100)
-                                {
-                                    progressPostingBar.Value = 100;
-
-                                }
-                                else
-                                {
-                                    var progressPercentage = ((_numberofSelectedCars - (_wholeList.Count-1)) * 100) /
-                                                             _numberofSelectedCars;
-
-                                    progressPostingBar.Value = progressPercentage;
-                                }
-
+                                progressPostingBar.Value = progressPercentage;
                             }
-
-                           
-
-                      
-
 
                         }
 
 
-                    }
-                    else
-                    {
-                        //_browser.Close();
 
-                        //_browser = null;
 
-                        CraigslistLogin();
+
 
                     }
-              
+
+
+                }
+                else
+                {
+                    //_browser.Close();
+
+                    //_browser = null;
+
+                    CraigslistLogin();
+
+                }
+
 
             }
 
@@ -1236,24 +1223,22 @@ namespace VinCLAPP
             }
         }
 
-
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             pbPicLoad.Visible = true;
 
             btnPost.Enabled = true;
             btnPost.Text = "Post";
-            
+
             Refresh();
 
             var account = DataHelper.CheckAccountStatus(txtUsername.Text, txtPassword.Text);
-            
+
             if (account.IsExist)
             {
                 if (!account.Active)
                 {
-                    MessageBox.Show("Your account is deactivated. Please make a payment or contact POSTCL to support","Critical Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Your account is deactivated. Please make a payment or contact POSTCL to support", "Critical Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (account.IsFirstLogon)
                 {
@@ -1267,7 +1252,7 @@ namespace VinCLAPP
 
                     Refresh();
 
-                  
+
                 }
                 else if (account.IsTrial)
                 {
@@ -1278,11 +1263,11 @@ namespace VinCLAPP
                     sForm.Show();
 
                     sForm.Activate();
-                   
+
                 }
                 else
                 {
-                   AfterLogging();
+                    AfterLogging();
                 }
             }
             else
@@ -1374,12 +1359,12 @@ namespace VinCLAPP
             btnPostAPI.Enabled = true;
             btnPause.Enabled = true;
             //btnSettingSave.Enabled = true;
-           
+
             EmailToolStripMenuItem.Enabled = true;
             lblTotalPost.Text = LogicHelper.GetDailyUse().ToString(CultureInfo.InvariantCulture);
             //labelTrial.Text = String.Format("You are using trial version - {0} days left.", TrialHelper.TrialDaysLeft());
             //labelTrial.Visible = GlobalVar.TrialInfo.IsTrial;
-        
+
             if (!e.Cancelled)
             {
                 lblDealerName.Visible = true;
@@ -1475,7 +1460,7 @@ namespace VinCLAPP
             }
             else if (e.ColumnIndex == dGridInventory.Columns["Edit"].Index)
             {
-                var form = new VinDecodeForm(String.IsNullOrEmpty(vin) ? DecodeType.Manual : DecodeType.VIN, listingId,this);
+                var form = new VinDecodeForm(String.IsNullOrEmpty(vin) ? DecodeType.Manual : DecodeType.VIN, listingId, this);
                 form.Show();
             }
             else if (e.ColumnIndex == dGridInventory.Columns["AdsLink"].Index)
@@ -1508,7 +1493,7 @@ namespace VinCLAPP
             }
         }
 
-    
+
 
         private void btnDeleteAll_Click(object sender, EventArgs e)
         {
@@ -1532,7 +1517,7 @@ namespace VinCLAPP
                 }
             }
         }
-      
+
         private void editBillingToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -1546,7 +1531,7 @@ namespace VinCLAPP
 
                 sForm.Activate();
             }
-        
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -1585,13 +1570,13 @@ namespace VinCLAPP
 
             sForm.Activate();
         }
-        
-    
+
+
 
         private void postingCitiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-     
+
+
             if (GlobalVar.CurrentDealer == null)
                 MessageBox.Show("Please login first to access this feature. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
@@ -1736,7 +1721,7 @@ namespace VinCLAPP
             this.Close();
         }
 
-     
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (GlobalVar.CurrentAccount != null)
@@ -1752,7 +1737,7 @@ namespace VinCLAPP
 
         private void cbRemember_CheckedChanged(object sender, EventArgs e)
         {
-              
+
             if (cbRemember.Checked)
             {
                 Properties.Settings.Default.Username = txtUsername.Text;
@@ -1765,10 +1750,10 @@ namespace VinCLAPP
                 Properties.Settings.Default.Password = "";
                 Properties.Settings.Default.Save();
             }
-        
+
         }
 
-     
+
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (GlobalVar.CurrentDealer == null)
@@ -1781,12 +1766,12 @@ namespace VinCLAPP
 
                 sForm.Activate();
             }
-           
+
         }
 
         private void btnAddInventory_Click(object sender, EventArgs e)
         {
-            var form = new VinDecodeForm(DecodeType.VIN,this);
+            var form = new VinDecodeForm(DecodeType.VIN, this);
             form.Show();
         }
 
@@ -1875,7 +1860,7 @@ namespace VinCLAPP
             }
         }
 
-     
+
         private void bgWorkerChangeCity_DoWork(object sender, DoWorkEventArgs e)
         {
             try
@@ -1937,7 +1922,7 @@ namespace VinCLAPP
             }
         }
 
-    
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -1946,7 +1931,7 @@ namespace VinCLAPP
             var imageModel = ImageHelper.GenerateRunTimePhysicalImageByComputerAccount(vehicle);
         }
 
-      
+
         private void craigslistFToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (GlobalVar.CurrentDealer == null)
@@ -2040,10 +2025,10 @@ namespace VinCLAPP
                             btnPostAPI.Enabled = true;
                             MessageBox.Show("Please contact POSTCL support for more information");
                         }
-    
+
                     }
 
-                                 
+
                 }
 
             }
@@ -2110,7 +2095,7 @@ namespace VinCLAPP
 
                 if (String.IsNullOrEmpty(vehicle.CarImageUrl)) return;
 
-                string[] carImage = vehicle.CarImageUrl.Split(new[] {",", "|"}, StringSplitOptions.RemoveEmptyEntries);
+                string[] carImage = vehicle.CarImageUrl.Split(new[] { ",", "|" }, StringSplitOptions.RemoveEmptyEntries);
                 var index = 1;
 
                 foreach (var tmp in carImage)
@@ -2131,7 +2116,7 @@ namespace VinCLAPP
                         }
                         else
                         {
-                            var progressPercentage = ((indexProgress*100)/_wholeList.Count);
+                            var progressPercentage = ((indexProgress * 100) / _wholeList.Count);
 
                             progressPostingBar.Value = progressPercentage;
                         }
@@ -2213,12 +2198,12 @@ namespace VinCLAPP
                                 !String.IsNullOrEmpty(citySelected.SubAbbr))
                             {
                                 craigslisturl =
-                                    citySelected.CraigsListCityURL +citySelected.SubAbbr +"/ctd/" + postingid + ".html";
+                                    citySelected.CraigsListCityURL + citySelected.SubAbbr + "/ctd/" + postingid + ".html";
                             }
                             else
                             {
                                 craigslisturl =
-                                   citySelected.CraigsListCityURL +"ctd/" + postingid + ".html";
+                                   citySelected.CraigsListCityURL + "ctd/" + postingid + ".html";
                             }
 
                             var clModel = new CraigsListTrackingModel
@@ -2265,7 +2250,7 @@ namespace VinCLAPP
 
             _wholeList.Clear();
 
-            MessageBox.Show("Posting succesfully!!!", "Message",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Posting succesfully!!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             var cForm = WebForm.Instance();
 
@@ -2277,14 +2262,14 @@ namespace VinCLAPP
 
         }
 
-        
+
         private int GetIndexOfRowWithAutoId(int id)
         {
             for (int i = 0; i < dGridInventory.Rows.Count; i += 1)
             {
                 var cell = dGridInventory.Rows[i].Cells["AutoId"]; // or.DataBoundItem;
                 var autoId = Convert.ToInt32(cell.Value.ToString());
-                if (autoId==id)
+                if (autoId == id)
                 {
                     return i;
                 }
@@ -2294,7 +2279,7 @@ namespace VinCLAPP
 
 
         }
-      
+
         private void linkEditEnding_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
@@ -2322,7 +2307,7 @@ namespace VinCLAPP
 
                 cForm.Activate();
             }
-           
+
 
         }
 
@@ -2341,7 +2326,7 @@ namespace VinCLAPP
 
                 cForm.Activate();
             }
-           
+
         }
 
         private void videoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2358,7 +2343,7 @@ namespace VinCLAPP
             }
         }
 
-      
+
 
 
     }

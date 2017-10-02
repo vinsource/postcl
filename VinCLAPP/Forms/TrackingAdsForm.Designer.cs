@@ -72,6 +72,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dGridViewSameCity = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewLinkColumn3 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Clbrowser = new System.Windows.Forms.WebBrowser();
+            this.dGridViewOtherCities = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ListingId = new System.Windows.Forms.DataGridViewLinkColumn();
             this.ClpostingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CityId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,12 +91,6 @@
             this.StockNumber = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Title = new System.Windows.Forms.DataGridViewLinkColumn();
             this.CityName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewLinkColumn3 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Clbrowser = new System.Windows.Forms.WebBrowser();
-            this.dGridViewOtherCities = new System.Windows.Forms.DataGridView();
             this.ListingIdOtherCities = new System.Windows.Forms.DataGridViewLinkColumn();
             this.ClpostingIdOther = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,12 +98,6 @@
             this.dataGridViewLinkColumn5 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewLinkColumn6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewSameCity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewOtherCities)).BeginInit();
             this.SuspendLayout();
@@ -123,11 +123,132 @@
             this.StockNumber,
             this.Title,
             this.CityName});
-            this.dGridViewSameCity.Location = new System.Drawing.Point(781, 2);
+            this.dGridViewSameCity.Location = new System.Drawing.Point(871, 2);
             this.dGridViewSameCity.Name = "dGridViewSameCity";
             this.dGridViewSameCity.Size = new System.Drawing.Size(490, 261);
             this.dGridViewSameCity.TabIndex = 3;
             this.dGridViewSameCity.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewToday_CellClick_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(872, 264);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(266, 25);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Same posting in other cities : ";
+            // 
+            // dataGridViewLinkColumn1
+            // 
+            this.dataGridViewLinkColumn1.DataPropertyName = "AutoId";
+            this.dataGridViewLinkColumn1.HeaderText = "Id";
+            this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
+            this.dataGridViewLinkColumn1.Width = 30;
+            // 
+            // dataGridViewLinkColumn2
+            // 
+            this.dataGridViewLinkColumn2.DataPropertyName = "StockNumber";
+            this.dataGridViewLinkColumn2.HeaderText = "Stock";
+            this.dataGridViewLinkColumn2.Name = "dataGridViewLinkColumn2";
+            this.dataGridViewLinkColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLinkColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewLinkColumn2.Width = 70;
+            // 
+            // dataGridViewLinkColumn3
+            // 
+            this.dataGridViewLinkColumn3.DataPropertyName = "Title";
+            this.dataGridViewLinkColumn3.HeaderText = "Posted/Renew Cars";
+            this.dataGridViewLinkColumn3.Name = "dataGridViewLinkColumn3";
+            this.dataGridViewLinkColumn3.ReadOnly = true;
+            this.dataGridViewLinkColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLinkColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewLinkColumn3.Width = 200;
+            // 
+            // Clbrowser
+            // 
+            this.Clbrowser.Location = new System.Drawing.Point(-1, 2);
+            this.Clbrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.Clbrowser.Name = "Clbrowser";
+            this.Clbrowser.Size = new System.Drawing.Size(866, 814);
+            this.Clbrowser.TabIndex = 7;
+            this.Clbrowser.Url = new System.Uri("http://www.craigslist.org/about/sites", System.UriKind.Absolute);
+            // 
+            // dGridViewOtherCities
+            // 
+            this.dGridViewOtherCities.AllowUserToAddRows = false;
+            this.dGridViewOtherCities.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGridViewOtherCities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dGridViewOtherCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridViewOtherCities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ListingIdOtherCities,
+            this.ClpostingIdOther,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewLinkColumn5,
+            this.dataGridViewLinkColumn6,
+            this.dataGridViewTextBoxColumn9});
+            this.dGridViewOtherCities.Location = new System.Drawing.Point(871, 289);
+            this.dGridViewOtherCities.Name = "dGridViewOtherCities";
+            this.dGridViewOtherCities.Size = new System.Drawing.Size(490, 527);
+            this.dGridViewOtherCities.TabIndex = 8;
+            this.dGridViewOtherCities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewOtherCities_CellClick_1);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CityName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Posted/Renew Cars";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CityId";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CityId";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "HtmlCraigslistUrl";
+            this.dataGridViewTextBoxColumn3.HeaderText = "HtmlCraigslistUrl";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            this.dataGridViewTextBoxColumn3.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CityName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "City";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "HtmlCraigslistUrl";
+            this.dataGridViewTextBoxColumn5.HeaderText = "HtmlCraigslistUrl";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            this.dataGridViewTextBoxColumn5.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "CityName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "City";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            this.dataGridViewTextBoxColumn6.Width = 120;
             // 
             // ListingId
             // 
@@ -181,80 +302,7 @@
             this.CityName.DataPropertyName = "CityName";
             this.CityName.HeaderText = "City";
             this.CityName.Name = "CityName";
-            this.CityName.Width = 120;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(782, 264);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 25);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Same posting in other cities : ";
-            // 
-            // dataGridViewLinkColumn1
-            // 
-            this.dataGridViewLinkColumn1.DataPropertyName = "AutoId";
-            this.dataGridViewLinkColumn1.HeaderText = "Id";
-            this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
-            this.dataGridViewLinkColumn1.Width = 30;
-            // 
-            // dataGridViewLinkColumn2
-            // 
-            this.dataGridViewLinkColumn2.DataPropertyName = "StockNumber";
-            this.dataGridViewLinkColumn2.HeaderText = "Stock";
-            this.dataGridViewLinkColumn2.Name = "dataGridViewLinkColumn2";
-            this.dataGridViewLinkColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLinkColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewLinkColumn2.Width = 70;
-            // 
-            // dataGridViewLinkColumn3
-            // 
-            this.dataGridViewLinkColumn3.DataPropertyName = "Title";
-            this.dataGridViewLinkColumn3.HeaderText = "Posted/Renew Cars";
-            this.dataGridViewLinkColumn3.Name = "dataGridViewLinkColumn3";
-            this.dataGridViewLinkColumn3.ReadOnly = true;
-            this.dataGridViewLinkColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLinkColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewLinkColumn3.Width = 200;
-            // 
-            // Clbrowser
-            // 
-            this.Clbrowser.Location = new System.Drawing.Point(-1, 2);
-            this.Clbrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.Clbrowser.Name = "Clbrowser";
-            this.Clbrowser.Size = new System.Drawing.Size(776, 804);
-            this.Clbrowser.TabIndex = 7;
-            this.Clbrowser.Url = new System.Uri("http://www.craigslist.org/about/sites", System.UriKind.Absolute);
-            // 
-            // dGridViewOtherCities
-            // 
-            this.dGridViewOtherCities.AllowUserToAddRows = false;
-            this.dGridViewOtherCities.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGridViewOtherCities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dGridViewOtherCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridViewOtherCities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ListingIdOtherCities,
-            this.ClpostingIdOther,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewLinkColumn5,
-            this.dataGridViewLinkColumn6,
-            this.dataGridViewTextBoxColumn9});
-            this.dGridViewOtherCities.Location = new System.Drawing.Point(781, 289);
-            this.dGridViewOtherCities.Name = "dGridViewOtherCities";
-            this.dGridViewOtherCities.Size = new System.Drawing.Size(490, 517);
-            this.dGridViewOtherCities.TabIndex = 8;
-            this.dGridViewOtherCities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewOtherCities_CellClick_1);
+            this.CityName.Width = 170;
             // 
             // ListingIdOtherCities
             // 
@@ -310,62 +358,14 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "CityName";
             this.dataGridViewTextBoxColumn9.HeaderText = "City";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CityName";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Posted/Renew Cars";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CityId";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CityId";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "HtmlCraigslistUrl";
-            this.dataGridViewTextBoxColumn3.HeaderText = "HtmlCraigslistUrl";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            this.dataGridViewTextBoxColumn3.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CityName";
-            this.dataGridViewTextBoxColumn4.HeaderText = "City";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            this.dataGridViewTextBoxColumn4.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "HtmlCraigslistUrl";
-            this.dataGridViewTextBoxColumn5.HeaderText = "HtmlCraigslistUrl";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            this.dataGridViewTextBoxColumn5.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "CityName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "City";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            this.dataGridViewTextBoxColumn6.Width = 120;
+            this.dataGridViewTextBoxColumn9.Width = 170;
             // 
             // TrackingAdsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(1274, 819);
+            this.ClientSize = new System.Drawing.Size(1364, 819);
             this.Controls.Add(this.dGridViewOtherCities);
             this.Controls.Add(this.Clbrowser);
             this.Controls.Add(this.label1);

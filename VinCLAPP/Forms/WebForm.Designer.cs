@@ -57,12 +57,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dGridViewToday = new System.Windows.Forms.DataGridView();
             this.ClWebBrowser = new System.Windows.Forms.WebBrowser();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ListingId = new System.Windows.Forms.DataGridViewLinkColumn();
             this.StockNumber = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Title = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.HtmlCraigslistUrl = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CityName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HtmlCraigslistUrl = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewToday)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,9 +85,9 @@
             this.Title,
             this.CityName,
             this.HtmlCraigslistUrl});
-            this.dGridViewToday.Location = new System.Drawing.Point(776, 2);
+            this.dGridViewToday.Location = new System.Drawing.Point(925, 2);
             this.dGridViewToday.Name = "dGridViewToday";
-            this.dGridViewToday.Size = new System.Drawing.Size(445, 796);
+            this.dGridViewToday.Size = new System.Drawing.Size(469, 804);
             this.dGridViewToday.TabIndex = 1;
             this.dGridViewToday.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewToday_CellClick);
             // 
@@ -96,9 +96,17 @@
             this.ClWebBrowser.Location = new System.Drawing.Point(3, 2);
             this.ClWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.ClWebBrowser.Name = "ClWebBrowser";
-            this.ClWebBrowser.Size = new System.Drawing.Size(767, 804);
+            this.ClWebBrowser.Size = new System.Drawing.Size(916, 804);
             this.ClWebBrowser.TabIndex = 2;
             this.ClWebBrowser.Url = new System.Uri("http://www.craigslist.org/about/sites", System.UriKind.Absolute);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CityName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Posted/Renew Cars";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 250;
             // 
             // ListingId
             // 
@@ -126,6 +134,13 @@
             this.Title.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Title.Width = 200;
             // 
+            // CityName
+            // 
+            this.CityName.DataPropertyName = "CityName";
+            this.CityName.HeaderText = "City";
+            this.CityName.Name = "CityName";
+            this.CityName.Width = 120;
+            // 
             // HtmlCraigslistUrl
             // 
             this.HtmlCraigslistUrl.DataPropertyName = "HtmlCraigslistUrl";
@@ -134,26 +149,12 @@
             this.HtmlCraigslistUrl.ReadOnly = true;
             this.HtmlCraigslistUrl.Visible = false;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CityName";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Posted/Renew Cars";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 250;
-            // 
-            // CityName
-            // 
-            this.CityName.DataPropertyName = "CityName";
-            this.CityName.HeaderText = "City";
-            this.CityName.Name = "CityName";
-            // 
             // WebForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(1224, 810);
+            this.ClientSize = new System.Drawing.Size(1406, 810);
             this.Controls.Add(this.ClWebBrowser);
             this.Controls.Add(this.dGridViewToday);
             this.MaximizeBox = false;
