@@ -183,9 +183,9 @@ namespace VinCLAPP.Model
 
         public string AdsLink { get; set; }
 
-
         public int TotalAds { get; set; }
-        
+
+        public string Condition { get; set; }
     }
 
     public class LeadFormat

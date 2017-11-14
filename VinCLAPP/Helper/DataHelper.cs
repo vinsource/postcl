@@ -343,8 +343,8 @@ namespace VinCLAPP.Helper
                             : GlobalVar.CurrentDealer.CityList.First(x => x.CityID == tmp.PostingCityId).CityName,
                     PostingCityId = tmp.PostingCityId,
                     Pictures = tmp.Pictures,
-                    TotalAds = tmp.TotalAds
-
+                    TotalAds = tmp.TotalAds,
+                    Condition = tmp.Condition
                 };
 
 
