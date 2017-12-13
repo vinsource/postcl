@@ -751,7 +751,8 @@ namespace Vinclapp.Craigslist
                 //var streamReader = new StreamReader(response.GetResponseStream());
                 //var result = streamReader.ReadToEnd();
                 //streamReader.Close();
-                return response.Headers["Location"];
+                var returnUrl = response.Headers["Location"];
+                return !string.IsNullOrEmpty(returnUrl) && !returnUrl.Contains("https") ? "https://post.craigslist.org" + returnUrl : returnUrl;
             }
         }
 
