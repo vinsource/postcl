@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lblVersion = new System.Windows.Forms.Label();
             this.btnPause = new System.Windows.Forms.Button();
@@ -362,12 +362,12 @@
             this.dGridInventory.AllowUserToDeleteRows = false;
             this.dGridInventory.AllowUserToResizeColumns = false;
             this.dGridInventory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dGridInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dGridInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGridInventory.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dGridInventory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -397,8 +397,8 @@
             this.dGridInventory.Margin = new System.Windows.Forms.Padding(4);
             this.dGridInventory.Name = "dGridInventory";
             this.dGridInventory.RowHeadersWidth = 25;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.dGridInventory.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.dGridInventory.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGridInventory.Size = new System.Drawing.Size(1462, 616);
             this.dGridInventory.TabIndex = 78;
             // 
